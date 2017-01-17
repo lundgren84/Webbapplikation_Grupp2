@@ -1,1 +1,19 @@
 ﻿
+Register Partial View
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h3>Username</h3>
+    @Html.TextBox("username")
+
+    <h3>Email</h3>
+    @Html.TextBox("email")
+
+    <h3>Password</h3>
+    @Html.Password("password")
+
+    <input type="submit" />
+}
+    <input type="submit" />

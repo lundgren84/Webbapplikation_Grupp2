@@ -22,9 +22,10 @@ namespace Tournament.net.Controllers
             userManager = new UserManager<IdentityUser>(store);
         }
         // GET: Authentication
+        [HttpGet]
         public ActionResult Register()
         {
-            return PartialView("Register");
+            return PartialView();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
