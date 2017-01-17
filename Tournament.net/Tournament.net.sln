@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tournament.net", "Tournamen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network_layer", "Network_layer\Network_layer.csproj", "{B7AC2815-03EF-49AD-A8EF-5E6700628495}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business_layer", "Business_layer\Business_layer.csproj", "{3043F7CF-0E4F-4E1A-A2FD-B928A2374A2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B7AC2815-03EF-49AD-A8EF-5E6700628495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7AC2815-03EF-49AD-A8EF-5E6700628495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7AC2815-03EF-49AD-A8EF-5E6700628495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3043F7CF-0E4F-4E1A-A2FD-B928A2374A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3043F7CF-0E4F-4E1A-A2FD-B928A2374A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3043F7CF-0E4F-4E1A-A2FD-B928A2374A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3043F7CF-0E4F-4E1A-A2FD-B928A2374A2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
