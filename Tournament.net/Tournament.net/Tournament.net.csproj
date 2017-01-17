@@ -217,6 +217,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Items\Images\" />
+    <Folder Include="Scripts\JavaScript\" />
+    <Folder Include="Styles\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Game\" />
     <Folder Include="Views\Tournament\" />
