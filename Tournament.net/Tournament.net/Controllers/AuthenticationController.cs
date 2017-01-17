@@ -24,7 +24,7 @@ namespace Tournament.net.Controllers
         // GET: Authentication
         public ActionResult Register()
         {
-            return View();
+            return PartialView("Register");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

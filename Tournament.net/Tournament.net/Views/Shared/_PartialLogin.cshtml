@@ -16,9 +16,18 @@
 }
 else
 {
+   
+            var options = new AjaxOptions()
+            {
+                HttpMethod = "",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "AuthenticationDiv"
+        };
+    
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Register:PartialView", routeValues: null, htmlAttributes: new { id = "" })</li>
-        <li>@Html.ActionLink("Login", "Login", "Login_PartialView", routeValues: null, htmlAttributes: new { id = "" })</li>
+        <li>@Ajax.ActionLink("Register", "Register", "Authentication","null",options)</li>
+        <li>@Html.ActionLink("Register", "Register", "Register", routeValues: null, htmlAttributes: new { id = "" })</li>
+        <li>@Html.ActionLink("Login", "Login", "Login", routeValues: null, htmlAttributes: new { id = "" })</li>
     </ul>
 
 }
