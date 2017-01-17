@@ -42,6 +42,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabels\Account_tbl.cs" />
+    <Compile Include="Tabels\Game_tbl.cs" />
+    <Compile Include="Tabels\Tournament_tbl.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Network_layer\Network_layer.csproj">

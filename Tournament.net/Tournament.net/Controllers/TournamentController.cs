@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Tournament.net.Controllers
 {
-    public class TurnamentController : Controller
+    public class TournamentController : Controller
     {
         // GET: Turnament
         public ActionResult Index()

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Tournament.net.Models
 {
-    public class Account
+    public class GameViewModel
     {
     }
 }

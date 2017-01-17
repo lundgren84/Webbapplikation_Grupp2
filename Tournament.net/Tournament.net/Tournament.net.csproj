@@ -106,13 +106,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GameController.cs" />
-    <Compile Include="Controllers\TurnamentController.cs" />
+    <Compile Include="Controllers\TournamentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\Game.cs" />
-    <Compile Include="Models\Turnament.cs" />
+    <Compile Include="Models\AccountViewModel.cs" />
+    <Compile Include="Models\GameViewModel.cs" />
+    <Compile Include="Models\TournamentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,9 +133,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Items\Images\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Game\" />
-    <Folder Include="Views\Turnament\" />
+    <Folder Include="Views\Tournament\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business_layer\Business_layer.csproj">
