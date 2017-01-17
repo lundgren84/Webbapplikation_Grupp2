@@ -8,6 +8,6 @@ namespace Tournament.net
 {
     public class MyIdentityDbContext : IdentityDbContext<IdentityUser>
     {
-        public MyIdentityDbContext() : base("name = connectionsStringName") { }
+        public MyIdentityDbContext() : base("name = TournamentAccountDb") { }
     }
 }
