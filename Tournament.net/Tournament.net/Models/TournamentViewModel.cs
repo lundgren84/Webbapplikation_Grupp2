@@ -7,6 +7,11 @@ namespace Tournament.net.Models
 {
     public class TournamentViewModel
     {
+        public TournamentTypeViewModel Type { get; set; }
+        public List<AccountViewModel> Players { get; set; }
+    }
+    public class TournamentTypeViewModel
+    {
 
     }
 }
