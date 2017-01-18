@@ -16,17 +16,17 @@
 }
 else
 {
-   
-            var options = new AjaxOptions()
-            {
-                HttpMethod = "GET",
-                InsertionMode = InsertionMode.Replace,
-                UpdateTargetId = "AuthenticationDiv"
-        };
-    
+
+    var options = new AjaxOptions()
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "AuthenticationDiv"
+    };
+
     <ul class="nav navbar-nav navbar-right">
-        <li>@Ajax.ActionLink("Register", "Register", "Authentication","null",options)</li>
-        <li>@Html.ActionLink("Login", "Login", "Login", routeValues: null, htmlAttributes: new { id = "" })</li>
+        <li><div id="AuthenticationDiv"></div></li>
+        <li>@Ajax.ActionLink("Register", "Register", "Authentication", "null", options)</li>
+        <li>@Html.ActionLink("Login", "Login", "Authentication", routeValues: null, htmlAttributes: new { id = "" })</li>
     </ul>
 
 }

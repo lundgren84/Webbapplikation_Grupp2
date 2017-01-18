@@ -22,10 +22,10 @@ namespace Tournament.net.Controllers
             userManager = new UserManager<IdentityUser>(store);
         }
         // GET: Authentication
-        [HttpGet]
+       
         public ActionResult Register()
         {
-            return PartialView();
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -57,7 +57,7 @@ namespace Tournament.net.Controllers
                 //Create new acc in db - FIX
          
             }
-            return RedirectToAction("Index", "Album");
+            return RedirectToAction("Index","Main");
         }
         public ActionResult Login()
         {
@@ -80,7 +80,7 @@ namespace Tournament.net.Controllers
 
             authorisationManager.SignIn(identity);
 
-            return RedirectToAction("Index", "Album");
+            return RedirectToAction("Index", "Main");
         }
 
         public ActionResult Logout()
