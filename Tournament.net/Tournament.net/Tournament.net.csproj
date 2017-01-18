@@ -188,6 +188,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701180355017_InitialCreate.cs" />
+    <Compile Include="Migrations\201701180355017_InitialCreate.Designer.cs">
+      <DependentUpon>201701180355017_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\GameViewModel.cs" />
     <Compile Include="Models\TournamentViewModel.cs" />
@@ -205,8 +210,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Shared\_PartialLogin.cshtml" />
+    <Content Include="Views\Authentication\_Register.cshtml" />
+    <Content Include="Views\Authentication\_Login.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -217,7 +225,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Items\Images\" />
-    <Folder Include="Views\Account\" />
+    <Folder Include="Scripts\JavaScript\" />
+    <Folder Include="Styles\" />
     <Folder Include="Views\Game\" />
     <Folder Include="Views\Tournament\" />
   </ItemGroup>
@@ -226,6 +235,11 @@
       <Project>{3043f7cf-0e4f-4e1a-a2fd-b928a2374a2b}</Project>
       <Name>Business_layer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701180355017_InitialCreate.resx">
+      <DependentUpon>201701180355017_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
