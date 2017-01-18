@@ -1,0 +1,51 @@
+﻿body {
+    font-family: 'Futura PT';
+    background-color: #313131;
+    color: #00ffd2;
+}
+.nav.navbar-nav.navbar-right li a {
+    font-family: 'Futura PT';
+    color: #00ffd2;
+}
+.nav.navbar-nav li a{
+    font-family: 'Futura PT';
+    color: #00ffd2;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #00ffd2;
+    font-family: 'Futura PT';
+    font-weight: 600;
+    letter-spacing: -2px;
+}
+.welcome {
+    text-align: center;
+     color: #00ffd2;
+    font-family: 'Futura PT';
+    font-size: 70px;
+    font-weight: 600;
+}
+.btn-xlarge {
+    text-align: center;
+    color: #313131;
+    font-size: 42px; 
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: normal;
+    width: 400px;
+    height: 200px;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+            background-color: #00ffd2;
+}
+.btn-info:hover, .btn-info:focus{
+    background-color: #00ffd2;
+    color: white;
+}
+.btn-info{
+    text-align: center;
+}
+.userChoice{
+    text-align: center;
+}
