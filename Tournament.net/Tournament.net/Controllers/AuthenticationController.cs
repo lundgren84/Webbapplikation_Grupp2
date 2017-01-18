@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
-
+using Business_layer.BusinessObjects;
 
 namespace Tournament.net.Controllers
 {
@@ -54,8 +54,16 @@ namespace Tournament.net.Controllers
                     HttpContext.GetOwinContext().Authentication;
                 //Sign in
                 authorisationManager.SignIn(identity);
-                //Create new acc in db - FIX
-         
+
+                //Create BusinessData                
+                var BusinessData = new Account_BData()
+                {          
+                    UserName = user.UserName,
+                    Email = user.Email
+                };
+                //Sending it to Business layer
+                Account_BData.CreateAccount(BusinessData);
+
             }
             return RedirectToAction("Index","Main");
         }

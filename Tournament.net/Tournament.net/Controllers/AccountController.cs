@@ -25,16 +25,8 @@ namespace Tournament.net.Controllers
         {
             return RedirectToAction("Index","Main");
         }
-        [HttpPost]
-        public ActionResult Create(AccountViewModel Model)
-        {
-            //Mapping to BusinessData
-            var BusinessData = Model.ToBusinessData();
-            //Sending it to Business layer
-            Account_BData.CreateAccount(BusinessData);
-
-            return View();
-        }
+       
+      
       
     }
 }
