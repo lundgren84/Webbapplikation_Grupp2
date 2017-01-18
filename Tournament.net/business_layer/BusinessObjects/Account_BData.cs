@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business_layer.Tabels
+namespace Business_layer.BusinessObjects
 {
-    class Game_tbl
+    class Account_BData
     {
     }
 }

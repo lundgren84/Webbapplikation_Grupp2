@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Network_layer
+namespace Business_layer.BusinessObjects
 {
-    public class Class1
+    class Tournament_BData
     {
     }
 }

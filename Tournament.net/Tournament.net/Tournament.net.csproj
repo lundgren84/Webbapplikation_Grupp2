@@ -214,6 +214,7 @@
     <Content Include="Views\Authentication\_Login.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,7 +227,6 @@
     <Folder Include="Items\Images\" />
     <Folder Include="Scripts\JavaScript\" />
     <Folder Include="Styles\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\Game\" />
     <Folder Include="Views\Tournament\" />
   </ItemGroup>
