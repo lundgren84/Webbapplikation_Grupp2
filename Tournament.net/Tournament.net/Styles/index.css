@@ -1,35 +1,41 @@
-﻿body {
-    font-family: 'Futura PT';
+﻿@font-face {
+    font-family: 'futura-pt-book';
+    src: url('../fonts/futuraptbook.woff') format('woff');
+}
+@font-face {
+    font-family: 'futurapt-heavy';
+    src: url('../fonts/futuraptheavy.woff') format('woff');
+}
+body {
+    font-family: 'futura-pt-book';
     background-color: #313131;
     color: #00ffd2;
 }
 .nav.navbar-nav.navbar-right li a {
-    font-family: 'Futura PT';
+    font-family: 'futura-pt-book';
     color: #00ffd2;
 }
 .nav.navbar-nav li a{
-    font-family: 'Futura PT';
+    font-family: 'futura-pt-book';
     color: #00ffd2;
 }
 
 .navbar-inverse .navbar-brand {
     color: #00ffd2;
-    font-family: 'Futura PT';
-    font-weight: 600;
-    letter-spacing: -2px;
+    font-family: 'futurapt-heavy';
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 .welcome {
     text-align: center;
-     color: #00ffd2;
-    font-family: 'Futura PT';
-    font-size: 70px;
-    font-weight: 600;
+
 }
 .btn-xlarge {
+    font-family: 'futurapt-heavy';
     text-align: center;
     color: #313131;
     font-size: 42px; 
-    font-weight: 600;
+    font-weight: 900;
     letter-spacing: -2px;
     line-height: normal;
     width: 400px;
@@ -42,10 +48,15 @@
 .btn-info:hover, .btn-info:focus{
     background-color: #00ffd2;
     color: white;
+
 }
 .btn-info{
     text-align: center;
 }
 .userChoice{
     text-align: center;
+    
+}
+.userChoice button{
+  margin: 13px 12px 12px 10px;
 }
