@@ -191,6 +191,7 @@
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
+    <Compile Include="ExtensionMethods\Mapping\AccountMapping.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
