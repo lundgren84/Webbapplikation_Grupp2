@@ -1,29 +1,37 @@
 ﻿body {
-    font-family: 'Futura PT';
-    background-color: #313131;
-    color: #00ffd2;
+    font-family: 'Berlin Sans FB';
+    background-color: #021e3d;
+    color: #177eb3;
 }
 .nav.navbar-nav.navbar-right li a {
-    font-family: 'Futura PT';
-    color: #00ffd2;
+    font-family: 'Berlin Sans FB';
+    color: #177eb3;
 }
 .nav.navbar-nav li a{
-    font-family: 'Futura PT';
-    color: #00ffd2;
+    font-family: 'Berlin Sans FB';
+    color: #177eb3;
 }
 
 .navbar-inverse .navbar-brand {
-    color: #00ffd2;
-    font-family: 'Futura PT';
+    color: #177eb3;
+    font-family: 'Berlin Sans FB';
     font-weight: 600;
     letter-spacing: -2px;
 }
 .welcome {
     text-align: center;
      color: #00ffd2;
-    font-family: 'Futura PT';
+    font-family: 'Berlin Sans FB';
     font-size: 70px;
     font-weight: 600;
+}
+
+.btn-xlarge2 {
+    background-image: url('../Items/Images/startbutton small.png');
+    width: 600px;
+    height: 600px;
+    background-color:transparent;
+    border:none;
 }
 .btn-xlarge {
     text-align: center;
@@ -40,7 +48,7 @@
             background-color: #00ffd2;
 }
 .btn-info:hover, .btn-info:focus{
-    background-color: #00ffd2;
+    /*background-color: #00ffd2;*/
     color: white;
 }
 .btn-info{
@@ -48,4 +56,15 @@
 }
 .userChoice{
     text-align: center;
+}
+
+
+.greydout {
+ 
+   opacity: 0.8;
+}
+.greydout:hover {
+ 
+ 
+   opacity: 1;
 }

@@ -168,6 +168,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Items\Images\Logotypes\BigLogo.png" />
+    <Content Include="Items\Images\Logotypes\tournlogo2.png" />
+    <Content Include="Items\Images\Logotypes\tournlogo3-2 small.png" />
+    <Content Include="Items\Images\startbutton small.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
