@@ -19,7 +19,16 @@ namespace Tournament.net.Controllers
 
         public ActionResult Options()
         {
-            return PartialView();
+            //Get current Account from DB
+
+            var AccName = User.Identity.Name;
+            var testAccount = new AccountViewModel()
+            {
+                UserName = AccName,
+                Email = AccName+"@gmail.com",
+                ImgURL = "img/"+ AccName+".png"
+            };
+            return PartialView(testAccount);
         }
         [HttpPost]
         [Authorize]
@@ -27,8 +36,8 @@ namespace Tournament.net.Controllers
         {
             return PartialView();
         }
-       
-      
-      
+
+
+
     }
 }

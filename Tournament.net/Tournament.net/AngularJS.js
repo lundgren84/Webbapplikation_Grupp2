@@ -14,8 +14,8 @@ myApp.config(function ($routeProvider) {
         templateUrl: "PartialViews/two.html"
     })
      .otherwise({
-         template: "",
-     });;
+         template: ""
+     });
 });
 
 myApp.factory("OneFactory", function () {
@@ -26,9 +26,9 @@ myApp.factory("OneFactory", function () {
 });
 var controllers = {};
 controllers.OneController = function ($scope, OneFactory) {
- 
-  
-}
+
+
+};
 
 
 myApp.controller(controllers);

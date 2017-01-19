@@ -8,9 +8,12 @@ HL.AccountOptions_btn = $('#AccountOptions_btn');
 
 
 
-$(document).ready(function () {
-    HL.AccountOptions_btn.on("click", function () {
 
+
+$(document).ready(function () {
+
+    //Clicks
+    HL.AccountOptions_btn.on("click", function () {
         $.ajax({
             dataType: "html",
             type: "GET",
@@ -23,5 +26,4 @@ $(document).ready(function () {
         });
 
     });
-
 });
