@@ -176,7 +176,7 @@
     <Content Include="fonts\futuraptbook.woff" />
     <Content Include="fonts\futuraptheavy.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\JavaScript\Hampus\AngularJS.js" />
+    <Content Include="AngularJS.js" />
     <Content Include="Scripts\JavaScript\Hampus\Main.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
