@@ -4,3 +4,7 @@
 .hide{
     visibility:collapse;
 }
+#firstSpinner{
+    position:absolute;
+    left:80%;
+}

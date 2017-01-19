@@ -184,6 +184,7 @@
     <Content Include="DeveloperComments.txt" />
     <Content Include="Styles\index.css" />
     <Content Include="Styles\Main.css" />
+    <Content Include="Styles\Spinner.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
