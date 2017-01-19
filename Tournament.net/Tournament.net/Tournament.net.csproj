@@ -222,8 +222,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Shared\_PartialLogin.cshtml" />
-    <Content Include="Views\Authentication\_Register.cshtml" />
-    <Content Include="Views\Authentication\_Login.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\Account\Options.cshtml" />

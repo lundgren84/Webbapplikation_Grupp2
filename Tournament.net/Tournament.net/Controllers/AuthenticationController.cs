@@ -25,7 +25,7 @@ namespace Tournament.net.Controllers
        
         public ActionResult Register()
         {
-            return View();
+            return PartialView();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -69,7 +69,7 @@ namespace Tournament.net.Controllers
         }
         public ActionResult Login()
         {
-            return View();
+            return PartialView();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -98,7 +98,7 @@ namespace Tournament.net.Controllers
 
             authorisationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
 
-            return RedirectToAction("Login");
+            return RedirectToAction("Index","Main",null);
         }
     }
 }

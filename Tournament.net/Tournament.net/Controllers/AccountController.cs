@@ -16,7 +16,7 @@ namespace Tournament.net.Controllers
         {
             return View();
         }
-
+    
         public ActionResult Options()
         {
             //Get current Account from DB
@@ -36,6 +36,7 @@ namespace Tournament.net.Controllers
         {
             return PartialView();
         }
+
 
 
 

@@ -1,1 +1,2 @@
-﻿ActhenticationController row 60: Add all properties!
+﻿HL- ActhenticationController row 60: Add all properties!
+HL- Scripts/JavaScript/Hampus/Main.js: Fix open/close indext top div nice!!!

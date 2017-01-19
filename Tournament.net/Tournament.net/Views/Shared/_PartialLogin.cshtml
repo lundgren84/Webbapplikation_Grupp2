@@ -8,7 +8,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li>
               
-                <a id="AccountOptions_btn" href="#/Account/Options">Hello @User.Identity.Name!</a>
+                <a id="AccountOptions_btn" href="#/">Hello @User.Identity.Name!</a>
                 @*@Html.ActionLink("Hello " + User.Identity.Name + "!", "Options", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })*@
 
             </li>
@@ -27,8 +27,10 @@ else
 
     <ul class="nav navbar-nav navbar-right">
         <li><div id="AuthenticationDiv"></div></li>
-        <li>@Ajax.ActionLink("Register", "Register", "Authentication", "null", options)</li>
-        <li>@Html.ActionLink("Login", "Login", "Authentication", routeValues: null, htmlAttributes: new { id = "" })</li>
+        <li><a id="AccountRegister_btn" href="#/">Register</a></li>
+        @*<li>@Ajax.ActionLink("Register", "Register", "Authentication", "null", options)</li>*@
+        <li><a id="AccountLogin_btn" href="#/">Login</a></li>
+        @*<li>@Html.ActionLink("Login", "Login", "Authentication", routeValues: null, htmlAttributes: new { id = "" })</li>*@
     </ul>
 
 }
