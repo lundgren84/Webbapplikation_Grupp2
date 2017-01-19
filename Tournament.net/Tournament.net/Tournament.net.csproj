@@ -176,11 +176,14 @@
     <Content Include="fonts\futuraptbook.woff" />
     <Content Include="fonts\futuraptheavy.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\JavaScript\Hampus\AngularJS.js" />
+    <Content Include="Scripts\JavaScript\Hampus\Main.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="DeveloperComments.txt" />
     <Content Include="Styles\index.css" />
+    <Content Include="Styles\Main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -222,7 +225,7 @@
     <Content Include="Views\Authentication\_Login.cshtml" />
     <Content Include="Views\Authentication\Register.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
-    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Account\Options.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -232,7 +235,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\JavaScript\" />
     <Folder Include="Views\Game\" />
     <Folder Include="Views\Tournament\" />
   </ItemGroup>

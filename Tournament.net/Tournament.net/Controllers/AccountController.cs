@@ -16,14 +16,16 @@ namespace Tournament.net.Controllers
         {
             return View();
         }
-        public ActionResult Edit()
+
+        public ActionResult Options()
         {
-            return View();
+            return PartialView();
         }
         [HttpPost]
-        public ActionResult Edit(AccountViewModel Model)
+        [Authorize]
+        public ActionResult Options(AccountViewModel Model)
         {
-            return RedirectToAction("Index","Main");
+            return PartialView();
         }
        
       

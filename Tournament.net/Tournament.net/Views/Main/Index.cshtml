@@ -3,6 +3,12 @@
     ViewBag.Title = "Index";
 }
 <link href="~/Styles/index.css" rel="stylesheet" />
+<div class="hide" id="Div_AccountOptions">
+    @{
+        Html.RenderAction("Options", "Account", null);
+    }
+    
+</div>
 <div class="welcome">
     <img style="width: 80%; height: 80%;" src="~/Items/Images/Logotypes/tournlogo2.png" />
 
