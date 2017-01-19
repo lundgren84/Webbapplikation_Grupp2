@@ -12,7 +12,7 @@ namespace Network_layer.Repositories
       
         public static void CreateOrUpdate(tbl_Account Entity)
         {
-            throw new NotImplementedException();
+          
         }
     }
 }
