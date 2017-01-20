@@ -27,35 +27,43 @@ body {
     letter-spacing: -2px;
 }
 .welcome {
-    text-align: center;
-     color: #00ffd2;
-    font-family: 'Berlin Sans FB';
-    font-size: 70px;
-    font-weight: 600;
+    width:900px;
+    height:353px;
+    margin:auto;
+    background-image: url('../Items/Images/Logotypes/tournlogo2-ok 900.png');
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-out;
+    -webkit-transition-delay: 100ms;
 }
+    .welcome:hover {
+     background-image: url('../Items/Images/Logotypes/tournlogo2-ok hover 900.png');
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-in;
+    -webkit-transition-delay: 100ms;
+ 
+    }
 
 .btn-xlarge2 {
-    background-image: url('../Items/Images/startbutton small.png');
-    width: 600px;
-    height: 600px;
-    background-color:transparent;
-    border:none;
+    background-image: url('../Items/Images/Buttons/startbutton nohover.png');
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    border: none;
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-out;
+    -webkit-transition-delay: 100ms;
 }
-.btn-xlarge {
-    font-family: 'futurapt-heavy';
-    text-align: center;
-    color: #313131;
-    font-size: 42px; 
-    font-weight: 900;
-    letter-spacing: -2px;
-    line-height: normal;
-    width: 400px;
-    height: 200px;
-    -webkit-border-radius: 8px;
-       -moz-border-radius: 8px;
-            border-radius: 8px;
-            background-color: #00ffd2;
+.btn-xlarge2:hover {
+    background-image: url('../Items/Images/Buttons/startbutton hover.png');
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-in;
+    -webkit-transition-delay: 100ms;
 }
+
 .btn-info:hover, .btn-info:focus{
     /*background-color: #00ffd2;*/
     color: white;
@@ -75,10 +83,9 @@ body {
 
 .greydout {
  
-   opacity: 0.8;
-}
-.greydout:hover {
- 
- 
    opacity: 1;
 }
+    .greydout:hover {
+     
+        opacity: 1;
+    }
