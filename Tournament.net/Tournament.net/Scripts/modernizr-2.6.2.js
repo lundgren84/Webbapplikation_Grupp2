@@ -173,7 +173,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     /*>>mq*/
     // adapted from matchMedia polyfill
-    // by Scott Jehl and Paul Irish
+    // by Scott JeHB and Paul Irish
     // gist.github.com/786768
     testMediaQuery = function( mq ) {
 
@@ -839,7 +839,7 @@ window.Modernizr = (function( window, document, undefined ) {
     };
 
 
-    // Thanks to Erik Dahlstrom
+    // Thanks to Erik DaHBstrom
     tests['svg'] = function() {
         return !!document.createElementNS && !!document.createElementNS(ns.svg, 'svg').createSVGRect;
     };

@@ -47,8 +47,15 @@ body {
     -webkit-transition-delay: 100ms;
  
     }
+.unhidden{
+    visibility: visible;
+}
 
+.hidden{
+    visibility: hidden;
+}
 .btn-xlarge2 {
+    visibility: visible;
     background-image: url('../Items/Images/Buttons/startbutton nohover.png');
     background-repeat: no-repeat;
     background-position: center;

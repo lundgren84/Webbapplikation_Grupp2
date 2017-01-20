@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
 }
 <link href="~/Styles/index.css" rel="stylesheet" />
+<script src="~/Scripts/JavaScript/Henrik/Main.js"></script>
 <ng-view></ng-view>
 <div class="hide" id="Spinner">
     @* Spinner *@
@@ -14,9 +15,12 @@
 <div class="welcome">
     @*<img style="width: 80%; height: 80%;"  />*@
 </div>
-<div class="userChoice">
+<div class="userChoice" id="UserChoice">
     @*<button type="button" class="btn btn-info btn-xlarge greyedout">Highscore</button>*@
-    <button type="button" class="btn-xlarge2 greydout"></button>
+    <button id="Start_btn" type="button" class="btn-xlarge2 greydout" onclick="hideElement()"></button>
+</div>
+<div class="hidden" id="SelectType">
+    <h1>Nu syns jag</h1>
 </div>
 <div id="Highscore_Div">
     Highscore_Div

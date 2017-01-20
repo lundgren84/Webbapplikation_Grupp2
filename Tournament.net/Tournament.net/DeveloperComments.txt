@@ -1,2 +1,2 @@
-﻿HL- ActhenticationController row 60: Add all properties!
-HL- Scripts/JavaScript/Hampus/Main.js: Fix open/close indext top div nice!!! if options open and click = close. if options open and click other = close and open new
+﻿HB- ActhenticationController row 60: Add all properties!
+HB- Scripts/JavaScript/Hampus/Main.js: Fix open/close indext top div nice!!! if options open and click = close. if options open and click other = close and open new
