@@ -10,10 +10,11 @@ namespace Network_layer
 {
     public class TournamentDbContext : DbContext
     {
-        public TournamentDbContext():base("name=Tournament_DataBase")
+        public TournamentDbContext() : base("name=Tournament_DataBase")
         {
 
         }
-      public DbSet<tbl_Account> Accounts { get; set; }
+        public DbSet<tbl_Account> Accounts { get; set; }
+        public DbSet<tbl_Taunt> Taunts { get; set; }
     }
 }

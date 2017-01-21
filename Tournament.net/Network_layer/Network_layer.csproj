@@ -49,8 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201701210813146_InitialCreate.cs" />
+    <Compile Include="Migrations\201701210813146_InitialCreate.Designer.cs">
+      <DependentUpon>201701210813146_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\TauntRepository.cs" />
     <Compile Include="Tables\tbl_Account.cs" />
     <Compile Include="Tables\tbl_Taunt.cs" />
     <Compile Include="TournamentDbContext.cs" />
@@ -58,6 +64,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701210813146_InitialCreate.resx">
+      <DependentUpon>201701210813146_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

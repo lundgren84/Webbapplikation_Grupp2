@@ -21,9 +21,9 @@ namespace Network_layer.Repositories
                 EntityToCreateOrUpdate.UserName = Entity.UserName;
                 EntityToCreateOrUpdate.Email = Entity.Email;
                 EntityToCreateOrUpdate.ImgURL = Entity.ImgURL;
-                EntityToCreateOrUpdate.WinWords = Entity.WinWords;
-                EntityToCreateOrUpdate.CommonWords = Entity.CommonWords;
-                EntityToCreateOrUpdate.LooseWords = Entity.LooseWords;
+                //EntityToCreateOrUpdate.WinWords = Entity.WinWords;
+                //EntityToCreateOrUpdate.CommonWords = Entity.CommonWords;
+                //EntityToCreateOrUpdate.LooseWords = Entity.LooseWords;
 
                 ctx.Accounts.AddOrUpdate(EntityToCreateOrUpdate);
                 ctx.SaveChanges();

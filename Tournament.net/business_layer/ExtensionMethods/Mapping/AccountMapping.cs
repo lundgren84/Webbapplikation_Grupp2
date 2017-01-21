@@ -1,4 +1,5 @@
 ﻿using Business_layer.BusinessObjects;
+using Network_layer.Repositories;
 using Network_layer.Tables;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,7 @@ namespace Business_layer.ExtensionMethods.Mapping
                 UserName = BData.UserName,
                 Email = BData.Email,
                 ImgURL = BData.ImgURL,
-                WinWords = BData.WinWords,
-                CommonWords = BData.CommonWords,
-                LooseWords = BData.LooseWords
-                // Mapp to entity
+                Taunts = TauntRepository.GetTaunt(BData.id)            
             };
             return Entity;
         }
@@ -33,9 +31,9 @@ namespace Business_layer.ExtensionMethods.Mapping
                 UserName = Entity.UserName,
                 Email = Entity.Email,
                 ImgURL = Entity.ImgURL,
-                WinWords = (List<string>)Entity.WinWords,
-                CommonWords = (List<string>)Entity.CommonWords,
-                LooseWords = (List<string>)Entity.LooseWords
+                WinWords = TauntRepository.GetWords("win",Entity.id),
+                CommonWords = TauntRepository.GetWords("common",Entity.id),
+                LooseWords = TauntRepository.GetWords("loose",Entity.id),
 
             };
             return BusinessData;
