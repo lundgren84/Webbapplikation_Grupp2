@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BusinessObjects\Account_BData.cs" />
     <Compile Include="BusinessObjects\Tournament_BData.cs" />
+    <Compile Include="ExtensionMethods\AccountExtensions.cs" />
     <Compile Include="ExtensionMethods\Mapping\AccountMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

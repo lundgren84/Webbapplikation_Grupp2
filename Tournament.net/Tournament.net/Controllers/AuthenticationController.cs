@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Business_layer.BusinessObjects;
+using Business_layer.ExtensionMethods;
 
 namespace Tournament.net.Controllers
 {
@@ -62,7 +63,8 @@ namespace Tournament.net.Controllers
                     Email = user.Email
                 };
                 //Sending it to Business layer
-                Account_BData.CreateAccount(BusinessData);
+
+                BusinessData.CreateNew();             
 
             }
             return RedirectToAction("Index","Main");

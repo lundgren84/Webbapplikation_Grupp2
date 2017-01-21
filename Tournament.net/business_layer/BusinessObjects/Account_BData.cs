@@ -1,5 +1,6 @@
 ﻿using Business_layer.ExtensionMethods.Mapping;
 using Network_layer.Repositories;
+using Network_layer.Tables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace Business_layer.BusinessObjects
 {
-   public class Account_BData
+    public class Account_BData
     {
+        public Guid id;
         public string UserName { get; set; }
         public string Email { get; set; }
         public string ImgURL { get; set; }
@@ -17,10 +19,16 @@ namespace Business_layer.BusinessObjects
         public List<string> CommonWords { get; set; }
         public List<string> LooseWords { get; set; }
 
-        public static void CreateAccount(Account_BData businessData)
+        public static object GetAccount()
         {
-            // Map to Entity and send to Connection layer
-            AccountRepository.CreateOrUpdate(businessData.ToEntity());
+            throw new NotImplementedException();
+        }
+
+        public static Account_BData GetAccount(string userName)
+        {
+            var entity = AccountRepository.GetAccount(userName);
+            var BusinessData = entity.ToBusinessData();
+            return BusinessData;
         }
     }
 }

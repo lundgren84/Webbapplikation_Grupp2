@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Network_layer.Tables;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace Network_layer
         {
 
         }
+      public DbSet<tbl_Account> Accounts { get; set; }
     }
 }

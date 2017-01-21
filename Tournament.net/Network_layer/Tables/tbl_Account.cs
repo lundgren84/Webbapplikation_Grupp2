@@ -8,6 +8,7 @@ namespace Network_layer.Tables
 {
    public class tbl_Account
     {
+        public Guid id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
         public string ImgURL { get; set; }

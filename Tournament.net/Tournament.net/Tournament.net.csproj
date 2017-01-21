@@ -169,6 +169,7 @@
     <Content Include="Global.asax" />
     <Content Include="Items\Images\Buttons\startbutton hover.png" />
     <Content Include="Items\Images\Buttons\startbutton nohover.png" />
+    <Content Include="Items\Images\Default\1.jpg" />
     <Content Include="Items\Images\Logotypes\BigLogo.png" />
     <Content Include="Items\Images\Logotypes\tournlogo2-ok 900.png" />
     <Content Include="Items\Images\Logotypes\tournlogo2-ok hover 900.png" />
@@ -199,6 +200,7 @@
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
+    <Compile Include="ExtensionMethods\AccountExtensions.cs" />
     <Compile Include="ExtensionMethods\Mapping\AccountMapping.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">

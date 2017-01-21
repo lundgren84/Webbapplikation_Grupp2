@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Network_layer.Tables;
+using System.Data.Entity.Migrations;
 
 namespace Network_layer.Repositories
 {
@@ -12,7 +13,30 @@ namespace Network_layer.Repositories
       
         public static void CreateOrUpdate(tbl_Account Entity)
         {
-          
+            using (var ctx = new TournamentDbContext())
+            {
+                var EntityToCreateOrUpdate = ctx.Accounts.FirstOrDefault(x => x.id == Entity.id)
+                    ?? new tbl_Account() { id = Guid.NewGuid() };
+
+                EntityToCreateOrUpdate.UserName = Entity.UserName;
+                EntityToCreateOrUpdate.Email = Entity.Email;
+                EntityToCreateOrUpdate.ImgURL = Entity.ImgURL;
+                EntityToCreateOrUpdate.WinWords = Entity.WinWords;
+                EntityToCreateOrUpdate.CommonWords = Entity.CommonWords;
+                EntityToCreateOrUpdate.LooseWords = Entity.LooseWords;
+
+                ctx.Accounts.AddOrUpdate(EntityToCreateOrUpdate);
+                ctx.SaveChanges();
+            }        
         }
+        public static tbl_Account GetAccount(string userName)
+        {
+            using (var ctx = new TournamentDbContext())
+            {
+                var Entity = ctx.Accounts.FirstOrDefault(x => x.UserName == userName);
+                return Entity;
+            }
+        }
+
     }
 }

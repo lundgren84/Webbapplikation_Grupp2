@@ -7,6 +7,7 @@ namespace Tournament.net.Models
 {
     public class AccountViewModel
     {
+        public Guid id;
         public string UserName { get; set; }
         public string Email { get; set; }
         public string ImgURL { get; set; }

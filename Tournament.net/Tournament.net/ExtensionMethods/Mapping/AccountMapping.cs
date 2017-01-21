@@ -13,14 +13,29 @@ namespace Tournament.net.ExtensionMethods.Mapping
         {
             var busniessData = new Account_BData()
             {
-              UserName = Model.UserName,
-              Email = Model.Email,
-              ImgURL = Model.ImgURL,
-              CommonWords= Model.CommonWords,
-              WinWords = Model.WinWords,
-              LooseWords = Model.LooseWords
+                id = Model.id,
+                UserName = Model.UserName,
+                Email = Model.Email,
+                ImgURL = Model.ImgURL,
+                CommonWords = Model.CommonWords,
+                WinWords = Model.WinWords,
+                LooseWords = Model.LooseWords
             };
             return busniessData;
+        }
+        public static AccountViewModel ToModel(this Account_BData BusinessData)
+        {
+            var Model = new AccountViewModel()
+            {
+                id = BusinessData.id,
+                UserName = BusinessData.UserName,
+                Email = BusinessData.Email,
+                ImgURL = BusinessData.ImgURL,
+                WinWords = BusinessData.WinWords,
+                CommonWords = BusinessData.CommonWords,
+                LooseWords = BusinessData.LooseWords
+            };
+            return Model;
         }
     }
 }

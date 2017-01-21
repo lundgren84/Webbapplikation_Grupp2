@@ -16,19 +16,15 @@ namespace Tournament.net.Controllers
         {
             return View();
         }
-    
+
         public ActionResult Options()
         {
+            // Get Account Name
+            var accName = User.Identity.Name;
             //Get current Account from DB
-
-            var AccName = User.Identity.Name;
-            var testAccount = new AccountViewModel()
-            {
-                UserName = AccName,
-                Email = AccName+"@gmail.com",
-                ImgURL = "img/"+ AccName+".png"
-            };
-            return PartialView(testAccount);
+            var Account = (Account_BData.GetAccount(accName).ToModel());
+            //Inject Account to view
+            return PartialView(Account);
         }
         [HttpPost]
         [Authorize]

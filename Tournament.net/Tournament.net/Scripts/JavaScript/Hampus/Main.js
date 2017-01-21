@@ -1,4 +1,5 @@
-﻿// -##- Namespace -##-
+﻿
+// -##- Namespace -##-
 var HL = HL || {};
 
 // -##- Divs -##-
@@ -10,8 +11,17 @@ HL.Spinner.removeClass('hide'); HL.Spinner.hide();
 HL.AccountOptions_btn = $('#AccountOptions_btn');
 HL.AccountRegister_btn = $('#AccountRegister_btn');
 HL.AccountLogin_btn = $('#AccountLogin_btn');
+HL.btn_UploadImage = $('#btn_UploadImage');
+// -##- Uploads -##-
+HL.imgupload = $('#imgupload');
+
+
+
+
+
 
 $(document).ready(function () {
+
     // -##- Variables -##-
     HL.OpenInIndexDiv = "";
 
@@ -31,7 +41,25 @@ $(document).ready(function () {
         toggleIndexTopDiv('/Authentication/Login', 'Login');
     });
 
+    //Image
+    //function click() {
+    //    console.log("Click!!");
+    //}
+    //HL.btn_UploadImage.on('click', function () {
+    //    //HL.imgupload.trigger('click');
+    //    console.log("Click!!");
+    //});
+
+
+
+
     // -##- Functions -##-
+
+    // Select text on focus
+    function select() {
+        $(this).select();
+    }
+
     // function to get html to top div in index
     function getHtmlToTopIndexDiv(url) {
         HL.Spinner.toggle('300');
@@ -65,5 +93,6 @@ $(document).ready(function () {
             HL.OpenInIndexDiv = type;
         }
     }
+
 
 });
