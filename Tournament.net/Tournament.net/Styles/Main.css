@@ -1,10 +1,62 @@
 ﻿
 
 
-.hide{
-    visibility:collapse;
+.hide {
+    visibility: collapse;
 }
-#firstSpinner{
-    position:absolute;
-    left:80%;
+
+#firstSpinner {
+    position: absolute;
+    left: 80%;
+}
+
+#Tournament {
+    border: none;
+    background-color: transparent;
+    width: 350px;
+    height: 350px;
+    background-size: 100%, 100%;
+    background-image: url('../Items/Images/Buttons/tournament nohover.png');
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-delay: 100ms;
+}
+
+    #Tournament:hover {
+        width: 350px;
+        height: 350px;
+        background-size: 100%, 100%;
+        background-image: url('../Items/Images/Buttons/tournament.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+#Highscore {
+    border: none;
+    background-color: transparent;
+    width: 350px;
+    height: 350px;
+    background-size: 100%, 100%;
+     background-image: url('../Items/Images/Buttons/highscore.png');
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-delay: 100ms;
+}
+
+    #Highscore:hover {
+        width: 350px;
+        height: 350px;
+        background-size: 100%, 100%;
+        background-image: url('../Items/Images/Buttons/highscore nohover 350.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+
+.GameTypeChoices {
+    background-color: transparent;
 }

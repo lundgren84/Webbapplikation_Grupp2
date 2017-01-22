@@ -13,5 +13,11 @@ namespace Tournament.net.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult GameTypeSelection()
+        {
+            return PartialView();
+        }
     }
+  
 }
