@@ -167,8 +167,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Items\Images\Buttons\highscore nohover 350.png" />
+    <Content Include="Items\Images\Buttons\highscore.png" />
     <Content Include="Items\Images\Buttons\startbutton hover.png" />
     <Content Include="Items\Images\Buttons\startbutton nohover.png" />
+    <Content Include="Items\Images\Buttons\tournament nohover.png" />
+    <Content Include="Items\Images\Buttons\tournament.png" />
     <Content Include="Items\Images\Default\1.jpg" />
     <Content Include="Items\Images\Logotypes\BigLogo.png" />
     <Content Include="Items\Images\Logotypes\tournlogo2-ok 900.png" />
