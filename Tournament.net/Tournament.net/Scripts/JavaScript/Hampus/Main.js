@@ -96,3 +96,28 @@ $(document).ready(function () {
 
 
 });
+
+
+$('#cat_icon,.panel_title').click(function () {
+    if ($('#cat_icon').is(':visible')) {
+        $('#cat_icon').fadeOut(function () {
+            $('#categories').toggle('slide', {
+                direction: 'left'
+            }, 1000);
+        });
+    }
+    else {
+        $('#categories').toggle('slide', {
+            direction: 'left'
+        }, 1000, function () { $('#cat_icon').fadeIn(); });
+    }
+});
+
+//<div id="cat_icon">Menu</div>
+//<div id="categories">
+//    <div CLASS="panel_title">Inner Menu</div>
+//    <div CLASS="panel_item">
+//        <template:UserControl id="ucCategories" src="UserControls/ProductCategories.ascx"
+//        />
+//    </div>
+//</div>
