@@ -21,7 +21,6 @@ $(document).ready(function () {
     }
 
     function getHtmlToGameTypeMenuDiv(url) {
-        alert("GetHTml");
         HL.Spinner.toggle('300');
         $.ajax({
             dataType: "html",  // dataType = What I get from the action       
