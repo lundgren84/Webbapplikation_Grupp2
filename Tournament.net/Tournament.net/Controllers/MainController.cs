@@ -23,6 +23,16 @@ namespace Tournament.net.Controllers
         {
             return PartialView();
         }
+        [HttpPost]
+        public ActionResult NbrOfPlayersSelection(int number)
+        {
+            return PartialView();
+        }
+        [HttpGet]
+        public ActionResult ContendersForm(int number)
+        {
+            return PartialView();
+        }
     }
   
 }

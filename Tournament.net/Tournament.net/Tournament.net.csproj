@@ -237,6 +237,7 @@
     <Content Include="Views\Account\Options.cshtml" />
     <Content Include="Views\Main\GameTypeSelection.cshtml" />
     <Content Include="Views\Main\NbrOfPlayersSelection.cshtml" />
+    <Content Include="Views\Main\ContendersForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
