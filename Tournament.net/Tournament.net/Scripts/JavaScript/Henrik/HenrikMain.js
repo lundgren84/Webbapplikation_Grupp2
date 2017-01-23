@@ -12,12 +12,10 @@ HB.StartButtonDiv = $('#UserChoice');
 $(document).ready(function () {
 
     HB.Start_btn.on("click", function () {
-        alert("Klick!");
         getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
     });
 
     function hideElement() {
-        alert("Inne!");
         document.getElementById("UserChoice").className = "hidden";
         document.getElementById("SelectType").className = "unhidden";
     }
@@ -26,10 +24,10 @@ $(document).ready(function () {
         alert("GetHTml");
         HL.Spinner.toggle('300');
         $.ajax({
-            dataType: "html",  // dataType = Wath i get from the action       
-            type: "GET",   // type = Wath im gona do with the controler         
-            url: url,   // url = controler/action           
-            success: function (data) {    // if success i run this function and "data" is wath the action returns
+            dataType: "html",  // dataType = What I get from the action       
+            type: "GET",   // type = What im gonna do with the controller         
+            url: url,   // url = controller/action           
+            success: function (data) {    // if success i run this function and "data" is what the action returns
 
                 let html = data;
                 HB.StartButtonDiv.html(html);

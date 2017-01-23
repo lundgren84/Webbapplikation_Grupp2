@@ -8,7 +8,7 @@ namespace Tournament.net.Controllers
 {
     public class TournamentController : Controller
     {
-        // GET: Turnament
+        // GET: Tournament
         public ActionResult Index()
         {
             return View();

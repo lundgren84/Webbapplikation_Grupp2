@@ -64,10 +64,10 @@ $(document).ready(function () {
     function getHtmlToTopIndexDiv(url) {
         HL.Spinner.toggle('300');
         $.ajax({
-            dataType: "html",  // dataType = Wath i get from the action       
-            type: "GET",   // type = Wath im gona do with the controler         
-            url: url,   // url = controler/action           
-            success: function (data) {    // if success i run this function and "data" is wath the action returns
+            dataType: "html",  // dataType = What I get from the action       
+            type: "GET",   // type = What I´m gonna do with the controller         
+            url: url,   // url = controller/action           
+            success: function (data) {    // if success, I run this function and "data" is what the action returns
 
                 let html = data;
                 HL.Top_Div_In_Index.html(html);
