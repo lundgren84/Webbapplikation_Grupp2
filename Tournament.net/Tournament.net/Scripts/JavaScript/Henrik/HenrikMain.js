@@ -3,6 +3,8 @@ var HB = HB || {};
 //Buttons
 
 HB.Start_btn = $("#Start_btn");
+HB.Tournament_btn = $("#Tournament");
+HB.Highscore_btn = $("#Highscore");
 
 ////Divs
 HB.StartButtonDiv = $('#UserChoice');
@@ -13,6 +15,15 @@ $(document).ready(function () {
 
     HB.Start_btn.on("click", function () {
         getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
+    })
+
+    HB.Tournament_btn.on("click", function () {
+        alert("Tournament click");
+        getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
+    })
+
+    HB.Highscore_btn.on("click", function () {
+        getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
     });
 
     function hideElement() {
