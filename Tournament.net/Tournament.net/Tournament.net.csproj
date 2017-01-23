@@ -179,6 +179,12 @@
     <Content Include="Items\Images\Logotypes\tournlogo2-ok hover 900.png" />
     <Content Include="Items\Images\Logotypes\tournlogo2.png" />
     <Content Include="Items\Images\Logotypes\tournlogo3-2 small.png" />
+    <Content Include="Items\Sounds\sfx_sounds_interaction1.wav" />
+    <Content Include="Items\Sounds\sfx_sounds_interaction11.wav" />
+    <Content Include="Items\Sounds\sfx_sounds_interaction22.wav" />
+    <Content Include="Items\Sounds\sfx_sounds_interaction24.wav" />
+    <Content Include="Items\Sounds\sfx_sounds_interaction3.wav" />
+    <Content Include="Items\Sounds\sfx_sounds_interaction9.wav" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\futuraptbook.woff" />

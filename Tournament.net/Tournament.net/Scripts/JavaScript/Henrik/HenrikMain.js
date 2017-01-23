@@ -23,18 +23,26 @@ HB.StartButtonDiv = $('#UserChoice');
 
 $(document).ready(function () {
 
+    var clickSound = new Audio("\Items/Sounds/sfx_sounds_interaction3.wav");
+
+ 
+
     var nbrOfPlayers = 0;
 
     HB.Start_btn.on("click", function () {
+        clickSound.play();
         getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
+       
+
     })
 
     HB.Tournament_btn.on("click", function () {
-        alert("Tournament click");
+        clickSound.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
     })
 
     HB.Highscore_btn.on("click", function () {
+        clickSound.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
     });
 
