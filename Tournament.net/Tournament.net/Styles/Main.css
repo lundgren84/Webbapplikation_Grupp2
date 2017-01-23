@@ -32,7 +32,14 @@
         -webkit-transition-duration: 300ms;
         -webkit-transition-timing-function: ease-in;
         -webkit-transition-delay: 100ms;
+  
     }
+    #Tournament:focus{
+        outline-color:transparent;
+    }
+   
+
+    
 #Highscore {
     border: none;
     background-color: transparent;
@@ -55,6 +62,10 @@
         -webkit-transition-duration: 300ms;
         -webkit-transition-timing-function: ease-in;
         -webkit-transition-delay: 100ms;
+    }
+    #Highscore:focus{
+        outline-color:transparent;
+        
     }
 
 .GameTypeChoices {
