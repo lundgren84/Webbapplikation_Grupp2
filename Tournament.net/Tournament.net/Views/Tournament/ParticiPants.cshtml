@@ -1,0 +1,38 @@
+﻿@model Tournament.net.Models.AccountViewModel
+
+<h2>Deltagande</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form">
+
+        @Html.Label("Username:")
+        @Html.TextBox("username")
+
+        @Html.Label("Password:")
+        @Html.Password("Password")
+
+        <input type="submit" value="< Get User" class="btn btn-default" style='margin:10px;'>
+        <input type="submit" value="< Quick Start" class="btn btn-default" style='margin:4px;'>
+    </div>
+            <div class="form">
+
+                @Html.Label("Username:")
+                @Html.TextBox("username")
+
+                @Html.Label("Password:")
+                @Html.Password("Password")
+
+                <input type="submit" value="< Get User" class="btn btn-default" style='margin:10px;'>
+                <input type="submit" value="< Guest" class="btn btn-default" style='margin:4px;'>
+            </div>
+
+}
+
+
+
+
+
+
