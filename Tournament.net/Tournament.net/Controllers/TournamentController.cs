@@ -26,10 +26,12 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpGet]
-        public ActionResult TournamentBracket()
+        public ActionResult TournamentBracket(/*TournamentViewModel t*/)
         {
-            //Hämta lista av players från databas?
-            var player = new List<AccountViewModel>{};
+          
+
+            //Hämta lista av players (username) från databas?
+            var player = new List<AccountViewModel>{ new AccountViewModel { UserName = "Emil" }};
 
             return PartialView(player);
         }
