@@ -1,24 +1,24 @@
 ﻿@model Tournament.net.Models.AccountViewModel
 
 <h2>Deltagande</h2>
-
+@ViewBag.numberofPlayers
 
 @using (Html.BeginForm())
 {
+
     @Html.AntiForgeryToken()
+    for (int i = 0; i < ViewBag.numberofPlayers; i++)
+    {
+        <div class="form" id="divParticiPants">
+            @Html.Label("Username:")
+            @Html.TextBox("username")
+            @Html.Label("Password:")
+            @Html.Password("password")
 
-            <div class="form" id="divParticiPants">
-
-                @Html.Label("Username:")
-                @Html.TextBox("username")
-
-                @Html.Label("Password:")
-                @Html.Password("password")
-
-                <input type="submit" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
-                <input type="submit" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>
-            </div>
-
+            <input type="submit" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
+            <input type="submit" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>
+        </div>
+    }
 }
 <script src="~/Scripts/JavaScript/Emil/EmilMain.js"></script>
 

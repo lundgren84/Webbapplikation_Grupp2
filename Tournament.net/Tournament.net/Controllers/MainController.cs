@@ -26,11 +26,15 @@ namespace Tournament.net.Controllers
         [HttpPost]
         public ActionResult NbrOfPlayersSelection(int number)
         {
-            return PartialView();
+            //number = 8;
+            ViewBag.numberofPlayers = number;
+        
+           return RedirectToAction("ParticPants", "Tournament", null);
         }
         [HttpGet]
         public ActionResult ContendersForm(int number)
         {
+            
             return PartialView();
         }
     }
