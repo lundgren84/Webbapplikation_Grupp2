@@ -14,7 +14,7 @@ namespace Network_layer.Repositories
         {
             using (var ctx = new TournamentDbContext())
             {
-                var Entity = ctx.Taunts.FirstOrDefault(x => x.id == id)
+                var Entity = ctx.Taunts.FirstOrDefault(x => x.AccountRefID == id)
                     ?? new tbl_Taunt()
                     {
                         id = Guid.NewGuid(),
@@ -35,6 +35,10 @@ namespace Network_layer.Repositories
             };
         }
 
+        public static tbl_Taunt AddOrUpdate()
+        {
+
+        }
         public static List<string> GetWords(string type, Guid accountId)
         {
             var result = new List<string>();
