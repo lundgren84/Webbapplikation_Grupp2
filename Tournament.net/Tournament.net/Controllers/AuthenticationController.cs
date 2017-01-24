@@ -67,7 +67,6 @@ namespace Tournament.net.Controllers
                 //Sending it to Business layer
 
                 BusinessData.CreateNew();             
-
             }
             return RedirectToAction("Index","Main");
         }
