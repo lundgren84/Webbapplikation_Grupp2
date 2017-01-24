@@ -69,7 +69,7 @@ $(document).ready(function () {
     }
 
     function getHtmlToNbrOfPlayersDiv(url, number) {
-        alert("hej");
+
         HL.Spinner.toggle('300');
         $.ajax({
             dataType: "html",  // dataType = What I get from the action       
@@ -88,7 +88,7 @@ $(document).ready(function () {
     HB.btns = $('.btns');
 
     HB.btns.on("click", function () {
-        alert("click");
+
         var selectednumber = $(this).attr('data-value')
         getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
     });
