@@ -6,7 +6,7 @@
 
 <h2>Options</h2>
 
-@using (Html.BeginForm())
+@using (Ajax.BeginForm("",null, new AjaxOptions(),new {  id = "optionsForm"  }))
 {
     @Html.AntiForgeryToken()
 
@@ -61,11 +61,44 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" id="btn_SaveOptions" class="btn btn-default" />
             </div>
         </div>
     </div>
 
     <hr />
 }
+<script type="text/javascript">
 
+    loaded();
+   
+    function loaded() {
+        document.getElementById("optionsForm").addEventListener("submit",
+                function (event) {
+                    event.preventDefault();
+                    // this.id will show "form"
+                    console.log("AccountOptions submit pressed!");
+                    saveAccountChanges();
+                },
+                    false);
+    }
+    function saveAccountChanges() {
+
+        HL.Spinner.toggle('300');
+        $.ajax({
+            dataType: "html",  // dataType = What I get from the action       
+            type: "POST",   // type = What I´m gonna do with the controller         
+            url: "SaveChanges/Account",   // url = controller/action           
+            success: function (data) {    // if success, I run this function and "data" is what the action returns
+
+                let html = data;
+                HL.Top_Div_In_Index.html(HL.Top_Div_In_Index.html + html);
+                HL.Spinner.toggle('300');
+                HL.Top_Div_In_Index.toggle('500');
+            }
+        });
+
+    }
+   
+
+</script>
