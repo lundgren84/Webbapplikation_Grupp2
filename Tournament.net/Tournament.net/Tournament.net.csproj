@@ -191,10 +191,16 @@
     <Content Include="fonts\futuraptheavy.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="AngularJS.js" />
+    <Content Include="Scripts\JavaScript\Emil\EmilMain.js" />
     <Content Include="Scripts\JavaScript\Hampus\Main.js" />
     <Content Include="Scripts\JavaScript\Henrik\HenrikMain.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="DeveloperComments.txt" />
     <Content Include="Styles\index.css" />
@@ -244,6 +250,7 @@
     <Content Include="Views\Main\GameTypeSelection.cshtml" />
     <Content Include="Views\Main\NbrOfPlayersSelection.cshtml" />
     <Content Include="Views\Main\ContendersForm.cshtml" />
+    <Content Include="Views\Tournament\ParticiPants.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -254,7 +261,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Game\" />
-    <Folder Include="Views\Tournament\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business_layer\Business_layer.csproj">
