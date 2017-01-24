@@ -9,6 +9,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Business_layer.BusinessObjects;
 using Business_layer.ExtensionMethods;
+using Tournament.net.Models;
+using Tournament.net.ExtensionMethods.Mapping;
 
 namespace Tournament.net.Controllers
 {
@@ -72,6 +74,21 @@ namespace Tournament.net.Controllers
         public ActionResult Login()
         {
             return PartialView();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> CheckLogin(
+          string username,
+          string password)
+        {
+            var user = await userManager.FindAsync(username, password);
+            AccountViewModel account;
+            if (user == null) { return null; }
+            else
+            {
+                account = (Account_BData.GetAccount(username)).ToModel();
+            }
+            return Json(account, JsonRequestBehavior.AllowGet);       
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -17,7 +17,11 @@ namespace Business_layer.ExtensionMethods
         {
             BData = AddDefaultValuesToNewAccount(BData);
             // Map to Entity and send to Connection layer
-            AccountRepository.CreateOrUpdate(BData.ToEntity());
+            if (AccountRepository.CreateOrUpdate(BData.ToEntity()))
+            {
+                //Send mail
+            }
+            
         }
         private static Account_BData AddDefaultValuesToNewAccount(Account_BData NewAccount)
         {
