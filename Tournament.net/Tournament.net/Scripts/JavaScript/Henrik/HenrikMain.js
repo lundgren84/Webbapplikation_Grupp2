@@ -24,6 +24,7 @@ HB.StartButtonDiv = $('#UserChoice');
 $(document).ready(function () {
 
     var clickSound = new Audio("\Items/Sounds/sfx_sounds_interaction3.wav");
+    var clickSound2 = new Audio("\Items/Sounds/Short Circuit-SoundBible.com-1450168875.wav");
 
 
 
@@ -37,12 +38,12 @@ $(document).ready(function () {
     });
 
     HB.Tournament_btn.on("click", function () {
-        clickSound.play();
+        clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
     });
 
     HB.Highscore_btn.on("click", function () {
-        clickSound.play();
+        clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
     });
 
