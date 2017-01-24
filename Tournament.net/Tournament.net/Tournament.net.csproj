@@ -252,6 +252,7 @@
     <Content Include="Views\Main\NbrOfPlayersSelection.cshtml" />
     <Content Include="Views\Main\ContendersForm.cshtml" />
     <Content Include="Views\Tournament\ParticiPants.cshtml" />
+    <Content Include="Views\Tournament\TournamentBracket.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
