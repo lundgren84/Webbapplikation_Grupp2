@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Network_layer.Tables;
+using System.Data.Entity.Migrations;
 
 namespace Network_layer.Repositories
 {
@@ -18,16 +19,18 @@ namespace Network_layer.Repositories
                     {
                         id = Guid.NewGuid(),
                         AccountRefID = id,
-                        winWord1 = "win1",
-                        winWord2 = "win2",
-                        winWord3 = "win3",
-                        commonWord1 = "com1",
-                        commonWord2 = "com2",
-                        commonWord3 = "com3",
-                        looseWord1 = "los1",
-                        looseWord2 = "los2",
-                        looseWord3 = "los3"
+                        winWord1 = "Im the Winner!",
+                        winWord2 = "How came first? ME!!",
+                        winWord3 = "There can be only ONE!",
+                        commonWord1 = "im ok",
+                        commonWord2 = "Not best but not last!",
+                        commonWord3 = "Mr decent",
+                        looseWord1 = "Cryy..",
+                        looseWord2 = "Hate you all!",
+                        looseWord3 = "Im just crap!"
                     };
+                ctx.Taunts.AddOrUpdate(Entity);
+                ctx.SaveChanges();
                 return Entity;
             };
         }
