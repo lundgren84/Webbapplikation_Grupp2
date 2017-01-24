@@ -25,21 +25,21 @@ $(document).ready(function () {
 
     var clickSound = new Audio("\Items/Sounds/sfx_sounds_interaction3.wav");
 
- 
+
 
     var nbrOfPlayers = 0;
 
     HB.Start_btn.on("click", function () {
         clickSound.play();
         getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
-       
 
-    })
+
+    });
 
     HB.Tournament_btn.on("click", function () {
         clickSound.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
-    })
+    });
 
     HB.Highscore_btn.on("click", function () {
         clickSound.play();
@@ -48,8 +48,8 @@ $(document).ready(function () {
 
     HB.One_btn.on("click", function () {
         nbrOfPlayers = 1;
-        getHtmlToGameTypeMenuDiv('/Main/ContendersForm');    
-    })
+        getHtmlToGameTypeMenuDiv('/Main/ContendersForm');
+    });
 
     function hideElement() {
         document.getElementById("UserChoice").className = "hidden";
@@ -72,7 +72,7 @@ $(document).ready(function () {
         });
     }
 
-    function getHtmlToNbrOfPlayersDiv(url,number) {
+    function getHtmlToNbrOfPlayersDiv(url, number) {
         HL.Spinner.toggle('300');
         $.ajax({
             dataType: "html",  // dataType = What I get from the action       
@@ -89,4 +89,4 @@ $(document).ready(function () {
         });
     }
 
-})
+});
