@@ -46,12 +46,12 @@ namespace Tournament.net.Controllers
             if (result.Succeeded)
             {
                 //Create a identity
-                var identity = await userManager.CreateIdentityAsync(user,
+                var identity = await userManager.CreateIdentityAsync(user, 
                     DefaultAuthenticationTypes.ApplicationCookie);
                 //Create new claim            
                 identity.AddClaim(new Claim("Email", user.Email));
 
-                var authorisationManager =
+                var authorisationManager = 
                     HttpContext.GetOwinContext().Authentication;
                 //Sign in
                 authorisationManager.SignIn(identity);
