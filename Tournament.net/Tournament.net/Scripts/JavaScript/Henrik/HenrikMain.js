@@ -51,10 +51,6 @@ $(document).ready(function () {
         getHtmlToGameTypeMenuDiv('/Main/ContendersForm');
     });
 
-    function hideElement() {
-        document.getElementById("UserChoice").className = "hidden";
-        document.getElementById("SelectType").className = "unhidden";
-    }
 
     function getHtmlToGameTypeMenuDiv(url) {
         HL.Spinner.toggle('300');
@@ -73,20 +69,36 @@ $(document).ready(function () {
     }
 
     function getHtmlToNbrOfPlayersDiv(url, number) {
+        alert("hej");
         HL.Spinner.toggle('300');
         $.ajax({
             dataType: "html",  // dataType = What I get from the action       
-            type: "POST",   // type = What im gonna do with the controller         
+            type: "POST",   // type = What im gonna do with the controller    
+            data: { number: number },
             url: url,   // url = controller/action 
-            data: number,
             success: function (data) {    // if success i run this function and "data" is what the action returns
 
                 let html = data;
                 HB.StartButtonDiv.html(html);
                 HL.Spinner.toggle('300');
-                //HL.Top_Div_In_Index.toggle('500');
+              
             }
         });
     }
+    HB.btns = $('.btns');
+
+    HB.btns.on("click", function () {
+        alert("click");
+        var selectednumber = $(this).attr('data-value')
+        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
+    });
 
 });
+
+ 
+ //html
+ //<input type="botton" class="btns" data-value="1" />
+ //<input type="botton" class="btns" data-value="2" />
+
+ //Javascript
+

@@ -1,13 +1,13 @@
 ﻿@model Tournament.net.Models.AccountViewModel
 
 <h2>Deltagande</h2>
-@ViewBag.numberofPlayers
+<p>@ViewBag.number</p>
 
 @using (Html.BeginForm())
 {
 
     @Html.AntiForgeryToken()
-    for (int i = 0; i < ViewBag.numberofPlayers; i++)
+    for (int i = 0; i < ViewBag.number; i++)
     {
         <div class="form" id="divParticiPants">
             @Html.Label("Username:")

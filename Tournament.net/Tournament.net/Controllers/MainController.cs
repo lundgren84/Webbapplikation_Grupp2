@@ -27,9 +27,9 @@ namespace Tournament.net.Controllers
         public ActionResult NbrOfPlayersSelection(int number)
         {
             //number = 8;
-            ViewBag.numberofPlayers = number;
+            //ViewBag.title = 8;
         
-           return RedirectToAction("ParticPants", "Tournament", null);
+           return RedirectToAction("ParticiPants", "Tournament", new { number = number});
         }
         [HttpGet]
         public ActionResult ContendersForm(int number)

@@ -14,8 +14,9 @@ namespace Tournament.net.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult ParticiPants()
+        public ActionResult ParticiPants(int number)
         {
+            ViewBag.number = number;
             return PartialView();
         }
         [HttpPost]
