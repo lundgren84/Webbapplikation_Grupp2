@@ -13,5 +13,15 @@ namespace Tournament.net.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult ParticiPants()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public ActionResult ParticiPants(string username,int password)
+        {
+            return PartialView();
+        }
     }
 }
