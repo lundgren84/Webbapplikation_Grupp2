@@ -35,10 +35,10 @@ namespace Network_layer.Repositories
             };
         }
 
-        public static tbl_Taunt AddOrUpdate()
-        {
+        //public static tbl_Taunt AddOrUpdate()
+        //{
 
-        }
+        //}
         public static List<string> GetWords(string type, Guid accountId)
         {
             var result = new List<string>();
