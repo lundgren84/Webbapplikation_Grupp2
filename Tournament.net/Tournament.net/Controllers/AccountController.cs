@@ -1,4 +1,5 @@
 ﻿using Business_layer.BusinessObjects;
+using Business_layer.ExtensionMethods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,12 @@ namespace Tournament.net.Controllers
         }
         [HttpPost]
         [Authorize]
-        public ActionResult Options(AccountViewModel Model)
+        public ActionResult SaveChanges(AccountViewModel Model)
         {
-            return PartialView();
+            // Saving Account changes
+            (Model.ToBusinessData()).SaveChanges();
+
+            return Content("Hello");
         }
 
 

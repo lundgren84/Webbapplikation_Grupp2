@@ -20,9 +20,18 @@ namespace Business_layer.ExtensionMethods
             if (AccountRepository.CreateOrUpdate(BData.ToEntity()))
             {
                 //Send mail
-            }
-            
+            }            
         }
+        public static bool SaveChanges(this Account_BData BData)
+        {
+            var saved = false;
+            if (AccountRepository.CreateOrUpdate(BData.ToEntity()))
+            {
+                saved = true;
+            }
+            return saved;
+        }
+
         private static Account_BData AddDefaultValuesToNewAccount(Account_BData NewAccount)
         {
             NewAccount.WinWords = new List<string>() { "WinWord1", "WinWord2", "WinWord3" };

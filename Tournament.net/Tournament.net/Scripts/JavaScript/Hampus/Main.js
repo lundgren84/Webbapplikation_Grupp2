@@ -98,6 +98,8 @@ $(document).ready(function () {
 });
 
 
+
+// TOGGLE_SLIDER
 $('#cat_icon,.panel_title').click(function () {
     if ($('#cat_icon').is(':visible')) {
         $('#cat_icon').fadeOut(function () {
@@ -121,3 +123,17 @@ $('#cat_icon,.panel_title').click(function () {
 //        />
 //    </div>
 //</div>
+
+// Här Henrik
+
+// html
+// <input type="botton" class="btns" ng-value="1" />
+// <input type="botton" class="btns" ng-value="2" />
+
+// Javascript
+
+// var btns = $('.btns');
+
+// btns.on("click",functions(){
+// var here_is_the_Value = $('this').attr('ng-value'):;
+// }

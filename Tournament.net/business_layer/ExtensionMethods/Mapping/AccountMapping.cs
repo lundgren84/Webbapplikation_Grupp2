@@ -31,10 +31,9 @@ namespace Business_layer.ExtensionMethods.Mapping
                 UserName = Entity.UserName,
                 Email = Entity.Email,
                 ImgURL = Entity.ImgURL,
-                WinWords = TauntRepository.GetWords("win",Entity.id),
+                WinWords = (TauntRepository.GetWords("win",Entity.id)),
                 CommonWords = TauntRepository.GetWords("common",Entity.id),
                 LooseWords = TauntRepository.GetWords("loose",Entity.id),
-
             };
             return BusinessData;
         }

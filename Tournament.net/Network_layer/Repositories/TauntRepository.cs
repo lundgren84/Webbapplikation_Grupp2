@@ -10,15 +10,15 @@ namespace Network_layer.Repositories
 {
     public class TauntRepository
     {
-        public static tbl_Taunt GetTaunt(Guid id)
+        public static tbl_Taunt GetTaunt(Guid AccountId)
         {
             using (var ctx = new TournamentDbContext())
             {
-                var Entity = ctx.Taunts.FirstOrDefault(x => x.AccountRefID == id)
+                var Entity = ctx.Taunts.FirstOrDefault(x => x.AccountRefID == AccountId)
                     ?? new tbl_Taunt()
                     {
                         id = Guid.NewGuid(),
-                        AccountRefID = id,
+                        AccountRefID = AccountId,
                         winWord1 = "Im the Winner!",
                         winWord2 = "How came first? ME!!",
                         winWord3 = "There can be only ONE!",
@@ -29,8 +29,8 @@ namespace Network_layer.Repositories
                         looseWord2 = "Hate you all!",
                         looseWord3 = "Im just crap!"
                     };
-                ctx.Taunts.AddOrUpdate(Entity);
-                ctx.SaveChanges();
+                //ctx.Taunts.AddOrUpdate(Entity);
+                //ctx.SaveChanges();
                 return Entity;
             };
         }

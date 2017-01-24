@@ -13,10 +13,7 @@ namespace Network_layer.Repositories
 
         public static bool CreateOrUpdate(tbl_Account Entity)
         {
-            try
-            {
-
-
+           try { 
                 using (var ctx = new TournamentDbContext())
                 {
                     var EntityToCreateOrUpdate = ctx.Accounts.FirstOrDefault(x => x.id == Entity.id)
@@ -25,9 +22,7 @@ namespace Network_layer.Repositories
                     EntityToCreateOrUpdate.UserName = Entity.UserName;
                     EntityToCreateOrUpdate.Email = Entity.Email;
                     EntityToCreateOrUpdate.ImgURL = Entity.ImgURL;
-                    //EntityToCreateOrUpdate.WinWords = Entity.WinWords;
-                    //EntityToCreateOrUpdate.CommonWords = Entity.CommonWords;
-                    //EntityToCreateOrUpdate.LooseWords = Entity.LooseWords;
+                    EntityToCreateOrUpdate.Taunts = Entity.Taunts;          
 
                     ctx.Accounts.AddOrUpdate(EntityToCreateOrUpdate);
                     ctx.SaveChanges();
@@ -38,6 +33,8 @@ namespace Network_layer.Repositories
             {
                 return false;
             }
+
+
         }
         public static tbl_Account GetAccount(string userName)
         {

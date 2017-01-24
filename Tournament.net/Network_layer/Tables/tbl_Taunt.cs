@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,9 @@ namespace Network_layer.Tables
         public string looseWord1 { get; set; }
         public string looseWord2 { get; set; }
         public string looseWord3 { get; set; }
+
         public Guid? AccountRefID { get; set; }
+ 
        
     }
 }
