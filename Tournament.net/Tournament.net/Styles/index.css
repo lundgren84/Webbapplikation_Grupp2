@@ -76,6 +76,9 @@ body {
     -webkit-transition-timing-function:ease-in;
     -webkit-transition-delay: 100ms;
 }
+.btn-xlarge2{
+    outline-color:transparent;
+}
 
 .btn-info:hover, .btn-info:focus{
     /*background-color: #00ffd2;*/
