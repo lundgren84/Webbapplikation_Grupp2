@@ -31,20 +31,27 @@ $(document).ready(function () {
     var nbrOfPlayers = 0;
 
     HB.Start_btn.on("click", function () {
-        clickSound.play();
+        clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
-
-
+    });
+    HB.Start_btn.on("mouseover", function () {
+        clickSound.play();  
     });
 
     HB.Tournament_btn.on("click", function () {
         clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
     });
+    HB.Tournament_btn.on("mouseover", function () {
+        clickSound.play();
+    });
 
     HB.Highscore_btn.on("click", function () {
         clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
+    });
+    HB.Highscore_btn.on("mouseover", function () {
+        clickSound.play();
     });
 
     HB.One_btn.on("click", function () {
