@@ -191,7 +191,7 @@
     <Content Include="fonts\futuraptbook.woff" />
     <Content Include="fonts\futuraptheavy.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="AngularJS.js" />
+    <Content Include="Scripts\JavaScript\AngularJS.js" />
     <Content Include="Scripts\JavaScript\Emil\EmilMain.js" />
     <Content Include="Scripts\JavaScript\Hampus\Main.js" />
     <Content Include="Scripts\JavaScript\Henrik\HenrikMain.js" />
