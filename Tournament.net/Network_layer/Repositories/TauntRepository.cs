@@ -15,20 +15,7 @@ namespace Network_layer.Repositories
             using (var ctx = new TournamentDbContext())
             {
                 var Entity = ctx.Taunts.FirstOrDefault(x => x.AccountRefID == AccountId)
-                    ?? new tbl_Taunt()
-                    {
-                        id = Guid.NewGuid(),
-                        AccountRefID = AccountId,
-                        winWord1 = "Im the Winner!",
-                        winWord2 = "How came first? ME!!",
-                        winWord3 = "There can be only ONE!",
-                        commonWord1 = "im ok",
-                        commonWord2 = "Not best but not last!",
-                        commonWord3 = "Mr decent",
-                        looseWord1 = "Cryy..",
-                        looseWord2 = "Hate you all!",
-                        looseWord3 = "Im just crap!"
-                    };
+                    ?? new tbl_Taunt();                
                 //ctx.Taunts.AddOrUpdate(Entity);
                 //ctx.SaveChanges();
                 return Entity;

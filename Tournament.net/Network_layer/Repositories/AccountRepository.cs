@@ -13,26 +13,23 @@ namespace Network_layer.Repositories
 
         public static bool CreateOrUpdate(tbl_Account Entity)
         {
-           try { 
-                using (var ctx = new TournamentDbContext())
-                {
-                    var EntityToCreateOrUpdate = ctx.Accounts.FirstOrDefault(x => x.id == Entity.id)
-                        ?? new tbl_Account() { id = Guid.NewGuid() };
 
-                    EntityToCreateOrUpdate.UserName = Entity.UserName;
-                    EntityToCreateOrUpdate.Email = Entity.Email;
-                    EntityToCreateOrUpdate.ImgURL = Entity.ImgURL;
-                    EntityToCreateOrUpdate.Taunts = Entity.Taunts;          
-
-                    ctx.Accounts.AddOrUpdate(EntityToCreateOrUpdate);
-                    ctx.SaveChanges();
-                    return true;
-                }
-            }
-            catch
+            using (var ctx = new TournamentDbContext())
             {
-                return false;
+                var EntityToCreateOrUpdate = ctx.Accounts.FirstOrDefault(x => x.id == Entity.id)
+                    ?? new tbl_Account() { id = Guid.NewGuid() };
+
+                EntityToCreateOrUpdate.UserName = Entity.UserName;
+                EntityToCreateOrUpdate.Email = Entity.Email;
+                EntityToCreateOrUpdate.ImgURL = Entity.ImgURL;
+                EntityToCreateOrUpdate.Taunts = Entity.Taunts;
+                EntityToCreateOrUpdate.Taunts.AccountRefID = EntityToCreateOrUpdate.id;
+
+                ctx.Accounts.AddOrUpdate(EntityToCreateOrUpdate);
+                ctx.SaveChanges();
+                return true;
             }
+
 
 
         }

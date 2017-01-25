@@ -34,10 +34,18 @@ namespace Business_layer.ExtensionMethods
 
         private static Account_BData AddDefaultValuesToNewAccount(Account_BData NewAccount)
         {
+            Random random = new Random();
+            var imgNr = "";
+            var rndNr = random.Next(1, 14);
+            if (rndNr < 10)
+            {
+                imgNr = "0" + rndNr.ToString();
+            }
+            else { imgNr = rndNr.ToString(); }
             NewAccount.WinWords = new List<string>() { "WinWord1", "WinWord2", "WinWord3" };
             NewAccount.CommonWords = new List<string>() { "CommonWord1", "CommonWord2", "CommonWord3" };
             NewAccount.LooseWords = new List<string>() { "LooseWord1", "LooseWord2", "LooseWord3" };
-            NewAccount.ImgURL = "/Items/Images/Default/1.jpg";
+            NewAccount.ImgURL = "/Items/Avatars/M"+ imgNr + ".png";
             return NewAccount;
         }
     }
