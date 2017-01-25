@@ -24,8 +24,12 @@ namespace Business_layer.ExtensionMethods
         }
         public static bool SaveChanges(this Account_BData BData)
         {
+            var Entity = AccountRepository.GetAccount(BData.UserName);
+            var entityToSave = BData.ToEntity();
+            entityToSave.id = Entity.id;
+            entityToSave.Taunts = TauntRepository.GetTaunt(Entity.id);
             var saved = false;
-            if (AccountRepository.CreateOrUpdate(BData.ToEntity()))
+            if (AccountRepository.CreateOrUpdate(entityToSave))
             {
                 saved = true;
             }

@@ -15,7 +15,7 @@ namespace Network_layer.Repositories
             using (var ctx = new TournamentDbContext())
             {
                 var Entity = ctx.Taunts.FirstOrDefault(x => x.AccountRefID == AccountId)
-                    ?? new tbl_Taunt();                
+                    ?? new tbl_Taunt(AccountId);                
                 //ctx.Taunts.AddOrUpdate(Entity);
                 //ctx.SaveChanges();
                 return Entity;
