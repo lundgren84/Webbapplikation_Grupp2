@@ -192,6 +192,15 @@
     <Content Include="Items\Images\Buttons\4button hover.png" />
     <Content Include="Items\Images\Buttons\4button pressed.png" />
     <Content Include="Items\Images\Buttons\4button.png" />
+    <Content Include="Items\Images\Buttons\5button hover.png" />
+    <Content Include="Items\Images\Buttons\5button pressed.png" />
+    <Content Include="Items\Images\Buttons\5button.png" />
+    <Content Include="Items\Images\Buttons\6button hover.png" />
+    <Content Include="Items\Images\Buttons\6button pressed.png" />
+    <Content Include="Items\Images\Buttons\6button.png" />
+    <Content Include="Items\Images\Buttons\7button hover.png" />
+    <Content Include="Items\Images\Buttons\7button pressed.png" />
+    <Content Include="Items\Images\Buttons\7button.png" />
     <Content Include="Items\Images\Buttons\highscore nohover 350.png" />
     <Content Include="Items\Images\Buttons\highscore.png" />
     <Content Include="Items\Images\Buttons\startbutton hover.png" />
