@@ -1,0 +1,20 @@
+﻿@model Tournament.net.Models.TournamentViewModel
+
+@{
+    ViewBag.Title = "TreeTest";
+}
+
+<h2>TreeTest</h2>
+<div class="row">
+    @foreach (var item in Model.Players)
+    {
+        <div class="col-xs-3">
+            <div style="border: 5px solid black; border-radius:50%">
+                
+                <img style="width:40%" src="@item.ImgURL" />
+                @item.UserName<br />
+            </div>
+        </div>
+    }
+</div>
+

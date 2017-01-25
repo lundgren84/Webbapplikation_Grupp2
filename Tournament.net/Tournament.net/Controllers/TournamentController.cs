@@ -29,11 +29,12 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpGet]
-        public ActionResult TournamentBracket(List<string> userNames)
+        public ActionResult TournamentBracket()
         {
 
 
             //Hämta lista av players (username) från databas?
+            var userNames = new List<string>() {"Kalle","Olle","Frodo" };
             var players = new List<AccountViewModel>();
             var tournament = new TournamentViewModel();
             foreach (var item in userNames)
@@ -42,7 +43,7 @@ namespace Tournament.net.Controllers
                 players.Add(Account);
             }
             tournament.Players = players;
-            return PartialView(tournament);
-        }
+            return View("TreeTest",tournament);
+        }    
     }
 }

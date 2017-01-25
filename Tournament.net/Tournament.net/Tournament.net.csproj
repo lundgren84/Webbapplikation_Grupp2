@@ -290,6 +290,7 @@
     <Content Include="Views\Tournament\ParticiPants.cshtml" />
     <Content Include="Views\Tournament\TournamentBracket.cshtml" />
     <Content Include="Views\Main\HighscoreBracket.cshtml" />
+    <Content Include="Views\Tournament\TreeTest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
