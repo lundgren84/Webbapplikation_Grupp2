@@ -26,29 +26,89 @@
 }
 
     #Tournament:hover {
-        width: 350px;
-        height: 350px;
-        background-size: 100%, 100%;
+     
         background-image: url('../Items/Images/Buttons/tournament.png');
-        -webkit-transition-property: background;
-        -webkit-transition-duration: 300ms;
-        -webkit-transition-timing-function: ease-in;
-        -webkit-transition-delay: 100ms;
+    
   
     }
     #Tournament:focus{
         outline-color:transparent;
     }
 
-#4button {
+#fourbutton {
+    width: 200px;
+    height: 200px;
+     background-image: url('../Items/Images/Buttons/4button.png');
+    border: none;
+    background-color: transparent;   
+    background-size: 100%, 100%; 
+ 
+}
+
+ #fourbutton:hover {
+        width: 200px;
+        height: 200px;
+        background-size: 100%, 100%;
+        background-image: url('../Items/Images/Buttons/4button hover.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+#fivebutton {
+    width: 200px;
+    height: 200px;
+    background-image: url('../Items/Images/Buttons/5button.png');
     border: none;
     background-color: transparent;
-    width: 350px;
-    height: 350px;
     background-size: 100%, 100%;
-    background-image: url('../Items/Images/Buttons/4button.png');
-    
 }
+    #fivebutton:hover {
+        width: 200px;
+        height: 200px;
+        background-size: 100%, 100%;
+        background-image: url('../Items/Images/Buttons/5button hover.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+#sixbutton {
+    width: 200px;
+    height: 200px;
+    background-image: url('../Items/Images/Buttons/6button.png');
+    border: none;
+    background-color: transparent;
+    background-size: 100%, 100%;
+}
+  #sixbutton:hover {
+        width: 200px;
+        height: 200px;
+        background-size: 100%, 100%;
+        background-image: url('../Items/Images/Buttons/6button hover.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+#sevenbutton {
+    width: 200px;
+    height: 200px;
+    background-image: url('../Items/Images/Buttons/7button.png');
+    border: none;
+    background-color: transparent;
+    background-size: 100%, 100%;
+}
+ #sevenbutton:hover {
+        width: 200px;
+        height: 200px;
+        background-size: 100%, 100%;
+        background-image: url('../Items/Images/Buttons/7button hover.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
    
 
     
