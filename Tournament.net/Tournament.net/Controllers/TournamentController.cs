@@ -1,8 +1,11 @@
-﻿using System;
+﻿
+using Business_layer.BusinessObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tournament.net.ExtensionMethods.Mapping;
 using Tournament.net.Models;
 
 namespace Tournament.net.Controllers
@@ -26,14 +29,20 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpGet]
-        public ActionResult TournamentBracket(/*TournamentViewModel t*/)
+        public ActionResult TournamentBracket(List<string> userNames)
         {
-          
+
 
             //Hämta lista av players (username) från databas?
-            var player = new List<AccountViewModel>{ new AccountViewModel { UserName = "Emil" }};
-
-            return PartialView(player);
+            var players = new List<AccountViewModel>();
+            var tournament = new TournamentViewModel();
+            foreach (var item in userNames)
+            {
+                var Account = (Account_BData.GetAccount(item).ToModel());
+                players.Add(Account);
+            }
+            tournament.Players = players;
+            return PartialView(tournament);
         }
     }
 }
