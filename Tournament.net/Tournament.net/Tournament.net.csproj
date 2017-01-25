@@ -167,6 +167,28 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Items\Avatars\A01.png" />
+    <Content Include="Items\Avatars\A03.png" />
+    <Content Include="Items\Avatars\C04.png" />
+    <Content Include="Items\Avatars\E01.png" />
+    <Content Include="Items\Avatars\FA01.png" />
+    <Content Include="Items\Avatars\FB02.png" />
+    <Content Include="Items\Avatars\FC03.png" />
+    <Content Include="Items\Avatars\FD01.png" />
+    <Content Include="Items\Avatars\FD03.png" />
+    <Content Include="Items\Avatars\FE05.png" />
+    <Content Include="Items\Avatars\FI01.png" />
+    <Content Include="Items\Avatars\FI05.png" />
+    <Content Include="Items\Avatars\G01.png" />
+    <Content Include="Items\Avatars\H05.png" />
+    <Content Include="Items\Avatars\J01.png" />
+    <Content Include="Items\Avatars\L02.png" />
+    <Content Include="Items\Avatars\L03.png" />
+    <Content Include="Items\Avatars\N01.png" />
+    <Content Include="Items\Avatars\N02.png" />
+    <Content Include="Items\Avatars\N03.png" />
+    <Content Include="Items\Avatars\N04.png" />
+    <Content Include="Items\Avatars\N05.png" />
     <Content Include="Items\Images\Buttons\highscore nohover 350.png" />
     <Content Include="Items\Images\Buttons\highscore.png" />
     <Content Include="Items\Images\Buttons\startbutton hover.png" />
@@ -263,7 +285,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Items\Avatars\" />
     <Folder Include="Views\Game\" />
   </ItemGroup>
   <ItemGroup>
