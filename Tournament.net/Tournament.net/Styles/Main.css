@@ -39,6 +39,16 @@
     #Tournament:focus{
         outline-color:transparent;
     }
+
+#4button {
+    border: none;
+    background-color: transparent;
+    width: 350px;
+    height: 350px;
+    background-size: 100%, 100%;
+    background-image: url('../Items/Images/Buttons/4button.png');
+    
+}
    
 
     

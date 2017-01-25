@@ -189,10 +189,14 @@
     <Content Include="Items\Avatars\M03.png" />
     <Content Include="Items\Avatars\M04.png" />
     <Content Include="Items\Avatars\M05.png" />
+    <Content Include="Items\Images\Buttons\4button hover.png" />
+    <Content Include="Items\Images\Buttons\4button pressed.png" />
+    <Content Include="Items\Images\Buttons\4button.png" />
     <Content Include="Items\Images\Buttons\highscore nohover 350.png" />
     <Content Include="Items\Images\Buttons\highscore.png" />
     <Content Include="Items\Images\Buttons\startbutton hover.png" />
     <Content Include="Items\Images\Buttons\startbutton nohover.png" />
+    <Content Include="Items\Images\Buttons\startbutton pressed.png" />
     <Content Include="Items\Images\Buttons\tournament nohover.png" />
     <Content Include="Items\Images\Buttons\tournament.png" />
     <Content Include="Items\Images\Default\1.jpg" />
