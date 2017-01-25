@@ -193,6 +193,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\JavaScript\AngularJS.js" />
     <Content Include="Scripts\JavaScript\Emil\EmilMain.js" />
+    <Content Include="Scripts\JavaScript\endAngular.js" />
     <Content Include="Scripts\JavaScript\Hampus\Main.js" />
     <Content Include="Scripts\JavaScript\Henrik\HenrikMain.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
