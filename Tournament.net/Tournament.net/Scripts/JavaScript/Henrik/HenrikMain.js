@@ -23,7 +23,7 @@ HB.StartButtonDiv = $('#UserChoice');
 
 $(document).ready(function () {
 
-    var clickSound = new Audio("Items/Sounds/sfx_sounds_interaction3.wav");
+    var clickSound = new Audio("/Items/Sounds/sfx_sounds_interaction3.wav");
     var clickSound2 = new Audio("\Items/Sounds/Short Circuit-SoundBible.com-1450168875.wav");
 
 
