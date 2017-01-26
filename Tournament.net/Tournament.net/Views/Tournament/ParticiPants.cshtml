@@ -11,16 +11,14 @@
     @Html.AntiForgeryToken()
     for (int i = 0; i < ViewBag.number; i++)
     {
-        <div id="@("divUsername" + i)">
+        <div id="@("divForUsrPswBtn" + i)">
             @Html.Label("Username:")
             @Html.TextBox("username")
-        </div>
-        <div id="@("divPassword" + i)">
+       
+       
             @Html.Label("Password:")
             @Html.Password("password")
-        </div>
-
-        <div id="@("divButtons" + i)">
+      
             <input type="submit" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
             <input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>
         </div>
