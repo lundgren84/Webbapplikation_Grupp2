@@ -1,18 +1,18 @@
-﻿var EF = EF || {};
+﻿//var EF = EF || {};
 
-EF.btnGetUser.on("click", function () {
-    CheckLogin();
-});
+//EF.btnGetUser.on("click", function () {
+//    CheckLogin();
+//});
 
-EF.btnGetUser = $('#btnGetUser');
+//EF.btnGetUser = $('#btnGetUser');
 
-$(document).ready(function () {
+//$(document).ready(function () {
 
-    EF.btnGetUser.on('click', function () {
-        console.log("click");
+//    EF.btnGetUser.on('click', function () {
+//        console.log("click");
 
-    });
-})
+//    });
+//})
 //EF.btnGetUser.on('click', function () {
 //   ('/Authentication/Login', 'checklogin');
 //});

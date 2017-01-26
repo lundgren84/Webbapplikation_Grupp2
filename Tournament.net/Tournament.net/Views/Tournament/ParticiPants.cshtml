@@ -40,13 +40,20 @@
                 type: usersForm.attr('method'),
                 data: usersForm.serialize(),
                 success: function (data) {
-                    alert("success");
+
+                    // perform your save call here
+
+                    if (data.status == "Success") {
+                        alert("Done");
+                    } else {
+                        alert("Error occurs on the Database level!");
+                    }
                 },
                 error: function () {
-                    alert("ERROR");
+                    alert("An error has occured!!!");
                 }
             });
-        })
-    });
+        });
+    })
 </script>
 
