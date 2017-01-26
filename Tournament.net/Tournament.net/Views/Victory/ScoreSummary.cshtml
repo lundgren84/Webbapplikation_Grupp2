@@ -1,0 +1,27 @@
+﻿Score Summary Partial View
+
+@model Tournament.net.Models.TournamentViewModel
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h2>Deltagare samt deras score</h2>
+
+    @foreach (var item in Model.Players)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+                @* score *@
+            </td>
+            
+        </tr>
+    }
+
+
+
+}
+<hr />
+

@@ -6,7 +6,10 @@ RP.Maildip_btn = $("#Maildip_btn");
 $(document).ready(function () {
 
     RP.Printdip_btn.on("click", function () {
-        alert("print");
+        document.getElementById("MPButons").style.visibility = "hidden";
+
+        window.print();
+        
     });
 
     RP.Maildip_btn.on("click", function () {
