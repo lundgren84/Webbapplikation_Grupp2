@@ -43,8 +43,7 @@ namespace Tournament.net.Controllers
                 Email = email
             };
             //Register user in db
-            var result = await userManager.CreateAsync(user, password);
-
+            var result = await userManager.CreateAsync(user, password);           
             if (result.Succeeded)
             {
                 //Create a identity
@@ -67,7 +66,7 @@ namespace Tournament.net.Controllers
                 //Sending it to Business layer
 
                 BusinessData.CreateNew();
-                return RedirectToAction("Index", "Main");
+                return Content("Registration Successful");
             }
             else
             {
