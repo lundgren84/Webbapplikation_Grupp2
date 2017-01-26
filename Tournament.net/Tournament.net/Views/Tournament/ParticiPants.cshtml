@@ -1,15 +1,17 @@
-﻿@model Tournament.net.Models.AccountViewModel
+﻿
+
+@model Tournament.net.Models.AccountViewModel
 
 <h2>Deltagande</h2>
 <p>@ViewBag.number</p>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
 {
 
     @Html.AntiForgeryToken()
     for (int i = 0; i < ViewBag.number; i++)
     {
-        <div class="form" id="divParticiPants">
+        <div class="form">
             @Html.Label("Username:")
             @Html.TextBox("username")
             @Html.Label("Password:")
@@ -20,9 +22,31 @@
         </div>
     }
 }
-<script src="~/Scripts/JavaScript/Emil/EmilMain.js"></script>
 
 
 
 
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var usersForm = $("#UsersForm");
+
+        $('#btnGetUser').on('click', function (e) {
+            alert("clickok");
+            e.preventDefault();
+            alert("prevent form from reloading page");
+            $.ajax({
+                url: usersForm.attr('action'),
+                type: usersForm.attr('method'),
+                data: usersForm.serialize(),
+                success: function (data) {
+                    alert("success");
+                },
+                error: function () {
+                    alert("ERROR");
+                }
+            });
+        })
+    });
+</script>
 
