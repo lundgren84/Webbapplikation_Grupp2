@@ -231,6 +231,7 @@
     <Content Include="Scripts\JavaScript\endAngular.js" />
     <Content Include="Scripts\JavaScript\Hampus\Main.js" />
     <Content Include="Scripts\JavaScript\Henrik\HenrikMain.js" />
+    <Content Include="Scripts\JavaScript\Rikard\Rikardmain.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -253,6 +254,7 @@
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
+    <Compile Include="Controllers\VictoryController.cs" />
     <Compile Include="ExtensionMethods\AccountExtensions.cs" />
     <Compile Include="ExtensionMethods\Mapping\AccountMapping.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -291,6 +293,7 @@
     <Content Include="Views\Tournament\TournamentBracket.cshtml" />
     <Content Include="Views\Main\HighscoreBracket.cshtml" />
     <Content Include="Views\Tournament\TreeTest.cshtml" />
+    <Content Include="Views\Victory\Finalpage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
