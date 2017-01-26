@@ -19,12 +19,15 @@
             @Html.Label("Password:")
             @Html.Password("password")
       
-            <input type="submit" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
+            <input type="button" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
             <input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>
         </div>
-    }
-}
 
+
+    }
+   
+}
+<input type="submit" id="btnGoToNextPage" value="Play" onclick="location.href='@Url.Action("TournamentBracket","Tournament")'" class="btn btn-default">
 
 
 
