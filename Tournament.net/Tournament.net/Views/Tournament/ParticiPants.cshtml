@@ -43,10 +43,10 @@
 
                     // perform your save call here
 
-                    if (data.status == "Success") {
-                        alert("Done");
+                    if (data !== null) {
+                        alert(data.UserName + " is in Ajax success as a jSon object");
                     } else {
-                        alert("Error occurs on the Database level!");
+                        alert("Account dontexists in Database");
                     }
                 },
                 error: function () {
