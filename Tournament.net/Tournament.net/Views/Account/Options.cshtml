@@ -16,7 +16,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="row">
 
-            <div class="col-xs-4">
+            <div class="col-sm-4">
                 <div class="form-group">
                     @* Image *@
                     <div class="form-group">
@@ -25,20 +25,30 @@
                             <img src="@Model.ImgURL" />
                             @Html.HiddenFor(model => model.ImgURL)
                             @Html.HiddenFor(model => model.id)
+                            @Html.HiddenFor(model => model.UserName)
                             @*<input type="file" name="photo" id="imgupload" />*@
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6">
+            <div class="col-sm-6">
                 @* Username *@
-                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @* @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })*@
-                    @Html.Label("", Model.UserName, new { @class = "control-label col-md-2" })
-                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @* @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.Label("", Model.UserName, new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-
+                @* Points *@
+                <div class="form-group">
+                    @Html.Label("", "Points", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.Label("", "120", new { @class = "control-label col-md-2" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
                 @* Email *@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -47,14 +57,7 @@
                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                @* Points *@
-                <div class="form-group">
-                    @Html.Label("", "Points", new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.TextBox("asd", "Not connected", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Save" id="btn_SaveOptions" class="btn btn-default" />
@@ -84,7 +87,7 @@
                 <div class="col-md-3">@Html.EditorFor(model => model.LooseWords[1], new { htmlAttributes = new { @onfocus = "select()", @class = "form-control" } })</div>
                 <div class="col-md-3">@Html.EditorFor(model => model.LooseWords[2], new { htmlAttributes = new { @onfocus = "select()", @class = "form-control" } })</div>
             </div>*@
-      
+
     </div>
 
     <hr />
@@ -96,13 +99,12 @@
 
         $('#btn_SaveOptions').click(function (e) {
             e.preventDefault();
-            // if ($("#OrderForm").valid()) { //if you use validation
             $.ajax({
                 url: optionsForm.attr('action'),
                 type: optionsForm.attr('method'),
                 data: optionsForm.serialize(),
                 success: function (data) {
-                    alert("success");
+                    alert("save-success");
                 },
                 error: function () {
                     alert("ERROR");
@@ -110,43 +112,4 @@
             });
         })
     });
-    @*loaded();
-
-    function loaded() {
-        document.getElementById("optionsForm").addEventListener("submit",
-                function (event) {
-                    event.preventDefault();
-                    // this.id will show "form"
-                    console.log("AccountOptions submit pressed!");
-                    saveAccountChanges();
-                },
-                    false);
-    }
-    function saveAccountChanges() {
-
-        HL.Spinner.toggle('300');
-        $.ajax({
-            data: {
-                'viewModel': @Html.Raw(Json.Encode(Model)),
-            },
-            dataType: "html",  // dataType = What I get from the action
-            content: "application/json; charset=utf-8",
-            type: "POST",   // type = What I´m gonna do with the controller
-            url: "/Account/SaveChanges",   // url = controller/action
-            success: function (data) {    // if success, I run this function and "data" is what the action returns
-
-                let html = data;
-
-                // Todo
-                // Fill a result div how the save whent
-                HL.Spinner.toggle('300');
-                console.log("Controller returned = "+data);
-                //HL.Top_Div_In_Index.toggle('500');
-            },
-            error: function(response){ console.log(response)}
-        });
-
-    }*@
-
-
 </script>

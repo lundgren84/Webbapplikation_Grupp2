@@ -26,8 +26,7 @@ namespace Business_layer.ExtensionMethods
         {
             var Entity = AccountRepository.GetAccount(BData.UserName);
             var entityToSave = BData.ToEntity();
-            entityToSave.id = Entity.id;
-            entityToSave.Taunts = TauntRepository.GetTaunt(Entity.id);
+            entityToSave.id = Entity.id;        
             var saved = false;
             if (AccountRepository.CreateOrUpdate(entityToSave))
             {
@@ -46,9 +45,6 @@ namespace Business_layer.ExtensionMethods
                 imgNr = "0" + rndNr.ToString();
             }
             else { imgNr = rndNr.ToString(); }
-            NewAccount.WinWords = new List<string>() { "WinWord1", "WinWord2", "WinWord3" };
-            NewAccount.CommonWords = new List<string>() { "CommonWord1", "CommonWord2", "CommonWord3" };
-            NewAccount.LooseWords = new List<string>() { "LooseWord1", "LooseWord2", "LooseWord3" };
             NewAccount.ImgURL = "/Items/Avatars/M"+ imgNr + ".png";
             return NewAccount;
         }

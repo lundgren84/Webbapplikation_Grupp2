@@ -66,9 +66,14 @@ namespace Tournament.net.Controllers
                 };
                 //Sending it to Business layer
 
-                BusinessData.CreateNew();             
+                BusinessData.CreateNew();
+                return RedirectToAction("Index", "Main");
             }
-            return RedirectToAction("Index","Main");
+            else
+            {
+                return Content(result.Errors.First());
+            }
+           
         }
         public ActionResult Login()
         {
@@ -97,7 +102,7 @@ namespace Tournament.net.Controllers
         {
             var user = await userManager.FindAsync(username, password);
 
-            if (user == null) { return View(); }
+            if (user == null) { return View(username); }
 
             var identity = await userManager.CreateIdentityAsync(user,
                 DefaultAuthenticationTypes.ApplicationCookie);

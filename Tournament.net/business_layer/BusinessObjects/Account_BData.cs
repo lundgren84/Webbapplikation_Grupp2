@@ -15,9 +15,6 @@ namespace Business_layer.BusinessObjects
         public string UserName { get; set; }
         public string Email { get; set; }
         public string ImgURL { get; set; }
-        public List<string> WinWords { get; set; }
-        public List<string> CommonWords { get; set; }
-        public List<string> LooseWords { get; set; }
 
         public static object GetAccount()
         {

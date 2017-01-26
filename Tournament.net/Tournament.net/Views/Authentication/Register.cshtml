@@ -1,7 +1,7 @@
 ﻿
 Register Partial View
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Register", "Authentication", FormMethod.Post, new { id = "RegisterAccountForm" }))
 {
     @Html.AntiForgeryToken()
 
@@ -14,6 +14,30 @@ Register Partial View
     <h3>Password</h3>
     @Html.Password("password")
 
-    <input type="submit" />
+    <input type="submit" value="Register" id="btn_Register_Account" class="btn btn-default" />
 }
 <hr />
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var optionsForm = $("#RegisterAccountForm");
+
+        $('#btn_Register_Account').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: optionsForm.attr('action'),
+                type: optionsForm.attr('method'),
+                data: optionsForm.serialize(),
+                success: function (data) {
+                    alert(data);
+                    console.log(data);
+                },
+                error: function () {
+                    alert(data);
+                }
+            });
+        })
+    });
+
+</script>

@@ -21,8 +21,7 @@ namespace Network_layer.Repositories
 
                 EntityToCreateOrUpdate.UserName = Entity.UserName;
                 EntityToCreateOrUpdate.Email = Entity.Email;
-                EntityToCreateOrUpdate.ImgURL = Entity.ImgURL;
-               // EntityToCreateOrUpdate.Taunts = TauntRepository.GetTaunt(EntityToCreateOrUpdate.id);              
+                EntityToCreateOrUpdate.ImgURL = Entity.ImgURL;            
 
                 ctx.Accounts.AddOrUpdate(EntityToCreateOrUpdate);
                 ctx.SaveChanges();
