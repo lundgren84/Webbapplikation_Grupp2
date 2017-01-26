@@ -6,9 +6,10 @@
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
+          
             <li>
-              
-                <a id="AccountOptions_btn" href="#/">Hello @User.Identity.Name!</a>
+               
+                <a id="AccountOptions_btn" href="#/">Options</a>
                 @*@Html.ActionLink("Hello " + User.Identity.Name + "!", "Options", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })*@
 
             </li>

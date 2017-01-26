@@ -1,0 +1,8 @@
+﻿@model Tournament.net.Models.TournamentViewModel
+
+<h2>Players</h2>
+
+@foreach (var item in Model.Players)
+{
+    @item.UserName
+}

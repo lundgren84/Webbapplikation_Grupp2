@@ -167,10 +167,45 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Items\Avatars\M10.png" />
+    <Content Include="Items\Avatars\M11.png" />
+    <Content Include="Items\Avatars\M12.png" />
+    <Content Include="Items\Avatars\M13.png" />
+    <Content Include="Items\Avatars\F01.png" />
+    <Content Include="Items\Avatars\F02.png" />
+    <Content Include="Items\Avatars\F03.png" />
+    <Content Include="Items\Avatars\F04.png" />
+    <Content Include="Items\Avatars\F05.png" />
+    <Content Include="Items\Avatars\F06.png" />
+    <Content Include="Items\Avatars\F07.png" />
+    <Content Include="Items\Avatars\F08.png" />
+    <Content Include="Items\Avatars\M14.png" />
+    <Content Include="Items\Avatars\M06.png" />
+    <Content Include="Items\Avatars\M07.png" />
+    <Content Include="Items\Avatars\M08.png" />
+    <Content Include="Items\Avatars\M09.png" />
+    <Content Include="Items\Avatars\M01.png" />
+    <Content Include="Items\Avatars\M02.png" />
+    <Content Include="Items\Avatars\M03.png" />
+    <Content Include="Items\Avatars\M04.png" />
+    <Content Include="Items\Avatars\M05.png" />
+    <Content Include="Items\Images\Buttons\4button hover.png" />
+    <Content Include="Items\Images\Buttons\4button pressed.png" />
+    <Content Include="Items\Images\Buttons\4button.png" />
+    <Content Include="Items\Images\Buttons\5button hover.png" />
+    <Content Include="Items\Images\Buttons\5button pressed.png" />
+    <Content Include="Items\Images\Buttons\5button.png" />
+    <Content Include="Items\Images\Buttons\6button hover.png" />
+    <Content Include="Items\Images\Buttons\6button pressed.png" />
+    <Content Include="Items\Images\Buttons\6button.png" />
+    <Content Include="Items\Images\Buttons\7button hover.png" />
+    <Content Include="Items\Images\Buttons\7button pressed.png" />
+    <Content Include="Items\Images\Buttons\7button.png" />
     <Content Include="Items\Images\Buttons\highscore nohover 350.png" />
     <Content Include="Items\Images\Buttons\highscore.png" />
     <Content Include="Items\Images\Buttons\startbutton hover.png" />
     <Content Include="Items\Images\Buttons\startbutton nohover.png" />
+    <Content Include="Items\Images\Buttons\startbutton pressed.png" />
     <Content Include="Items\Images\Buttons\tournament nohover.png" />
     <Content Include="Items\Images\Buttons\tournament.png" />
     <Content Include="Items\Images\Default\1.jpg" />
@@ -185,16 +220,24 @@
     <Content Include="Items\Sounds\sfx_sounds_interaction24.wav" />
     <Content Include="Items\Sounds\sfx_sounds_interaction3.wav" />
     <Content Include="Items\Sounds\sfx_sounds_interaction9.wav" />
+    <Content Include="Items\Sounds\Short Circuit-SoundBible.com-1450168875.wav" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\futuraptbook.woff" />
     <Content Include="fonts\futuraptheavy.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="AngularJS.js" />
+    <Content Include="Scripts\JavaScript\AngularJS.js" />
+    <Content Include="Scripts\JavaScript\Emil\EmilMain.js" />
+    <Content Include="Scripts\JavaScript\endAngular.js" />
     <Content Include="Scripts\JavaScript\Hampus\Main.js" />
     <Content Include="Scripts\JavaScript\Henrik\HenrikMain.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="DeveloperComments.txt" />
     <Content Include="Styles\index.css" />
@@ -244,6 +287,10 @@
     <Content Include="Views\Main\GameTypeSelection.cshtml" />
     <Content Include="Views\Main\NbrOfPlayersSelection.cshtml" />
     <Content Include="Views\Main\ContendersForm.cshtml" />
+    <Content Include="Views\Tournament\ParticiPants.cshtml" />
+    <Content Include="Views\Tournament\TournamentBracket.cshtml" />
+    <Content Include="Views\Main\HighscoreBracket.cshtml" />
+    <Content Include="Views\Tournament\TreeTest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -254,7 +301,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Game\" />
-    <Folder Include="Views\Tournament\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business_layer\Business_layer.csproj">

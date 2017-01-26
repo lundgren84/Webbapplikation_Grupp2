@@ -17,9 +17,6 @@ namespace Tournament.net.ExtensionMethods.Mapping
                 UserName = Model.UserName,
                 Email = Model.Email,
                 ImgURL = Model.ImgURL,
-                CommonWords = Model.CommonWords,
-                WinWords = Model.WinWords,
-                LooseWords = Model.LooseWords
             };
             return busniessData;
         }
@@ -30,10 +27,7 @@ namespace Tournament.net.ExtensionMethods.Mapping
                 id = BusinessData.id,
                 UserName = BusinessData.UserName,
                 Email = BusinessData.Email,
-                ImgURL = BusinessData.ImgURL,
-                WinWords = BusinessData.WinWords,
-                CommonWords = BusinessData.CommonWords,
-                LooseWords = BusinessData.LooseWords
+                ImgURL = BusinessData.ImgURL,         
             };
             return Model;
         }

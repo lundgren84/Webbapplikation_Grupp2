@@ -23,38 +23,42 @@ HB.StartButtonDiv = $('#UserChoice');
 
 $(document).ready(function () {
 
-    var clickSound = new Audio("\Items/Sounds/sfx_sounds_interaction3.wav");
+    var clickSound = new Audio("/Items/Sounds/sfx_sounds_interaction3.wav");
+    var clickSound2 = new Audio("\Items/Sounds/Short Circuit-SoundBible.com-1450168875.wav");
 
- 
+
 
     var nbrOfPlayers = 0;
 
     HB.Start_btn.on("click", function () {
-        clickSound.play();
+        clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
-       
-
-    })
+    });
+    HB.Start_btn.on("mouseover", function () {
+        clickSound.play();  
+    });
 
     HB.Tournament_btn.on("click", function () {
-        clickSound.play();
+        clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
-    })
+    });
+    HB.Tournament_btn.on("mouseover", function () {
+        clickSound.play();
+    });
 
     HB.Highscore_btn.on("click", function () {
-        clickSound.play();
+        clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
+    });
+    HB.Highscore_btn.on("mouseover", function () {
+        clickSound.play();
     });
 
     HB.One_btn.on("click", function () {
         nbrOfPlayers = 1;
-        getHtmlToGameTypeMenuDiv('/Main/ContendersForm');    
-    })
+        getHtmlToGameTypeMenuDiv('/Main/ContendersForm');
+    });
 
-    function hideElement() {
-        document.getElementById("UserChoice").className = "hidden";
-        document.getElementById("SelectType").className = "unhidden";
-    }
 
     function getHtmlToGameTypeMenuDiv(url) {
         HL.Spinner.toggle('300');
@@ -72,21 +76,37 @@ $(document).ready(function () {
         });
     }
 
-    function getHtmlToNbrOfPlayersDiv(url,number) {
+    function getHtmlToNbrOfPlayersDiv(url, number) {
+
         HL.Spinner.toggle('300');
         $.ajax({
             dataType: "html",  // dataType = What I get from the action       
-            type: "POST",   // type = What im gonna do with the controller         
+            type: "POST",   // type = What im gonna do with the controller    
+            data: { number: number },
             url: url,   // url = controller/action 
-            data: number,
             success: function (data) {    // if success i run this function and "data" is what the action returns
 
                 let html = data;
                 HB.StartButtonDiv.html(html);
                 HL.Spinner.toggle('300');
-                //HL.Top_Div_In_Index.toggle('500');
+              
             }
         });
     }
+    HB.btns = $('.btns');
 
-})
+    HB.btns.on("click", function () {
+
+        var selectednumber = $(this).attr('data-value')
+        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
+    });
+
+});
+
+ 
+ //html
+ //<input type="botton" class="btns" data-value="1" />
+ //<input type="botton" class="btns" data-value="2" />
+
+ //Javascript
+

@@ -31,4 +31,3 @@ controllers.OneController = function ($scope, OneFactory) {
 };
 
 
-myApp.controller(controllers);

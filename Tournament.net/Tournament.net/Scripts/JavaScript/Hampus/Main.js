@@ -12,6 +12,9 @@ HL.AccountOptions_btn = $('#AccountOptions_btn');
 HL.AccountRegister_btn = $('#AccountRegister_btn');
 HL.AccountLogin_btn = $('#AccountLogin_btn');
 HL.btn_UploadImage = $('#btn_UploadImage');
+HL.btn_SaveOptions = $('#btn_SaveOptions');
+// -##- Forms -##-
+HL.AccountOptionsForm = $('#AccountOptionsForm');
 // -##- Uploads -##-
 HL.imgupload = $('#imgupload');
 
@@ -21,7 +24,7 @@ HL.imgupload = $('#imgupload');
 
 
 $(document).ready(function () {
-
+   
     // -##- Variables -##-
     HL.OpenInIndexDiv = "";
 
@@ -40,6 +43,10 @@ $(document).ready(function () {
     HL.AccountLogin_btn.on('click', function () {
         toggleIndexTopDiv('/Authentication/Login', 'Login');
     });
+    // Save options
+    HL.btn_SaveOptions.on("click", function () {
+        saveAccountChanges();
+    });
 
     //Image
     //function click() {
@@ -51,7 +58,8 @@ $(document).ready(function () {
     //});
 
 
-
+    // -##- Events -##-
+ 
 
     // -##- Functions -##-
 
@@ -59,7 +67,7 @@ $(document).ready(function () {
     function select() {
         $(this).select();
     }
-
+  
     // function to get html to top div in index
     function getHtmlToTopIndexDiv(url) {
         HL.Spinner.toggle('300');
@@ -98,6 +106,8 @@ $(document).ready(function () {
 });
 
 
+
+// TOGGLE_SLIDER
 $('#cat_icon,.panel_title').click(function () {
     if ($('#cat_icon').is(':visible')) {
         $('#cat_icon').fadeOut(function () {
@@ -121,3 +131,18 @@ $('#cat_icon,.panel_title').click(function () {
 //        />
 //    </div>
 //</div>
+
+// Här Henrik
+
+ //html
+ //<input type="botton" class="btns" ng-value="1" />
+ //<input type="botton" class="btns" ng-value="2" />
+
+ //Javascript
+
+ //var btns = $('.btns');
+
+ //btns.on("click",functions(){
+ //var here_is_the_Value = $(this).attr('ng-value')
+ //});
+ 

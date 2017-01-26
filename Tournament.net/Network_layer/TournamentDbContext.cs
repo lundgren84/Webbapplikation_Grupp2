@@ -15,6 +15,6 @@ namespace Network_layer
 
         }
         public DbSet<tbl_Account> Accounts { get; set; }
-        public DbSet<tbl_Taunt> Taunts { get; set; }
+  
     }
 }

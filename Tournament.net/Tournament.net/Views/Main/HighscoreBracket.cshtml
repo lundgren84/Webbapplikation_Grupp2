@@ -1,0 +1,23 @@
+﻿
+@model Tournament.net.Models.TournamentViewModel
+
+<div>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Points</th>
+
+        </tr>
+        
+        @foreach (var item in Model.Players)
+            {
+        <tr>
+            <td>item.Players.UserName</td>
+            <td>0</td>
+        </tr>
+        }
+
+    </table>
+</div>
+
+

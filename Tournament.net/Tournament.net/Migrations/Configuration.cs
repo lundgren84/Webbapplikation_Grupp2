@@ -9,7 +9,7 @@ namespace Tournament.net.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Tournament.net.MyIdentityDbContext";
         }

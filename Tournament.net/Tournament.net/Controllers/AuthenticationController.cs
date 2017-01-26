@@ -43,8 +43,7 @@ namespace Tournament.net.Controllers
                 Email = email
             };
             //Register user in db
-            var result = await userManager.CreateAsync(user, password);
-
+            var result = await userManager.CreateAsync(user, password);           
             if (result.Succeeded)
             {
                 //Create a identity
@@ -66,10 +65,14 @@ namespace Tournament.net.Controllers
                 };
                 //Sending it to Business layer
 
-                BusinessData.CreateNew();             
-
+                BusinessData.CreateNew();
+                return Content("Registration Successful");
             }
-            return RedirectToAction("Index","Main");
+            else
+            {
+                return Content(result.Errors.First());
+            }
+           
         }
         public ActionResult Login()
         {
@@ -98,7 +101,7 @@ namespace Tournament.net.Controllers
         {
             var user = await userManager.FindAsync(username, password);
 
-            if (user == null) { return View(); }
+            if (user == null) { return View(username); }
 
             var identity = await userManager.CreateIdentityAsync(user,
                 DefaultAuthenticationTypes.ApplicationCookie);
