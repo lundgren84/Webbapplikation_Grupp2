@@ -1,0 +1,28 @@
+﻿Partisipation Summary Partial View
+
+@model Tournament.net.Models.TournamentViewModel
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h2>Deltagare samt vilken plats de komm till</h2>
+
+    @foreach (var item in Model.Players)
+    {
+        <tr>
+            <td>
+                @* Round *@
+                @Html.DisplayFor(modelItem => item.UserName)
+                
+            </td>
+
+        </tr>
+    }
+
+
+
+}
+<hr />
+

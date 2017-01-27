@@ -4,12 +4,12 @@
 
 <h2>Deltagande</h2>
 <p>@ViewBag.number</p>
-
-@using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
+@Html.AntiForgeryToken()
+    @for (int i = 0; i < ViewBag.number; i++)
+using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
 {
 
-    @Html.AntiForgeryToken()
-    for (int i = 0; i < ViewBag.number; i++)
+   
     {
         <div id="@("divForUsrPswBtn" + i)">
             @Html.Label("Username:")
