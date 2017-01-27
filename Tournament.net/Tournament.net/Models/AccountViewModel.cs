@@ -21,4 +21,12 @@ namespace Tournament.net.Models
         public int WindowSpot { get; set; }
         public int TournamentPosition { get; set; }
     }
+    public class AccountInHighscoreViewModel
+    {
+        public Guid id;
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string ImgURL { get; set; }
+        public int Score { get; set; }
+    }
 }

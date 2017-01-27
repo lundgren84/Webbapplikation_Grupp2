@@ -5,14 +5,22 @@ using System.Web;
 
 namespace Tournament.net.Models
 {
+    public enum TournamentType
+    {
+        Highscore,Tournament
+    }
     public class TournamentViewModel
     {
-        public TournamentTypeViewModel Type { get; set; }
-        public List<AccountViewModel> Players { get; set; }
+        public TournamentType Type { get; set; }
+        public List<AccountInTournamentViewModel> Players { get; set; }
         public int NumbersOfPlayers { get; set; }
     }
-    public class TournamentTypeViewModel
+    public class HighscoreViewModel
     {
-
+        public TournamentType Type { get; set; }
+        public List<AccountInHighscoreViewModel> Players { get; set; }
+        public int NumbersOfPlayers { get; set; }
     }
+  
+  
 }
