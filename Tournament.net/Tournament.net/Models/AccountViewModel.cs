@@ -12,4 +12,13 @@ namespace Tournament.net.Models
         public string Email { get; set; }
         public string ImgURL { get; set; }
     }
+    public class AccountInTournamentViewModel
+    {
+        public Guid id;
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string ImgURL { get; set; }
+        public int WindowSpot { get; set; }
+        public int TournamentPosition { get; set; }
+    }
 }

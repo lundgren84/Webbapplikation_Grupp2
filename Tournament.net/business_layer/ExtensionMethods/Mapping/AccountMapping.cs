@@ -29,7 +29,7 @@ namespace Business_layer.ExtensionMethods.Mapping
                 id = Entity.id,
                 UserName = Entity.UserName,
                 Email = Entity.Email,
-                ImgURL = Entity.ImgURL,
+                ImgURL = Entity.ImgURL, 
             };
             return BusinessData;
         }
