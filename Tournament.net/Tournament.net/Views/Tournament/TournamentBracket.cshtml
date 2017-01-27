@@ -4,6 +4,7 @@
     ViewBag.Title = "TournamentBracket";
 }
 <h2>TreeTest</h2>
+
 <div ng-controller="TournamentBracketController" data-ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
     <h1>{{hello}}</h1>
     <h2>Champions</h2>
@@ -13,7 +14,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div style="border-top:2px solid black;border:2px solid black">
-                            <img style="width:20%" src="{{p.ImgURL}}" />
+                            <img style="width:30%" src="{{p.ImgURL}}" />
                             <span style="{{sideUsernameStyle}}">{{p.UserName}}</span><br />
                             <span style="font-size:xx-large">Position: {{p.TournamentPosition}}</span>
                         </div>
@@ -25,54 +26,42 @@
             @* TOP *@
             <div class="row" style="background-color:Blue">
                 <div>
-                    <div style="margin-left:40%" class="col-xs-3">
+                    <div style="background-color:gold;margin-left:40%" class="col-xs-3">
                         <div>
-                            <span style="font-size:600%;border:solid 5px black;border-radius:50%">?</span>
+                            <img style="width:100px" src="{{Players[1].ImgURL}}" /><br />
+                            <span style="font-size:xx-large">{{Players[1].UserName}}</span>
                         </div>
                     </div>              
                 </div>
             </div>
-            @* Middle1 *@
+               @* Middle2 *@
             <div class="row" style="background-color:Blue">
                 <div>
-                    <div style="margin-left:28%" class="col-xs-3">
+                    <div style="background:green;margin-left:15%" class="col-xs-3">
                         <div>
-                            <span style="font-size:600%;border:solid 5px black;border-radius:50%">?</span>
+                            <img style="width:100px" src="{{Players[1].ImgURL}}" /><br />
+                            <span style="font-size:xx-large">{{Players[1].UserName}}</span>
                         </div>
                     </div>
-                    <div class="col-xs-3">
+                    <div style="background:red" class="col-xs-3">
                         <div>
-                            <span style="font-size:600%;border:solid 5px black;border-radius:50%">?</span>
+                            <span style="font-size:600%;">VS</span>
                         </div>
                     </div>                
-                </div>
-            </div>
-            @* Middle2 *@
-            <div class="row" style="background-color:Blue">
-                <div>
-                    <div style="margin-left:15%" class="col-xs-3">
-                        <div>                        
-                            <span  style="width:100px;font-size:600%;border:solid 5px black;border-radius:50%">?</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-3">
+                    <div style="background-color:orange" class="col-xs-3">
                         <div>
-                            <span style="width:100px;font-size:600%;border:solid 5px black;border-radius:50%">?</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-3">
-                        <div>
-                            <span style="width:100px;font-size:600%;border:solid 5px black;border-radius:50%">?</span>
+                            <img style="width:100px" src="{{Players[3].ImgURL}}" /><br />
+                            <span style="font-size:xx-large">{{Players[3].UserName}}</span>
                         </div>
                     </div>
                 </div>
             </div>
             @* Bottom *@
             <div class="row" style="background-color:yellow">
-                <div ng-repeat="p in Tournament.Players">
+                <div ng-repeat="p in Players">
                     <div class="col-xs-3">
                         <div>
-                            <img style="width:100px" src="{{p.ImgURL}}" />
+                            <img style="width:100px" src="{{p.ImgURL}}" /><br />
                             <span style="font-size:xx-large">{{p.UserName}}</span>
                         </div>
                     </div>

@@ -20,12 +20,13 @@ myApp.factory("TournamentFactory", function () {
 controllers.TournamentBracketController = function ($scope, TournamentFactory) {  
     $scope.init = function (Tournament) {
         $scope.Tournament = Tournament;
+        $scope.Players = Tournament.Players;
     }
    
     $scope.hello = TournamentFactory.hello("Im from Controller in Angular");
     // Style Side
     $scope.sideUsernameStyle = "font-size:xx-large";
-
+   
 };
 
 HL.NumberOFPlayers = 0;
