@@ -17,14 +17,15 @@ myApp.factory("TournamentFactory", function () {
     return factory;
 });
 
-controllers.TournamentBracketController = function ($scope, TournamentFactory) {
-    
+controllers.TournamentBracketController = function ($scope, TournamentFactory) {  
     $scope.init = function (Tournament) {
         $scope.Tournament = Tournament;
     }
-  
-    $scope.hello = TournamentFactory.hello("Im from Controller in Angular");
    
+    $scope.hello = TournamentFactory.hello("Im from Controller in Angular");
+    // Style Side
+    $scope.sideUsernameStyle = "font-size:xx-large";
+
 };
 
 HL.NumberOFPlayers = 0;

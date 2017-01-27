@@ -31,13 +31,10 @@ namespace Tournament.net.Controllers
         [HttpGet]
         public ActionResult TournamentBracket()
         {
-
-
             //Hämta lista av players (username) från databas?
-            var userNames = new List<string>() { "Kalle", "Olle", "Frodo" };
+            var userNames = new List<string>() { "Kalle", "Olle", "Frodo","Bruno" };
             var players = new List<AccountInTournamentViewModel>();
-            var tournament = new TournamentViewModel() {
-             };
+        
             var counter = 0;
             foreach (var item in userNames)
             {
@@ -51,11 +48,15 @@ namespace Tournament.net.Controllers
                     Email = Account.Email,
                     id = Account.id,
                     WindowSpot = counter,
-                    TournamentPosition = 0
+                    TournamentPosition = 1
                 });
-             
             }
-            tournament.Players = players;
+            var tournament = new TournamentViewModel()
+            {
+                Type = TournamentType.Tournament,
+                Players = players,
+                NumbersOfPlayers = counter              
+            };
             return View(tournament);
         }
     }
