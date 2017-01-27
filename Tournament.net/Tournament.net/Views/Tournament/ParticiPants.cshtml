@@ -1,28 +1,64 @@
-﻿@model Tournament.net.Models.AccountViewModel
+﻿
+
+@model Tournament.net.Models.AccountViewModel
 
 <h2>Deltagande</h2>
 <p>@ViewBag.number</p>
-
-@using (Html.BeginForm())
+@Html.AntiForgeryToken()
+    @for (int i = 0; i < ViewBag.number; i++)
+using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
 {
 
-    @Html.AntiForgeryToken()
-    for (int i = 0; i < ViewBag.number; i++)
+   
     {
-        <div class="form" id="divParticiPants">
+        <div id="@("divForUsrPswBtn" + i)">
             @Html.Label("Username:")
             @Html.TextBox("username")
+       
+       
             @Html.Label("Password:")
             @Html.Password("password")
-
+      
             <input type="button" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
             <input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>
         </div>
+
+
     }
+   
 }
-<script src="~/Scripts/JavaScript/Emil/EmilMain.js"></script>
+<input type="submit" id="btnGoToNextPage" value="Play" onclick="location.href='@Url.Action("TournamentBracket","Tournament")'" class="btn btn-default">
 
 
 
+<script type="text/javascript">
 
+    $(document).ready(function () {
+        var usersForm = $("#UsersForm");
+
+        $('#btnGetUser').on('click', function (e) {
+            alert("clickok");
+            e.preventDefault();
+            alert("prevent form from reloading page");
+            $.ajax({
+                url: usersForm.attr('action'),
+                type: usersForm.attr('method'),
+                data: usersForm.serialize(),
+                success: function (data) {
+
+                    // perform your save call here
+
+                    if (data !== undefined) {
+                        alert(data.UserName + " is in Ajax success as a jSon object");
+                    } else {
+                        alert("Account dontexists in Database");
+                    }
+                },
+                error: function () {
+                    alert("An error has occured!!!");
+                }
+            });
+        });
+    })
+</script>
 

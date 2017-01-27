@@ -3,17 +3,25 @@
 @{
     ViewBag.Title = "TreeTest";
 }
-
 <h2>TreeTest</h2>
-<div class="row">
-    @foreach (var item in Model.Players)
-    {
-        <div class="col-xs-3">
-            <div style="border: 5px solid black; border-radius:50%">                
-                <img style="width:40%" src="@item.ImgURL" />
-                @item.UserName<br />
-            </div>
-        </div>
-    }
+<div ng-controller="TournamentBracketController" data-ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+    <h1>{{hello}}</h1>
+    <h2>Champions</h2>
+    <div class="row">
+        <div ng-repeat="p in Tournament.Players">
+            <div class="col-xs-3">
+                <div style="background-color:gray;border: 5px solid black; border-radius:50%">
+                    <img style="width:40%" src="{{p.ImgURL}}" />
+                    <span style="font-size:xx-large">{{p.UserName}}</span><br />
+                </div>
+            </div>           
+        </div>      
+    </div> 
+    <div class="row">
+        <h2>Battle</h2>
+    </div>
+    <div class="row">
+        <h2>Winners</h2>
+    </div>
 </div>
 

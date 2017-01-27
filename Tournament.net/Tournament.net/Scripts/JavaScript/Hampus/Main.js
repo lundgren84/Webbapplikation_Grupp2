@@ -47,18 +47,6 @@ $(document).ready(function () {
     HL.btn_SaveOptions.on("click", function () {
         saveAccountChanges();
     });
-
-    //Image
-    //function click() {
-    //    console.log("Click!!");
-    //}
-    //HL.btn_UploadImage.on('click', function () {
-    //    //HL.imgupload.trigger('click');
-    //    console.log("Click!!");
-    //});
-
-
-    // -##- Events -##-
  
 
     // -##- Functions -##-

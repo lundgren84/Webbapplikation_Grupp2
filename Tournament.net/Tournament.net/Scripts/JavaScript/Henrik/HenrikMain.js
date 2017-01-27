@@ -31,8 +31,14 @@ $(document).ready(function () {
     var nbrOfPlayers = 0;
 
     HB.Start_btn.on("click", function () {
+        $('#Start_btn').addClass('greenButton').removeClass('userChoice');
         clickSound2.play();
-        getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
+        setTimeout(function () {
+            getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
+            
+           
+        }, 220);
+        
     });
     HB.Start_btn.on("mouseover", function () {
         clickSound.play();  
