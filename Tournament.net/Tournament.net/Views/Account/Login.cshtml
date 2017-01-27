@@ -1,0 +1,71 @@
+﻿@model Tournament.net.Library.LoginViewModel
+
+<!--
+Login Partial View
+    -->
+
+<div class="container">
+
+    @* show success or error messages when happens *@
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <h3 class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </h3>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <h3 class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </h3>
+    }
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Login
+                </div>
+
+                <div class="panel-body">
+
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true)
+
+                        <div class="form-group">
+                            <label>
+                                @Html.LabelFor(model => model.EmailID)
+                            </label>
+                            @Html.TextBoxFor(model => model.EmailID, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.EmailID)
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                @Html.LabelFor(model => model.Password)
+                            </label>
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Login" />
+                            <span>
+                                @Html.ActionLink("Create new account", "Register", "Account")
+                            </span>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

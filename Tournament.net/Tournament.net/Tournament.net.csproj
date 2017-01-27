@@ -269,6 +269,7 @@
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\SecuredController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
     <Compile Include="Controllers\VictoryController.cs" />
     <Compile Include="ExtensionMethods\AccountExtensions.cs" />
@@ -316,6 +317,10 @@
     <Content Include="Views\Victory\PartisipationSummary.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Secured\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ThankYou.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
