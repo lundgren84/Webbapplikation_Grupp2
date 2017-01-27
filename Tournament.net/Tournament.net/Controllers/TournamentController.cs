@@ -24,7 +24,7 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpPost]
-        public ActionResult ParticiPants(string username,int password)
+        public ActionResult ParticiPants(string username, int password)
         {
             return PartialView();
         }
@@ -34,16 +34,29 @@ namespace Tournament.net.Controllers
 
 
             //Hämta lista av players (username) från databas?
-            var userNames = new List<string>() {"Kalle","Olle","Frodo" };
-            var players = new List<AccountViewModel>();
-            var tournament = new TournamentViewModel();
+            var userNames = new List<string>() { "Kalle", "Olle", "Frodo" };
+            var players = new List<AccountInTournamentViewModel>();
+            var tournament = new TournamentViewModel() {
+             };
+            var counter = 0;
             foreach (var item in userNames)
             {
+                counter++;
                 var Account = (Account_BData.GetAccount(item).ToModel());
-                players.Add(Account);
+
+                players.Add(new AccountInTournamentViewModel()
+                {
+                    UserName = Account.UserName,
+                    ImgURL = Account.ImgURL,
+                    Email = Account.Email,
+                    id = Account.id,
+                    WindowSpot = counter,
+                    TournamentPosition = 0
+                });
+             
             }
             tournament.Players = players;
-            return View("TreeTest",tournament);
-        }    
+            return View(tournament);
+        }
     }
 }
