@@ -35,7 +35,7 @@
             </div>
                @* Middle2 *@
             <div class="row" style="background-color:yellow">
-                <div ng-repeat="p in Players">
+                <div ng-repeat="p in Round2">
                     <div class="col-xs-3">
                         <div>
                             <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
@@ -55,6 +55,7 @@
                     </div>
                 </div>
             </div>
+            <input type="button" ng-click="ToNextRound()" value="send player to next round" />
         </div>
     </div>
 
