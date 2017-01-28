@@ -20,7 +20,7 @@ myApp.factory("TournamentFactory", function () {
 
     return factory;
 });
-
+var nr = 0;
 controllers.TournamentBracketController = function ($scope, TournamentFactory) {  
     $scope.init = function (Tournament) {
         $scope.Tournament = Tournament;
