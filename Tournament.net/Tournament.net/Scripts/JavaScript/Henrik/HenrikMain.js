@@ -5,6 +5,7 @@ var HB = HB || {};
 HB.Start_btn = $("#Start_btn");
 HB.Tournament_btn = $("#Tournament");
 HB.Highscore_btn = $("#Highscore");
+HB.testbutton = $("#testbutton");
 // Contenders buttons
 
 HB.One_btn= $("#1Button");
@@ -29,6 +30,11 @@ $(document).ready(function () {
 
 
     var nbrOfPlayers = 0;
+
+    HB.testbutton.on("click", function () {
+        clickSound2.play();
+        getHtmlToGameTypeMenuDiv('/Main/HighscoreBracket');
+    });
 
     HB.Start_btn.on("click", function () {
         $('#Start_btn').addClass('greenButton').removeClass('userChoice');

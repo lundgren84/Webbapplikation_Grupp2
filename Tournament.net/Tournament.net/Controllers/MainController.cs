@@ -37,6 +37,12 @@ namespace Tournament.net.Controllers
             
             return PartialView();
         }
+
+        [HttpGet]
+        public ActionResult HighscoreBracket()
+        {
+            return PartialView("HighscoreBracket");
+        }
     }
   
 }

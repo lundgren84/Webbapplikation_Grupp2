@@ -1,23 +1,34 @@
-﻿
-@model Tournament.net.Models.TournamentViewModel
+﻿@*@model Tournament.net.Models.TournamentViewModel*@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="~/Scripts/JavaScript/Henrik/HenrikAngularJS.js"></script>
 
-<div>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>Points</th>
+    <div data-ng-controller="usersController">
+        <hr />
+        <button ng-click="propertyName = null; reverse = false">Set to unsorted</button>
+        <hr />
+        <table>
+            <tr>
+                <th>
+                    <button ng-click="sortBy('name')">Name</button>
+                    <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>
+                    <button ng-click="sortBy('phone')">Phone Number</button>
+                    <span class="sortorder" ng-show="propertyName === 'phone'" ng-class="{reverse: reverse}"></span>
+                </th>
+                <th>
+                    <button ng-click="sortBy('age')">Age</button>
+                    <span class="sortorder" ng-show="propertyName === 'age'" ng-class="{reverse: reverse}"></span>
+                </th>
+            </tr>
+            <tr data-ng-repeat="user in users">
+                <td>{{ user.name }}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
 
-        </tr>
-        
-        @foreach (var item in Model.Players)
-            {
-        <tr>
-            <td>item.Players.UserName</td>
-            <td>0</td>
-        </tr>
-        }
-
-    </table>
-</div>
 
 
