@@ -1,0 +1,153 @@
+﻿@model Tournament.net.Library.RegisterViewModel
+
+<!--
+Register Partial View
+    -->
+
+<div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Register
+            </div>
+
+            <div class="panel-body">
+
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "RegisterAccountForm" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true)
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.EmailID)
+                                </label>
+                                @Html.TextBoxFor(model => model.EmailID, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.EmailID)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.UserName)
+                                </label>
+                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.UserName)
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.FirstName)
+                                </label>
+                                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.FirstName)
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.LastName)
+                                </label>
+                                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.LastName)
+                            </div>
+
+                        </div>
+                    </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>
+                                        @Html.LabelFor(model => model.Password)
+                                    </label>
+                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Password)
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>
+                                        @Html.LabelFor(model => model.ConfirmPassword)
+                                    </label>
+                                    @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>
+                                        @Html.LabelFor(model => model.PhoneNumber)
+                                    </label>
+                                    @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PhoneNumber)
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>
+                                        @Html.LabelFor(model => model.Country)
+                                    </label>
+                                    @Html.TextBoxFor(model => model.Country, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Country)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Register" />
+                        </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="AccountRegError_Div">
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var optionsForm = $("#RegisterAccountForm");
+        var AccountRegError_Div = $('#AccountRegError_Div');
+        AccountRegError_Div.html();
+
+        $('#btn_Register_Account').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: optionsForm.attr('action'),
+                type: optionsForm.attr('method'),
+                data: optionsForm.serialize(),
+                success: function (data) {
+
+                    console.log(data);
+                    if (data == "Registration Successful") {
+                        window.location.href = "Main/Index";
+                    }
+                    else {
+                        AccountRegError_Div.html(data);
+                    }
+                },
+                error: function () {
+                    AccountRegError_Div.html("Ajax error");
+                }
+            });
+        })
+    });
+
+</script>

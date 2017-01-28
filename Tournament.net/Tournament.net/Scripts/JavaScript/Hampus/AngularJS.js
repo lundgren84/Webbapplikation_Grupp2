@@ -3,10 +3,6 @@
 myApp.factory("TournamentFactory", function () {
     var factory = {};
 
-    factory.hello = function (hello) {
-        let result = hello + " 'factory been here'";
-        return result;
-    }
     factory.CheckVS = function(Tournament){
     
 
@@ -23,9 +19,7 @@ controllers.TournamentBracketController = function ($scope, TournamentFactory) {
         $scope.Players = Tournament.Players;
     }
    
-    $scope.hello = TournamentFactory.hello("Im from Controller in Angular");
-    // Style Side
-    $scope.sideUsernameStyle = "font-size:xx-large";
+ 
    
 };
 
