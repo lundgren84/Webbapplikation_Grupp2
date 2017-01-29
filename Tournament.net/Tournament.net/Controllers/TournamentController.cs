@@ -32,9 +32,9 @@ namespace Tournament.net.Controllers
         public ActionResult TournamentBracket()
         {
             //Hämta lista av players (username) från databas?
-            var userNames = new List<string>() { "Kalle", "Olle", "Frodo","Bruno" };
+            var userNames = new List<string>() { "Kalle", "Olle", "Frodo", "Bruno" };
             var players = new List<AccountInTournamentViewModel>();
-        
+
             var counter = 0;
             foreach (var item in userNames)
             {
@@ -55,7 +55,9 @@ namespace Tournament.net.Controllers
             {
                 Type = TournamentType.Tournament,
                 Players = players,
-                NumbersOfPlayers = counter              
+                NumbersOfPlayers = counter,
+                Rounds = Tournament_BData.GetTournamentRounds(counter),
+                OddPlayers = Tournament_BData.IsOdd(counter)
             };
             return View(tournament);
         }

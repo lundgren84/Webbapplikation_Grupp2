@@ -275,6 +275,7 @@
     <Compile Include="Controllers\VictoryController.cs" />
     <Compile Include="ExtensionMethods\AccountExtensions.cs" />
     <Compile Include="ExtensionMethods\Mapping\AccountMapping.cs" />
+    <Compile Include="ExtensionMethods\Mapping\TournamentMapping.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
