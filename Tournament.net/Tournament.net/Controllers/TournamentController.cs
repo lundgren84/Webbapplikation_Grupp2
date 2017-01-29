@@ -32,7 +32,7 @@ namespace Tournament.net.Controllers
         public ActionResult TournamentBracket()
         {
             //Hämta lista av players (username) från databas?
-            var userNames = new List<string>() { "Kalle", "Olle", "Frodo", "Bruno" };
+            var userNames = new List<string>() {"Olle", "Frodo", "Bruno","Frida","Kaj" };
             var players = new List<AccountInTournamentViewModel>();
 
             var counter = 0;

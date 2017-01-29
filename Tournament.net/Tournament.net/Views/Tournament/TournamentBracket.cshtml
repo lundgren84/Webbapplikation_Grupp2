@@ -22,12 +22,13 @@
             </div>
         </div>
         <div class=col-xs-8 style="background-color:green">
-            <input type="button" value="SHUFFLE" ng-click="SHUFFLE()" />        
             <input type="button" value="START" ng-click="START()" />  
+            <input id="btn_Shuffle" type="button" value="SHUFFLE" ng-click="SHUFFLE()" />        
+          
             <div class="row" >
                 <p>Start Round</p>
                 <div ng-repeat="p in Round0">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <div>
                             <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
                             <span style="font-size:xx-large">{{p.UserName}}</span>
@@ -38,7 +39,7 @@
             <div class="row" >
                 <p>Round 2</p>
                 <div ng-repeat="p in Round1">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <div>
                             <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
                             <span style="font-size:xx-large">{{p.UserName}}</span>
@@ -49,7 +50,7 @@
             <div class="row" >
                 <p>Round 3</p>
                 <div ng-repeat="p in Round2">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <div>
                             <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
                             <span style="font-size:xx-large">{{p.UserName}}</span>
@@ -60,7 +61,7 @@
             <div class="row" >
                 <p>Round 4</p>
                 <div ng-repeat="p in Round3">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <div>
                             <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
                             <span style="font-size:xx-large">{{p.UserName}}</span>
@@ -71,7 +72,7 @@
             <div class="row" >
                 <p>Round 5</p>
                 <div ng-repeat="p in Round4">
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <div>
                             <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
                             <span style="font-size:xx-large">{{p.UserName}}</span>
@@ -81,40 +82,6 @@
             </div>
 
 
-
-           
-            @*<div class="row" style="background-color:yellow">
-                <div ng-repeat="p in Round3">
-                    <div class="col-xs-3">
-                        <div>
-                            <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
-                            <span style="font-size:xx-large">{{p.UserName}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="row" style="background-color:yellow">
-                <div ng-repeat="p in Round2">
-                    <div class="col-xs-3">
-                        <div>
-                            <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
-                            <span style="font-size:xx-large">{{p.UserName}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          
-            <div class="row" style="background-color:yellow">
-                <div ng-repeat="p in Players">
-                    <div class="col-xs-3">
-                        <div>
-                            <img style="width:100px" ng-src="{{p.ImgURL}}" /><br />
-                            <span style="font-size:xx-large">{{p.UserName}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
             <input type="button" ng-click="ToNextRound()" value="send player to next round" />
         </div>
     </div>

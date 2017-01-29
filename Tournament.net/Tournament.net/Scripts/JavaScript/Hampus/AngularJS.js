@@ -4,6 +4,8 @@ HL.CurrentRound = 0;
 HL.Rounds = 0;
 HL.Players;
 
+
+
 myApp.factory("TournamentFactory", function () {
     var factory = {};
     HL.Round1 = [];
@@ -17,9 +19,7 @@ myApp.factory("TournamentFactory", function () {
         }
         return null;
     }
-    factory.ToNextRound = function (Player) {
-        HL.Round2.push(Player);
-    }
+  
     factory.GetRoundsArray = function (Rounds) {
         let RoundArray = [];
 
@@ -41,22 +41,59 @@ controllers.TournamentBracketController = function ($scope, TournamentFactory) {
         GetNumberOfRounds($scope.Tournament.Rounds);
         $scope.TournamentRounds = TournamentFactory.GetRoundsArray($scope.Tournament.Rounds);
         HL.Players = Tournament.Players;
-        $scope.Round0 = Tournament.Players;
+        $scope.Round0 = GetFirstRound(Tournament.Players);
+        checkRound($scope.Round0);
     }
 
 
-
+    $scope.START = function () {
+        $('#btn_Shuffle').fadeOut();
+    }
     $scope.SHUFFLE = function () {
-        $scope.Round0 = shuffle($scope.Players);
+        $scope.Round0 = shuffle($scope.Round0);    
+        checkRound($scope.Round0);
     }
 
-    $scope.Round2 = TournamentFactory.getRound(2);
-
-    $scope.ToNextRound = function () {
-        TournamentFactory.ToNextRound($scope.Players[nr]);
-        nr++;
-    }
+    $scope.Round1 = HL.Round1;
 };
+function checkRound(Round) {
+    let i = Round.length
+    if (i % 2 !== 0) {
+        console.log("Odd round ")
+        addToNextRound(Round[Round.length-1])
+    }
+}
+function addToNextRound(FreeWinner) {
+    switch (HL.CurrentRound) {
+        case 0:
+            HL.Round1[0] = FreeWinner;
+            break;
+        case 1:
+            HL.Round1[2] = FreeWinner;
+            break;
+        case 2:
+            HL.Round1[3] = FreeWinner;
+            break;
+        case 3:
+            HL.Round1[4] = FreeWinner;
+            break;
+        case 4:
+            HL.Round1[5] = FreeWinner;
+            break;
+        case 5:
+            HL.Round1[6] = FreeWinner;
+            break;
+        case 6:
+            HL.Round1[7] = FreeWinner;
+    }
+}
+function GetFirstRound(Players) {
+    let firstRound = [];
+    for (var i = 0; i < Players.length; i++) {
+        firstRound.push(Players[i])
+    }
+    return firstRound
+}
 function shuffle(scopePlayers) {
     let players = scopePlayers
     let nr = 0;
