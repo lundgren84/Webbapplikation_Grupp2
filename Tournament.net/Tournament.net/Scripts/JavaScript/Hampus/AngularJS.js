@@ -1,10 +1,15 @@
 ﻿var HL = HL || {};
+HL.VSdiv = $('#VSdiv');
 HL.NumberOFPlayers = 0;
 HL.CurrentRound = 0;
 HL.Rounds = 0;
 HL.Players;
+HL.TournamentBtn = $('.TournamentBtn');
 
-
+HL.PlayerDivWidth = $('.playerDiv').width();
+HL.TournamentDivWith = $('.TournamentDiv').width();
+console.log("Tournamentdiv Width = " + HL.TournamentDivWith)
+console.log("PlayerDiv Width = " + HL.PlayerDivWidth)
 
 myApp.factory("TournamentFactory", function () {
     var factory = {};
@@ -28,6 +33,32 @@ myApp.factory("TournamentFactory", function () {
         }
         return RoundArray;
     }
+    factory.getMargin = function (Round) {
+        let nrOfPlayers = 0;
+
+        switch (Round) {
+            case 0:
+                nrOfPlayers = HL.NumberOFPlayers
+                break;
+            case 1:
+                nrOfPlayers = HL.Round1.length
+                break;
+            case 2:
+                nrOfPlayers = HL.Round2.length
+                break;
+            case 3:
+                nrOfPlayers = HL.Round3.length
+                break;            
+        }      
+            let totalWidth = nrOfPlayers * HL.PlayerDivWidth
+            console.log("totalWidth for players = " + totalWidth);
+            let widthLeft = HL.TournamentDivWith - totalWidth;
+            console.log("width Left = " + widthLeft);
+            margin = widthLeft / nrOfPlayers;
+            console.log("Margin = " + margin)
+            return (margin/2-10);
+        }
+    
 
 
     return factory;
@@ -43,11 +74,20 @@ controllers.TournamentBracketController = function ($scope, TournamentFactory) {
         HL.Players = Tournament.Players;
         $scope.Round0 = GetFirstRound(Tournament.Players);
         checkRound($scope.Round0);
+        $scope.marginRound0 = TournamentFactory.getMargin(0);
+        $scope.marginRound1 = TournamentFactory.getMargin(1);
+      
     }
-
+    var a = 0;
+    $scope.TESTBTN = function(){
+        HL.Round1.push($scope.Players[a]);
+        a++;
+        $scope.marginRound1 = TournamentFactory.getMargin(1);
+    }
 
     $scope.START = function () {
         $('#btn_Shuffle').fadeOut();
+        HL.VSdiv.fadeIn().css({top: 200, left: 200});
     }
     $scope.SHUFFLE = function () {
         $scope.Round0 = shuffle($scope.Round0);    
@@ -56,6 +96,7 @@ controllers.TournamentBracketController = function ($scope, TournamentFactory) {
 
     $scope.Round1 = HL.Round1;
 };
+
 function checkRound(Round) {
     let i = Round.length
     if (i % 2 !== 0) {
@@ -116,7 +157,9 @@ function GetNumberOfPlayers(number) {
 }
 
 $(document).ready(function () {
+    HL.TournamentBtn.on("click", function () {
 
+    })
 
 
 
