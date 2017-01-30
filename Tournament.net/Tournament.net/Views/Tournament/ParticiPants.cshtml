@@ -6,11 +6,12 @@
 <p>@ViewBag.number</p>
 @Html.AntiForgeryToken()
     @for (int i = 0; i < ViewBag.number; i++)
-using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
-{
-
-   
+    { 
+    using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
     {
+
+
+        
         <div id="@("divForUsrPswBtn" + i)">
             @Html.Label("Username:")
             @Html.TextBox("username")
