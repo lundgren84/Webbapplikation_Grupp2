@@ -17,6 +17,9 @@ HB.Six_btn = $("#6Button");
 HB.Seven_btn = $("#7Button");
 HB.Eight_btn = $("#8Button");
 
+//input fields
+HB.Score_field = $("#AddScores")
+
 ////Divs
 HB.StartButtonDiv = $('#UserChoice');
 ////Buttons
