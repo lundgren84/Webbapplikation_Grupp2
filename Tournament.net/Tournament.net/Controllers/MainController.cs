@@ -62,6 +62,7 @@ namespace Tournament.net.Controllers
         {
             AccountInHighscoreViewModel playerToBeModified = new AccountInHighscoreViewModel();
             playerToBeModified = playersList.Where(p => p.UserName == username).FirstOrDefault();
+            playerToBeModified.Score = number;
             return View();
         }
     }
