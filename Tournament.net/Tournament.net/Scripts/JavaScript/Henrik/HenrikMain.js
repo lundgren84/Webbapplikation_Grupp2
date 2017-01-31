@@ -65,12 +65,7 @@ $(document).ready(function () {
     HB.Start_btn.on("click", function () {
         $('#Start_btn').addClass('greenButton').removeClass('userChoice');
         clickSound2.play();
-        setTimeout(function () {
-            getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
-            
-           
-        }, 220);
-        
+            getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');     
     });
     HB.Start_btn.on("mouseover", function () {
         clickSound.play();  
@@ -92,9 +87,16 @@ $(document).ready(function () {
         clickSound.play();
     });
 
- 
+    HB.btns.on("click", function () {
 
-
+        var selectednumber = $(this).attr('data-value')
+        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
+        clickSound2.play();
+    });
+    HB.btns.on("mouseover", function () {
+        clickSound.play();
+    });
+   
     function getHtmlToGameTypeMenuDiv(url) {
         HL.Spinner.toggle('300');
         $.ajax({
@@ -130,11 +132,7 @@ $(document).ready(function () {
     }
     
 
-    HB.btns.on("click", function () {
 
-        var selectednumber = $(this).attr('data-value')
-        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
-    });
 
 });
 
