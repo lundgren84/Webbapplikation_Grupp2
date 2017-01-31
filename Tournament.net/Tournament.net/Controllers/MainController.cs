@@ -10,7 +10,7 @@ namespace Tournament.net.Controllers
     public class MainController : Controller
     {
         // GET: Main
-        List<AccountInHighscoreViewModel> playersList = new List<AccountInHighscoreViewModel>();
+        static List<AccountInHighscoreViewModel> playersList = new List<AccountInHighscoreViewModel>();
         static List<string> players = new List<string>();
         public ActionResult Index()
         {
@@ -63,7 +63,7 @@ namespace Tournament.net.Controllers
             AccountInHighscoreViewModel playerToBeModified = new AccountInHighscoreViewModel();
             playerToBeModified = playersList.Where(p => p.UserName == username).FirstOrDefault();
             playerToBeModified.Score = number;
-            return View();
+            return PartialView(playersList);
         }
     }
 

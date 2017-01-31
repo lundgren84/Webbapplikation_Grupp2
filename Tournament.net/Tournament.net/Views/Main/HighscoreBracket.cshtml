@@ -1,27 +1,32 @@
 ﻿@model ICollection<Tournament.net.Models.AccountInHighscoreViewModel>
 
-
-@foreach (var item in Model)
-{
-
-    
-    <div id="@item.UserName">
-        @using (Ajax.BeginForm("HighscoreBracket", new AjaxOptions() { }))
+@{
+        int id = 0;
+        foreach (var item in Model)
         {
-            <table class="table table-bordered">
-                <tr>
-                    <td>@item.UserName</td>
-                    <td>@item.Score</td>
-                    <td>@Html.EditorFor(x => item.Score)
-                        <input type="submit" name="submitscores" value="Add scores" /></td>
+        id += 1;
+
+        <div id="Username_@id">
+  
+                <table id="scoreBoard" align="center" class="table table-bordered">
+                    <tr>
+                        <td style="width:30%" class="username">@item.UserName</td>
+                        <td style="width:30%">@item.Score</td>
+                        <td>
+                            <input type="number" class="NewScore" placeholder="New Highscore"/>
+                        <input type="submit" name="submitscores" value="input" class="AddScore" id="Score_btn_@id" />
+                    </td>
                 </tr>
             </table>
-        }
-        @*<p>@item.UserName</p>
-        <p>@item.Score</p>
-        <input type="number" name="someid" id="@item.UserName Score" />*@
-    </div>
+     
+            @*<p>@item.UserName</p>
+                <p>@item.Score</p>
+                <input type="number" name="someid" id="@item.UserName Score" />*@
+        </div>
+    }
 }
+<script src="~/Scripts/JavaScript/Henrik/HenrikMain.js"></script>
+
 
 
 
