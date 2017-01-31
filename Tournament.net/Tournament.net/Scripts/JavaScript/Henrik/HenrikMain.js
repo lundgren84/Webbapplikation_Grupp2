@@ -7,21 +7,14 @@ HB.Tournament_btn = $("#Tournament");
 HB.Highscore_btn = $("#Highscore");
 HB.testbutton = $("#testbutton");
 // Contenders buttons
-
-HB.One_btn= $("#1Button");
-HB.Two_btn = $("#2Button");
-HB.Three_btn = $("#3Button");
-HB.Four_btn = $("#4Button");
-HB.Five_btn = $("#5Button");
-HB.Six_btn = $("#6Button");
-HB.Seven_btn = $("#7Button");
-HB.Eight_btn = $("#8Button");
-
+HB.btns = $('.btns');
+//Add Score btns
+HB.AddScore = $(".AddScore");
 //input fields
 HB.Score_field = $("#AddScores")
-
 ////Divs
 HB.StartButtonDiv = $('#UserChoice');
+
 ////Buttons
 //HB.Start_btn = $('#Start_btn');
 
@@ -33,6 +26,38 @@ $(document).ready(function () {
 
 
     var nbrOfPlayers = 0;
+
+    HB.AddScore.on("click", function () {
+        var currentRow = $(this).closest("tr");
+        var newHighScore = $(this).prev("input").val();
+        var username = currentRow.find("td:eq(0)").html();
+        alert(username);
+        alert("Score" + newHighScore);
+        AddNewScores("/Main/HighscoreBracket", newHighScore, username);
+    
+    });
+
+    function AddNewScores(url, number, username) {
+
+        HL.Spinner.toggle('300');
+        $.ajax({
+            dataType: "html",  // dataType = What I get from the action       
+            type: "POST",   // type = What im gonna do with the controller    
+            data: { number: number, username: username },
+            url: url,   // url = controller/action 
+            success: function (data) {    // if success i run this function and "data" is what the action returns
+
+                let html = data;
+                HB.StartButtonDiv.html(html);
+                HL.Spinner.toggle('300');
+
+            }
+        });
+    }
+
+
+
+
 
     HB.testbutton.on("click", function () {
         clickSound2.play();
@@ -69,10 +94,7 @@ $(document).ready(function () {
         clickSound.play();
     });
 
-    HB.One_btn.on("click", function () {
-        nbrOfPlayers = 1;
-        getHtmlToGameTypeMenuDiv('/Main/ContendersForm');
-    });
+ 
 
 
     function getHtmlToGameTypeMenuDiv(url) {
@@ -108,7 +130,7 @@ $(document).ready(function () {
             }
         });
     }
-    HB.btns = $('.btns');
+    
 
     HB.btns.on("click", function () {
 
