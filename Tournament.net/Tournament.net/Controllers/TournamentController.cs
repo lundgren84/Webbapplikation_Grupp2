@@ -12,6 +12,7 @@ namespace Tournament.net.Controllers
 {
     public class TournamentController : Controller
     {
+        public static List<string> GuestList = new List<string>();
         // GET: Tournament
         public ActionResult Index()
         {
@@ -21,6 +22,19 @@ namespace Tournament.net.Controllers
         public ActionResult ParticiPants(int number)
         {
             ViewBag.number = number;
+
+            GuestList.Add("Emil");
+            GuestList.Add("Klas");
+            GuestList.Add("Nils");
+
+            var counter = 0;
+
+            foreach (var item in GuestList)
+            {
+                counter++;
+
+            }
+
             return PartialView();
         }
         [HttpPost]
