@@ -9,10 +9,11 @@ HB.testbutton = $("#testbutton");
 HB.btns = $('.btns');
 //participants buttons
 HB.AddGuest = $(".AddGuest_btn");
+HB.Play = $("#play");
 //Add Score btns
 HB.AddScore = $(".AddScore");
 //input fields
-HB.Score_field = $("#AddScores")
+HB.Score_field = $("#AddScores");
 ////Divs
 HB.StartButtonDiv = $('#UserChoice');
 
@@ -23,7 +24,7 @@ $(document).ready(function () {
     var clickSound2 = new Audio("\Items/Sounds/Short Circuit-SoundBible.com-1450168875.wav");
 
 
-
+    var gametype = "Highscore";
     var nbrOfPlayers = 0;
 
     HB.AddGuest.one("click", function () {
@@ -33,7 +34,7 @@ $(document).ready(function () {
 
     });
     function AddNewGuest(url, username) {
-        alert("hej");
+
         HL.Spinner.toggle('300');
         $.ajax({
             dataType: "html",  // dataType = What I get from the action       
@@ -41,7 +42,6 @@ $(document).ready(function () {
             data: { username: username },
             url: url,   // url = controller/action 
             success: function (data) {    // if success i run this function and "data" is what the action returns
-                alert("player added");
                 //let html = data;
                 //HB.StartButtonDiv.html(html);
                 HL.Spinner.toggle('300');
@@ -50,6 +50,30 @@ $(document).ready(function () {
         });
     }
 
+    HB.Play.on("click", function () {
+        clickSound2.play();
+        GoToGame('/Tournament/Play', gametype);
+    });
+    function GoToGame(url, gametype) {
+
+        HL.Spinner.toggle('300');
+        $.ajax({
+            dataType: "html",  // dataType = What I get from the action       
+            type: "POST",   // type = What im gonna do with the controller    
+            data: { gametype: gametype },
+            url: url,   // url = controller/action 
+            success: function (data) {    // if success i run this function and "data" is what the action returns
+
+                let html = data;
+                HB.StartButtonDiv.html(html);
+                HL.Spinner.toggle('300');
+
+            }
+        });
+    }
+
+
+
 
 
     HB.AddScore.on("click", function () {
@@ -57,7 +81,7 @@ $(document).ready(function () {
         var newHighScore = $(this).prev("input").val();
         var username = currentRow.find("td:eq(0)").html();
         AddNewScores("/Main/HighscoreBracket", newHighScore, username);
-    
+
     });
 
     function AddNewScores(url, number, username) {
@@ -92,13 +116,13 @@ $(document).ready(function () {
         clickSound2.play();
         setTimeout(function () {
             getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
-            
-           
+
+
         }, 220);
-        
+
     });
     HB.Start_btn.on("mouseover", function () {
-        clickSound.play();  
+        clickSound.play();
     });
 
     HB.Tournament_btn.on("click", function () {
@@ -110,6 +134,7 @@ $(document).ready(function () {
     });
 
     HB.Highscore_btn.on("click", function () {
+        gametype = "Highscore";
         clickSound2.play();
         getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
     });
@@ -117,7 +142,7 @@ $(document).ready(function () {
         clickSound.play();
     });
 
- 
+
 
 
     function getHtmlToGameTypeMenuDiv(url) {
@@ -149,27 +174,24 @@ $(document).ready(function () {
                 let html = data;
                 HB.StartButtonDiv.html(html);
                 HL.Spinner.toggle('300');
-              
+
             }
         });
     }
-    
+
 
     HB.btns.on("click", function () {
-        clickSound2.play();
+
         var selectednumber = $(this).attr('data-value')
         getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
-    });
-    HB.btns.on("mouseover", function () {
-        clickSound.play();
     });
 
 });
 
- 
- //html
- //<input type="botton" class="btns" data-value="1" />
- //<input type="botton" class="btns" data-value="2" />
 
- //Javascript
+//html
+//<input type="botton" class="btns" data-value="1" />
+//<input type="botton" class="btns" data-value="2" />
+
+//Javascript
 
