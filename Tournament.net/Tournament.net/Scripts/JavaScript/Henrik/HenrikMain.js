@@ -31,8 +31,6 @@ $(document).ready(function () {
         var currentRow = $(this).closest("tr");
         var newHighScore = $(this).prev("input").val();
         var username = currentRow.find("td:eq(0)").html();
-        alert(username);
-        alert("Score" + newHighScore);
         AddNewScores("/Main/HighscoreBracket", newHighScore, username);
     
     });
