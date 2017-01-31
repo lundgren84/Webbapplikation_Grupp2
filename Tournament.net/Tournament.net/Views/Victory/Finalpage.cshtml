@@ -1,16 +1,37 @@
 ﻿Final Page Partial View
 @model Tournament.net.Models.AccountViewModel
 
+
+<div id="Finalpage">
+    <h1>Du har vunit</h1>
+    <h2>Här är dit diploma</h2>
+    <img src="~/Items/Images/Default/medalj.jpeg" style="width:300px; height:300px">
+    <p id="bevistext">Detta är bevis för [namn] deltagande samt seger inom tävlingen [tävlingnamn].</p>
+    <div id="MPButons">
+        <button id="Printdip_btn">Print out my diploma</button> <br />
+        <input class="form-control" id="EmailAdd" name="Themail" type="text" value="Addres@test.mail" />
+        <button id="Maildip_btn">Email my diploma</button>
+    </div>
+
+
+
+</div>
+
+
+
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <h1>Du har vunit</h1>
     <h2>Här är dit diploma</h2>
     <img src="~/Items/Images/Default/medalj.jpeg" style="width:300px; height:300px" >
-    
+
     <p id="bevistext">Detta är bevis för [namn] deltagande samt seger inom tävlingen [tävlingnamn].</p>
     <div id="MPButons">
-        <button id="Printdip_btn">Print out my diploma</button>
+
+        <button id="Printdip_btn">Print out my diploma</button> <br />
+        <input class="form-control" id="EmailAdd" name="Themail" type="text" value="Addres@test.mail" />
         <button id="Maildip_btn">Email my diploma</button>
 
     </div>

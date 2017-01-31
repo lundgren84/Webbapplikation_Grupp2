@@ -62,5 +62,46 @@ namespace Tournament.net.Controllers
             return View();
         }
 
+        public static void SendEmail(string to)
+        {
+            // These are custom settings
+            string fromAddress = "tournament@jonasjsk.com";
+            string toAddress = to;
+
+            
+            //string pass = "mQ8FJkKyj49o";
+            //string host = "smtpout.europe.secureserver.net";
+            //int port = 80;
+
+            //// Message
+            //MailMessage mm = new MailMessage();
+            //mm.IsBodyHtml = true; // make HTML mail
+            //mm.From = new MailAddress(fromAddress);
+            //mm.To.Add(new MailAddress(toAddress));
+            //mm.Subject = "Här är diplomat.";
+            //mm.Body = "Du vann tävlingne med tournamnet appen.";
+
+            //// SMTP
+            //NetworkCredential credential = new NetworkCredential(fromAddress, pass);
+            //SmtpClient smtp = new SmtpClient();
+            //smtp.Host = host;
+            //smtp.Port = port;
+            //smtp.EnableSsl = false;
+            //smtp.Credentials = credential;
+            //smtp.Timeout = 20000;
+
+            //// Send
+            //try
+            //{
+            //    smtp.Send(mm);
+            //}
+            //catch (Exception e)
+            //{
+
+            //}
+        }
+
+        
+
     }
 }
