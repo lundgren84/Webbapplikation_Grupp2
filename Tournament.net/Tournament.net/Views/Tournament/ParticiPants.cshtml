@@ -6,23 +6,13 @@
 @for (int i = 0; i < ViewBag.number; i++)
 {
 
-        <div id="@("GetNearestDivID" + i  )">
+        <div class="players">
 
-            @*<img src="~/Items/Avatars/@Html.DisplayFor(model =>model.ImgURL)"*@
-            @Html.Label("Username:")
-            @Html.TextBoxFor(x => Model.UserName, htmlAttributes: new { id = "txtBox" })
-
-
-            @*@Html.TextBox("username",new {id="txtBoxUserName" })*@
-            @Html.Label("Password:")
-            @Html.Password("password")
-
-
-
+          <input type="text" placeholder="username" />
             @*<input name="btnGuest" onclick="execute(document.getElementsById('txtbox')[0].value)" type="button" value="Guest" />*@
-            <input id="btnGuest" type="submit" value="Guest" class="classBtnGuest" onclick="setValues()" />
+            <input class="AddGuest_btn" type="submit" value="Guest" />
 
-            <input type="button" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
+            @*<input type="button" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>*@
             @*<input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>*@
 
 
@@ -32,21 +22,7 @@
     }
 
 }
-<input type="submit" id="btnGoToNextPage" value="Play" onclick="location.href='@Url.Action("TournamentBracket","Tournament")'" class="btn btn-default">
-
-<script src="~/Scripts/JavaScript/Emil/EmilMain.js"></script>
-
-<div id="screen"></div>
+<input type="submit" id="btnGoToNextPage" value="Play" class="btn btn-default">
 
 
-<script type="text/javascript">
-    var names = [];
-    var input = document.getElementById('txtBox');
-    var screen = document.getElementById('screen');
-
-    document.getElementById('btnGuest').onclick = function () {
-        names.push(input.value);
-        screen.innerHTML = input.value;
-        screen.innerHTML = inputArray;
-    };
-</script>
+<script src="~/Scripts/JavaScript/Henrik/HenrikMain.js"></script>

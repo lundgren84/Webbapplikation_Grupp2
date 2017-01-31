@@ -1,13 +1,14 @@
 ﻿////Namespace
 var HB = HB || {};
 //Buttons
-
 HB.Start_btn = $("#Start_btn");
 HB.Tournament_btn = $("#Tournament");
 HB.Highscore_btn = $("#Highscore");
 HB.testbutton = $("#testbutton");
 // Contenders buttons
 HB.btns = $('.btns');
+//participants buttons
+HB.AddGuest = $(".AddGuest_btn");
 //Add Score btns
 HB.AddScore = $(".AddScore");
 //input fields
@@ -15,8 +16,6 @@ HB.Score_field = $("#AddScores")
 ////Divs
 HB.StartButtonDiv = $('#UserChoice');
 
-////Buttons
-//HB.Start_btn = $('#Start_btn');
 
 $(document).ready(function () {
 
@@ -26,6 +25,32 @@ $(document).ready(function () {
 
 
     var nbrOfPlayers = 0;
+
+    HB.AddGuest.one("click", function () {
+        var newGuest = $(this).prev("input").val();
+        AddNewGuest("/Tournament/ParticiPants", newGuest);
+        $(this).css("background-color", "Green");
+
+    });
+    function AddNewGuest(url, username) {
+        alert("hej");
+        HL.Spinner.toggle('300');
+        $.ajax({
+            dataType: "html",  // dataType = What I get from the action       
+            type: "POST",   // type = What im gonna do with the controller    
+            data: { username: username },
+            url: url,   // url = controller/action 
+            success: function (data) {    // if success i run this function and "data" is what the action returns
+                alert("player added");
+                //let html = data;
+                //HB.StartButtonDiv.html(html);
+                HL.Spinner.toggle('300');
+
+            }
+        });
+    }
+
+
 
     HB.AddScore.on("click", function () {
         var currentRow = $(this).closest("tr");
