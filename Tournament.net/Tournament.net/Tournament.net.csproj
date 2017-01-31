@@ -211,7 +211,9 @@
     <Content Include="Items\Images\Buttons\tournament nohover.png" />
     <Content Include="Items\Images\Buttons\tournament.png" />
     <Content Include="Items\Images\Default\1.jpg" />
+    <Content Include="Items\Images\Default\green-mark.png" />
     <Content Include="Items\Images\Default\medalj.jpeg" />
+    <Content Include="Items\Images\Default\red-x.png" />
     <Content Include="Items\Images\Logotypes\BigLogo.png" />
     <Content Include="Items\Images\Logotypes\tournlogo2-ok 900.png" />
     <Content Include="Items\Images\Logotypes\tournlogo2-ok hover 900.png" />

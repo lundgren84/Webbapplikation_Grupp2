@@ -1,65 +1,56 @@
-﻿
-
-@model Tournament.net.Models.AccountViewModel
+﻿@model Tournament.net.Models.AccountViewModel
 
 <h2>Deltagande</h2>
 <p>@ViewBag.number</p>
 @Html.AntiForgeryToken()
-    @for (int i = 0; i < ViewBag.number; i++)
-    { 
+@for (int i = 0; i < ViewBag.number; i++)
+{
     using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
     {
 
 
-        
-        <div id="@("divForUsrPswBtn" + i)">
+
+        <div id="@("GetNearestDivID" + i  )">
+
+            @*<img src="~/Items/Avatars/@Html.DisplayFor(model =>model.ImgURL)"*@
             @Html.Label("Username:")
-            @Html.TextBox("username")
-       
-       
+            @Html.TextBoxFor(x => Model.UserName, htmlAttributes: new { id = "txtBox" })
+
+
+            @*@Html.TextBox("username",new {id="txtBoxUserName" })*@
             @Html.Label("Password:")
             @Html.Password("password")
-      
+
+
+
+            @*<input name="btnGuest" onclick="execute(document.getElementsById('txtbox')[0].value)" type="button" value="Guest" />*@
+            <input id="btnGuest" type="button" value="Guest" onclick="setValues()" />
+
             <input type="button" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
-            <input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>
+            @*<input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>*@
+
+
         </div>
 
 
     }
-   
+
 }
 <input type="submit" id="btnGoToNextPage" value="Play" onclick="location.href='@Url.Action("TournamentBracket","Tournament")'" class="btn btn-default">
 
 
 
+<div id="screen"></div>
+
+
 <script type="text/javascript">
+    var names = [];
+    var input = document.getElementById('txtBox');
+    var screen = document.getElementById('screen');
 
-    $(document).ready(function () {
-        var usersForm = $("#UsersForm");
-
-        $('#btnGetUser').on('click', function (e) {
-            alert("clickok");
-            e.preventDefault();
-            alert("prevent form from reloading page");
-            $.ajax({
-                url: usersForm.attr('action'),
-                type: usersForm.attr('method'),
-                data: usersForm.serialize(),
-                success: function (data) {
-
-                    // perform your save call here
-
-                    if (data !== undefined) {
-                        alert(data.UserName + " is in Ajax success as a jSon object");
-                    } else {
-                        alert("Account dontexists in Database");
-                    }
-                },
-                error: function () {
-                    alert("An error has occured!!!");
-                }
-            });
-        });
-    })
+    document.getElementById('btnGuest').onclick = function () {
+        names.push(input.value);
+        screen.innerHTML = input.value;
+        screen.innerHTML = inputArray;
+    };
 </script>
-
