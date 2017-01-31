@@ -23,24 +23,20 @@ namespace Tournament.net.Controllers
         {
             ViewBag.number = number;
 
-            GuestList.Add("Emil");
-            GuestList.Add("Klas");
-            GuestList.Add("Nils");
-
-            var counter = 0;
-
-            foreach (var item in GuestList)
-            {
-                counter++;
-
-            }
-
             return PartialView();
         }
         [HttpPost]
-        public ActionResult ParticiPants(string username, int password)
+        public ActionResult ParticiPants(string username)
         {
+            GuestList.Add(username);
+
             return PartialView();
+        }
+
+        public ActionResult Play()
+        {
+
+            return View();
         }
         [HttpGet]
         public ActionResult TournamentBracket()
