@@ -156,9 +156,12 @@ $(document).ready(function () {
     
 
     HB.btns.on("click", function () {
-
+        clickSound2.play();
         var selectednumber = $(this).attr('data-value')
         getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
+    });
+    HB.btns.on("mouseover", function () {
+        clickSound.play();
     });
 
 });

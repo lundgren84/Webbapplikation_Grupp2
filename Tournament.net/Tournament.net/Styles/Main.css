@@ -1,5 +1,7 @@
 ﻿
-
+.btns:focus{
+    outline-color:transparent;
+}
 
 .hide {
     visibility: collapse;
