@@ -35,9 +35,16 @@
         outline-color:transparent;
     }
 
+    #NbrOfPlayersChoices{
+        display:block;
+    }
+      #NbrOfPlayersChoices2{
+        display:block;
+    }
+
 #fourbutton {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
      background-image: url('../Items/Images/Buttons/4button.png');
     border: none;
     background-color: transparent;   
@@ -46,8 +53,8 @@
 }
 
  #fourbutton:hover {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
         background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/4button hover.png');
         -webkit-transition-property: background;
@@ -56,16 +63,16 @@
         -webkit-transition-delay: 100ms;
     }
 #fivebutton {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
     background-image: url('../Items/Images/Buttons/5button.png');
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
     #fivebutton:hover {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
         background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/5button hover.png');
         -webkit-transition-property: background;
@@ -74,16 +81,16 @@
         -webkit-transition-delay: 100ms;
     }
 #sixbutton {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
     background-image: url('../Items/Images/Buttons/6button.png');
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
   #sixbutton:hover {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
         background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/6button hover.png');
         -webkit-transition-property: background;
@@ -92,18 +99,57 @@
         -webkit-transition-delay: 100ms;
     }
 #sevenbutton {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
     background-image: url('../Items/Images/Buttons/7button.png');
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
  #sevenbutton:hover {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
         background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/7button hover.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+
+ #eightbutton {
+    width: 260px;
+    height: 260px;
+    background-image: url('../Items/Images/Buttons/8button.png');
+
+    border: none;
+    background-color: transparent;
+    background-size: 100%, 100%;
+}
+ #eightbutton:hover {
+        width: 260px;
+        height: 260px;
+        background-size: 100%, 100%;
+        background-image: url(''../Items/Images/Buttons/8button hover.png'');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+
+#ninebutton {
+    width: 260px;
+    height: 260px;
+    background-image: url('../Items/Images/Buttons/9button.png');
+    border: none;
+    background-color: transparent;
+    background-size: 100%, 100%;
+}
+ #ninebutton:hover {
+        width: 260px;
+        height: 260px;
+        background-size: 100%, 100%;
+        background-image: url('../Items/Images/Buttons/9button hover.png');
         -webkit-transition-property: background;
         -webkit-transition-duration: 300ms;
         -webkit-transition-timing-function: ease-in;
@@ -146,5 +192,11 @@
 #scoreBoard{
     width:80%;
     text-align:center;
-   font-size:20px;
+   font-size:20px; 
+   border:double;
+   
+}
+.NewScore{
+    background-color:transparent;
+    border:none;
 }
