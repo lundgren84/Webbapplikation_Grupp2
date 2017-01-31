@@ -32,11 +32,14 @@ namespace Tournament.net.Controllers
 
             return PartialView();
         }
-
-        public ActionResult Play()
+        [HttpPost]
+        public ActionResult Play(string gametype)
         {
-
-            return View();
+            if (gametype == "Highscore")
+            {
+                return RedirectToAction("HighscoreBracket", "Main");
+            }
+            return RedirectToAction("TournamentBracket", "Tournament", new { GuestList = GuestList });
         }
         [HttpGet]
         public ActionResult TournamentBracket()
