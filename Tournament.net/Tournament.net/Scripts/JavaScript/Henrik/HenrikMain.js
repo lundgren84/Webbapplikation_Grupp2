@@ -79,7 +79,7 @@ $(document).ready(function () {
     HB.AddScore.on("click", function () {
         var currentRow = $(this).closest("tr");
         var newHighScore = $(this).prev("input").val();
-        var username = currentRow.find("td:eq(0)").html();
+        var username = currentRow.find("td:eq(1)").html();
         AddNewScores("/Main/HighscoreBracket", newHighScore, username);
 
     });
