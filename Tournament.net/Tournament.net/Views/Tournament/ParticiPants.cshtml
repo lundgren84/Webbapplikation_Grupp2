@@ -2,13 +2,9 @@
 
 <h2>Deltagande</h2>
 <p>@ViewBag.number</p>
-@Html.AntiForgeryToken()
+
 @for (int i = 0; i < ViewBag.number; i++)
 {
-    using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
-    {
-
-
 
         <div id="@("GetNearestDivID" + i  )">
 
@@ -24,7 +20,7 @@
 
 
             @*<input name="btnGuest" onclick="execute(document.getElementsById('txtbox')[0].value)" type="button" value="Guest" />*@
-            <input id="btnGuest" type="button" value="Guest" onclick="setValues()" />
+            <input id="btnGuest" type="submit" value="Guest" class="classBtnGuest" onclick="setValues()" />
 
             <input type="button" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
             @*<input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>*@
@@ -38,7 +34,7 @@
 }
 <input type="submit" id="btnGoToNextPage" value="Play" onclick="location.href='@Url.Action("TournamentBracket","Tournament")'" class="btn btn-default">
 
-
+<script src="~/Scripts/JavaScript/Emil/EmilMain.js"></script>
 
 <div id="screen"></div>
 
