@@ -33,11 +33,12 @@ body {
     background-image: url('../Items/Images/Logotypes/tournlogo2-ok 900.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 65%, 65%;
+    background-size: contain;
     -webkit-transition-property: background;
     -webkit-transition-duration: 300ms;
     -webkit-transition-timing-function:ease-out;
     -webkit-transition-delay: 100ms;
+    transition: 2s;
 }
     .welcome:hover {
      background-image: url('../Items/Images/Logotypes/tournlogo2-ok hover 900.png');

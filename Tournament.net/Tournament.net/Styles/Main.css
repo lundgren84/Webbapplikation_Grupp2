@@ -45,8 +45,8 @@
     }
 
 #fourbutton {
-    width: 260px;
-    height: 260px;
+    width: 160px;
+    height: 160px;
      background-image: url('../Items/Images/Buttons/4button.png');
     border: none;
     background-color: transparent;   
@@ -55,8 +55,7 @@
 }
 
  #fourbutton:hover {
-        width: 260px;
-        height: 260px;
+       
         background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/4button hover.png');
         -webkit-transition-property: background;
@@ -65,16 +64,15 @@
         -webkit-transition-delay: 100ms;
     }
 #fivebutton {
-    width: 260px;
-    height: 260px;
+    width: 160px;
+    height: 160px;
     background-image: url('../Items/Images/Buttons/5button.png');
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
     #fivebutton:hover {
-        width: 260px;
-        height: 260px;
+       
         background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/5button hover.png');
         -webkit-transition-property: background;
@@ -83,17 +81,15 @@
         -webkit-transition-delay: 100ms;
     }
 #sixbutton {
-    width: 260px;
-    height: 260px;
+    width: 160px;
+    height: 160px;
     background-image: url('../Items/Images/Buttons/6button.png');
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
   #sixbutton:hover {
-        width: 260px;
-        height: 260px;
-        background-size: 100%, 100%;
+        background-size: 90%, 90%;
         background-image: url('../Items/Images/Buttons/6button hover.png');
         -webkit-transition-property: background;
         -webkit-transition-duration: 300ms;
@@ -101,16 +97,14 @@
         -webkit-transition-delay: 100ms;
     }
 #sevenbutton {
-    width: 260px;
-    height: 260px;
+    width: 160px;
+    height: 160px;
     background-image: url('../Items/Images/Buttons/7button.png');
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
  #sevenbutton:hover {
-        width: 260px;
-        height: 260px;
         background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/7button hover.png');
         -webkit-transition-property: background;
@@ -120,18 +114,14 @@
     }
 
  #eightbutton {
-    width: 260px;
-    height: 260px;
+    width: 160px;
+    height: 160px;
     background-image: url('../Items/Images/Buttons/8button.png');
-
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
  #eightbutton:hover {
-        width: 260px;
-        height: 260px;
-        background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/8button hover.png');
         -webkit-transition-property: background;
         -webkit-transition-duration: 300ms;
@@ -140,17 +130,14 @@
     }
 
 #ninebutton {
-    width: 260px;
-    height: 260px;
+    width: 160px;
+    height: 160px;
     background-image: url('../Items/Images/Buttons/9button.png');
     border: none;
     background-color: transparent;
     background-size: 100%, 100%;
 }
  #ninebutton:hover {
-        width: 260px;
-        height: 260px;
-        background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/9button hover.png');
         -webkit-transition-property: background;
         -webkit-transition-duration: 300ms;
