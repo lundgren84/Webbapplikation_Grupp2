@@ -203,8 +203,13 @@
     <Content Include="Items\Images\Buttons\7button hover.png" />
     <Content Include="Items\Images\Buttons\7button pressed.png" />
     <Content Include="Items\Images\Buttons\7button.png" />
+    <Content Include="Items\Images\Buttons\8button hover.png" />
+    <Content Include="Items\Images\Buttons\8button.png" />
+    <Content Include="Items\Images\Buttons\9button hover.png" />
+    <Content Include="Items\Images\Buttons\9button.png" />
     <Content Include="Items\Images\Buttons\highscore nohover 350.png" />
     <Content Include="Items\Images\Buttons\highscore.png" />
+    <Content Include="Items\Avatars\N05.png" />
     <Content Include="Items\Images\Buttons\startbutton hover.png" />
     <Content Include="Items\Images\Buttons\startbutton nohover.png" />
     <Content Include="Items\Images\Buttons\startbutton pressed.png" />

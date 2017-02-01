@@ -1,56 +1,43 @@
 ﻿@model Tournament.net.Models.AccountViewModel
 
-<h2>Deltagande</h2>
-<p>@ViewBag.number</p>
-@Html.AntiForgeryToken()
+<h2>Participants</h2>
+
 @for (int i = 0; i < ViewBag.number; i++)
 {
-    using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "UsersForm" }))
-    {
 
-
-
-        <div id="@("GetNearestDivID" + i  )">
-
-            @*<img src="~/Items/Avatars/@Html.DisplayFor(model =>model.ImgURL)"*@
-            @Html.Label("Username:")
-            @Html.TextBoxFor(x => Model.UserName, htmlAttributes: new { id = "txtBox" })
-
-
-            @*@Html.TextBox("username",new {id="txtBoxUserName" })*@
-            @Html.Label("Password:")
-            @Html.Password("password")
-
-
-
-            @*<input name="btnGuest" onclick="execute(document.getElementsById('txtbox')[0].value)" type="button" value="Guest" />*@
-            <input id="btnGuest" type="button" value="Guest" onclick="setValues()" />
-
-            <input type="button" id="btnGetUser" value="< Get User" class="btn btn-default" style='margin:10px;'>
-            @*<input type="button" id="btnGuest" value="< Guest" class="btn btn-default" style='margin:4px;'>*@
-
-
+        <div class="players">
+           
+            <label>Username:</label>
+          <input type="text" placeholder="Enter username.." id="username" />
+          <input class="AddGuest_btn" type="submit" value="Add player" />
+          
         </div>
-
-
     }
 
+    <input type="submit" id="play" value="Play">
+
+
+
+
+<style type="text/css">
+    label{
+        color:#0D82B8;
+        margin:20px;
+    }
+    input[type=text] {padding:3px; border:3px solid #8EDFF2; 
+
+-webkit-border-radius: 5px;
+    border-radius: 5px;
 }
-<input type="submit" id="btnGoToNextPage" value="Play" onclick="location.href='@Url.Action("TournamentBracket","Tournament")'" class="btn btn-default">
+input[type=text]:focus {border-color:#0D82B8; }
+
+input[type=submit] {padding:4px 10px; background:#AB1A17; border:0 none;
+                    margin:20px;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; }
+</style>
 
 
 
-<div id="screen"></div>
-
-
-<script type="text/javascript">
-    var names = [];
-    var input = document.getElementById('txtBox');
-    var screen = document.getElementById('screen');
-
-    document.getElementById('btnGuest').onclick = function () {
-        names.push(input.value);
-        screen.innerHTML = input.value;
-        screen.innerHTML = inputArray;
-    };
-</script>
+<script src="~/Scripts/JavaScript/Henrik/HenrikMain.js"></script>

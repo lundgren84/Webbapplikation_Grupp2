@@ -44,17 +44,17 @@ namespace Tournament.net.Controllers
         [HttpGet]
         public ActionResult HighscoreBracket()
         {
-            
-            players.Add("Emil");
-            players.Add("Hampus");
-            players.Add("Henrik");
-            players.Add("Rikard");
-           
-            foreach (var item in players)
+            List<string> GuestList = TournamentController.GuestList;
+
+            if (playersList.Count < 1)
             {
-                AccountInHighscoreViewModel player = new AccountInHighscoreViewModel() { UserName = item, Score = 0 };
-                playersList.Add(player);
+                foreach (var item in GuestList)
+                {
+                    AccountInHighscoreViewModel player = new AccountInHighscoreViewModel() { UserName = item, Score = 0 };
+                    playersList.Add(player);
+                }
             }
+            
             return PartialView("HighscoreBracket", playersList);
         }
         [HttpPost]

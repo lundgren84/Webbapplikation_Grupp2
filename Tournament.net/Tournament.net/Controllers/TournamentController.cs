@@ -12,6 +12,7 @@ namespace Tournament.net.Controllers
 {
     public class TournamentController : Controller
     {
+        public static List<string> GuestList = new List<string>();
         // GET: Tournament
         public ActionResult Index()
         {
@@ -21,12 +22,24 @@ namespace Tournament.net.Controllers
         public ActionResult ParticiPants(int number)
         {
             ViewBag.number = number;
+
             return PartialView();
         }
         [HttpPost]
-        public ActionResult ParticiPants(string username, int password)
+        public ActionResult ParticiPants(string username)
         {
+            GuestList.Add(username);
+
             return PartialView();
+        }
+        [HttpPost]
+        public ActionResult Play(string gametype)
+        {
+            if (gametype == "Highscore")
+            {
+                return RedirectToAction("HighscoreBracket", "Main");
+            }
+            return RedirectToAction("TournamentBracket", "Tournament", new { GuestList = GuestList });
         }
         [HttpGet]
         public ActionResult TournamentBracket()
