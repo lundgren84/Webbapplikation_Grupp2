@@ -38,7 +38,7 @@ body {
     -webkit-transition-duration: 300ms;
     -webkit-transition-timing-function:ease-out;
     -webkit-transition-delay: 100ms;
-    transition: 2s;
+    transition: 0.5s;
 }
     .welcome:hover {
      background-image: url('../Items/Images/Logotypes/tournlogo2-ok hover 900.png');
@@ -60,8 +60,8 @@ body {
     background-image: url('../Items/Images/Buttons/startbutton nohover.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 65%, 65%;
-    width: 40%;
+    background-size: 100%, 100%;
+    width: 290px;
     height: 290px;
     background-color: transparent;
     border: none;
