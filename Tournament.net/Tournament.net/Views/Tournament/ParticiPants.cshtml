@@ -16,7 +16,7 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
         <div class="warp2">
             <img class="img_From_Participants_SelectedAccount" src="" alt="Accimg" />
             <label class="Label_for_Username_img_From_Participants_SelectedAccount">UsernameHere</label>
-           <input class="removePlayersInParticipanta_btn" type="button" value="Remove" />
+            <input class="removePlayersInParticipanta_btn" type="button" value="Remove" />
         </div>
     </div>
 }
@@ -59,7 +59,7 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
     $('.warp2').hide();
     var PlayersFromParticipants = new Array();
 
-    function addPlayerToPlayerList(index,playerName) {
+    function addPlayerToPlayerList(index, playerName) {
         PlayersFromParticipants[index] = playerName;
     }
     function checkIfGameIsReady(numbersOfPlayersNeeded, PlayerList) {
@@ -73,7 +73,7 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
         return gameIsReady;
 
     }
-    
+
     $(document).ready(function () {
 
         // -- Start Game --
@@ -94,7 +94,7 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
                     data: postData,
                     traditional: true,
                     success: function (data) {
- 
+
                     },
                     error: function (data) {
                         alert("ERROR: " + data);
@@ -109,10 +109,10 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
                 console.log("Game not ready")
                 startGamebtns_errorDiv.html("All PlayerSpots need to be filled! If u want other amount of players you need to restart from begining!!");
             }
-          
+
 
         })
-       
+
         // -- Add Players to game __
         var checkUser_btn = $('.checkUser_btn');
 
@@ -132,7 +132,7 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
             console.log("Username= " + username);
             console.log("Password= " + password);
 
-            
+
 
 
             $.ajax({
@@ -147,16 +147,16 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
                     console.log(data.UserName)
                     var warp2 = wrap1.closest(".alfaWrap").find(".warp2");
 
-                    if ((password === undefined || password === "") && data.UserName === "Guest") {
+                    if ((password === undefined || password === "") && data.UserName === "Guest" && username.length > 0) {
                         // Add as guest
-                        let userName = username + "("+data.UserName+")";
+                        let userName = username + "(" + data.UserName + ")";
                         warp2.find(".img_From_Participants_SelectedAccount").attr("src", data.ImgURL)
                         warp2.find(".Label_for_Username_img_From_Participants_SelectedAccount").html(userName)
                         warp2.toggle();
                         wrap1.hide();
                         addPlayerToPlayerList(particiPants_DivIndex, userName);
                         console.log("Add as guest")
-                 
+
                     }
                     else if (data.UserName !== "Guest") {
                         // Add Registerd user
@@ -168,11 +168,14 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
                         console.log("Add as Registerd user")
                     }
                     else {
-                        errorDivinParticipants.html("Username or password wrong!");
-                    }               
+                        if (username.length < 1)
+                            errorDivinParticipants.html("You need a username!");
+                        else
+                            errorDivinParticipants.html("Username or password wrong!");
+                    }
                 },
                 error: function (data) {
-                    alert("ERROR: "+data);
+                    alert("ERROR: " + data);
                 }
             });
 
