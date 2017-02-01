@@ -65,11 +65,11 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
 
             //var form = $(this).parents('form:first');
             //var  = $(this).attr("data-id")
-            var iAmThis = $(this);
-            var password = iAmThis.closest('.wrap').find('.passwordInput').val()
-            var username = iAmThis.closest('.wrap').find('.usernameInput').val()
-            var errorDivinParticipants = iAmThis.closest('.wrap').find('.errorDiv')
-            console.log("Form Index= " + iAmThis.attr("data-id"))
+            var wrap1 = $(this);
+            var password = wrap1.closest('.wrap').find('.passwordInput').val()
+            var username = wrap1.closest('.wrap').find('.usernameInput').val()
+            var errorDivinParticipants = wrap1.closest('.wrap').find('.errorDiv')
+            console.log("Form Index= " + wrap1.attr("data-id"))
             console.log("Username= " + username)
             console.log("Password= " + password)
 
@@ -84,7 +84,8 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
                     errorDivinParticipants.html("");
                     let Players = data;
 
-                   
+                    console.log(data.UserName)
+                    var warp2 = wrap1.closest(".alfaWrap").find(".warp2");
 
                     if ((password === undefined || password === "") && data.UserName === "Guest") {
                         // Add as guest
@@ -92,6 +93,9 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
                     }
                     else if (data.UserName !== "Guest") {
                         // Add Registerd user
+                        warp2.find(".img_From_Participants_SelectedAccount").attr("src", data.ImgURL)
+                        warp2.find(".Label_for_Username_img_From_Participants_SelectedAccount").html(data.UserName)
+
 
                         console.log("Add as Registerd user")
                     }
