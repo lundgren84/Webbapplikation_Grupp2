@@ -17,8 +17,8 @@
 #Tournament {
     border: none;
     background-color: transparent;
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     background-size: 100%, 100%;
     background-image: url('../Items/Images/Buttons/tournament nohover.png');
     -webkit-transition-property: background;
@@ -163,8 +163,8 @@
 #Highscore {
     border: none;
     background-color: transparent;
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     background-size: 100%, 100%;
      background-image: url('../Items/Images/Buttons/highscore.png');
     -webkit-transition-property: background;
@@ -174,9 +174,6 @@
 }
 
     #Highscore:hover {
-        width: 350px;
-        height: 350px;
-        background-size: 100%, 100%;
         background-image: url('../Items/Images/Buttons/highscore nohover 350.png');
         -webkit-transition-property: background;
         -webkit-transition-duration: 300ms;
