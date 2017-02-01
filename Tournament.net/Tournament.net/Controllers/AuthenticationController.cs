@@ -79,15 +79,14 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+      
         public async Task<ActionResult> CheckLogin(
           string username,
           string password)
         {
             var user = await userManager.FindAsync(username, password);
-            AccountViewModel account;
-            if (user == null) { return null; }
-            else
+            AccountViewModel account = new AccountViewModel() { UserName = "Guest" };
+            if (user != null)
             {
                 account = (Account_BData.GetAccount(username)).ToModel();
             }

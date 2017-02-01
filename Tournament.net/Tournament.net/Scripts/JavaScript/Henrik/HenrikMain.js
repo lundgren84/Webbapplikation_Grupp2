@@ -114,6 +114,10 @@ $(document).ready(function () {
     HB.Start_btn.on("click", function () {
         $('#Start_btn').addClass('greenButton').removeClass('userChoice');
         clickSound2.play();
+        HB.LogotypeDiv = $('.welcome');
+        HB.LogotypeDiv.css({
+            height: "150px"
+        });
         setTimeout(function () {
             getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
 

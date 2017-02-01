@@ -28,16 +28,17 @@ body {
 }
 .welcome {
     width:78%;
-    height:353px;
+    height:250px;
     margin:auto;
     background-image: url('../Items/Images/Logotypes/tournlogo2-ok 900.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%, 100%;
+    background-size: contain;
     -webkit-transition-property: background;
     -webkit-transition-duration: 300ms;
     -webkit-transition-timing-function:ease-out;
     -webkit-transition-delay: 100ms;
+    transition: 0.5s;
 }
     .welcome:hover {
      background-image: url('../Items/Images/Logotypes/tournlogo2-ok hover 900.png');
@@ -60,8 +61,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%, 100%;
-    width: 40%;
-    height: 450px;
+    width: 290px;
+    height: 290px;
     background-color: transparent;
     border: none;
     -webkit-transition-property: background;

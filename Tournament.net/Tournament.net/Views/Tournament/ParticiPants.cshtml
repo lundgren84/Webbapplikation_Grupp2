@@ -1,43 +1,112 @@
 ﻿@model Tournament.net.Models.AccountViewModel
 
 <h2>Participants</h2>
-
+PS. To add Guests: just enter Username and skip the password.. then the program will see you as a guest player!
 @for (int i = 0; i < ViewBag.number; i++)
 {
-
-        <div class="players">
-           
+    <div class="alfaWrap">
+        <div class="wrap">
             <label>Username:</label>
-          <input type="text" placeholder="Enter username.." id="username" />
-          <input class="AddGuest_btn" type="submit" value="Add player" />
-          
+            <input type="text" name="username" placeholder="Enter username.." class="usernameInput" />
+            <label>Password:</label>
+            <input type="text" name="password" placeholder="Enter password" class="passwordInput" />
+            <input class="checkUser_btn" type="button" data-id="@i" value="Add player" /><br />
+            <div class="errorDiv"></div><br />
         </div>
-    }
+        <div class="warp2">
+            <img class="img_From_Participants_SelectedAccount" src="" alt="Accimg" />
+            <label class="Label_for_Username_img_From_Participants_SelectedAccount">UsernameHere</label>
+           <input class="removePlayersInParticipanta_btn" type="button" value="Remove" />
+        </div>
+    </div>
+}
 
-    <input type="submit" id="play" value="Play">
+<input type="submit" id="play" value="Play">
 
 
 
 
 <style type="text/css">
-    label{
-        color:#0D82B8;
-        margin:20px;
+    label {
+        color: #0D82B8;
+        margin: 20px;
     }
-    input[type=text] {padding:3px; border:3px solid #8EDFF2; 
 
--webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-input[type=text]:focus {border-color:#0D82B8; }
+    input[type=text] {
+        padding: 3px;
+        border: 3px solid #8EDFF2;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
 
-input[type=submit] {padding:4px 10px; background:#AB1A17; border:0 none;
-                    margin:20px;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; }
+        input[type=text]:focus {
+            border-color: #0D82B8;
+        }
+
+    input[type=submit] {
+        padding: 4px 10px;
+        background: #AB1A17;
+        border: 0 none;
+        margin: 20px;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
 </style>
 
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var PlayersFromParticipants = [];
+        var checkUser_btn = $('.checkUser_btn');
+
+        checkUser_btn.on("click", function () {
+
+            //var form = $(this).parents('form:first');
+            //var  = $(this).attr("data-id")
+            var iAmThis = $(this);
+            var password = iAmThis.closest('.wrap').find('.passwordInput').val()
+            var username = iAmThis.closest('.wrap').find('.usernameInput').val()
+            var errorDivinParticipants = iAmThis.closest('.wrap').find('.errorDiv')
+            console.log("Form Index= " + iAmThis.attr("data-id"))
+            console.log("Username= " + username)
+            console.log("Password= " + password)
 
 
+
+            $.ajax({
+                url: "/Authentication/CheckLogin",
+                type: "POST",
+                dataType: "json",
+                data: { 'username': username, 'password': password },
+                success: function (data) {
+                    errorDivinParticipants.html("");
+                    let Players = data;
+
+                   
+
+                    if ((password === undefined || password === "") && data.UserName === "Guest") {
+                        // Add as guest
+                        console.log("Add as guest")
+                    }
+                    else if (data.UserName !== "Guest") {
+                        // Add Registerd user
+
+                        console.log("Add as Registerd user")
+                    }
+                    else {
+                        errorDivinParticipants.html("Username or password wrong!");
+                    }
+
+                    alert("save-success");
+                },
+                error: function (data) {
+                    alert("ERROR: "+data);
+                }
+            });
+
+        })
+    });
+</script>
 <script src="~/Scripts/JavaScript/Henrik/HenrikMain.js"></script>
