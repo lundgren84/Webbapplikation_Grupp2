@@ -4,40 +4,59 @@
 
 @for (int i = 0; i < ViewBag.number; i++)
 {
+    @*using (Html.BeginForm("CheckLogin", "Authentication", FormMethod.Post, new { id = "OptionsForm" }))
+    {
+        <label>Username:</label>
+        <input type="text" placeholder="Enter username.." id="username" />
+        <label>Password:</label>
+        <input type="text" placeholder="Enter username.." id="username" />
+        <input class="checkUser_btn" type="submit" value="Add player" />
+        <input class="checkUser_btn" type="button" value="Add as GUEST" />
+    }*@
+    <div class="players">
 
-        <div class="players">
-           
-            <label>Username:</label>
-          <input type="text" placeholder="Enter username.." id="username" />
-          <input class="AddGuest_btn" type="submit" value="Add player" />
-          
-        </div>
-    }
+        <label>Username:</label>
+        <input type="text" placeholder="Enter username.." id="username" />
+        <input class="AddGuest_btn" type="submit" value="Add player" />
 
-    <input type="submit" id="play" value="Play">
+    </div>
+}
+
+<input type="submit" id="play" value="Play">
 
 
 
 
 <style type="text/css">
-    label{
-        color:#0D82B8;
-        margin:20px;
+    label {
+        color: #0D82B8;
+        margin: 20px;
     }
-    input[type=text] {padding:3px; border:3px solid #8EDFF2; 
 
--webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-input[type=text]:focus {border-color:#0D82B8; }
+    input[type=text] {
+        padding: 3px;
+        border: 3px solid #8EDFF2;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
 
-input[type=submit] {padding:4px 10px; background:#AB1A17; border:0 none;
-                    margin:20px;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; }
+        input[type=text]:focus {
+            border-color: #0D82B8;
+        }
+
+    input[type=submit] {
+        padding: 4px 10px;
+        background: #AB1A17;
+        border: 0 none;
+        margin: 20px;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
 </style>
 
+<script type="text/javascript">
 
 
+</script>
 <script src="~/Scripts/JavaScript/Henrik/HenrikMain.js"></script>
