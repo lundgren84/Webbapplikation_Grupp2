@@ -21,7 +21,7 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
     </div>
 }
 
-<input type="button" data-PlayerNumber="@ViewBag.number" id="ParticipantsPlay_btn" value="Play">
+<input type="button" data-type="@ViewBag.type" data-PlayerNumber="@ViewBag.number" id="ParticipantsPlay_btn" value="Play">
 <div id="startGamebtns_errorDiv"></div>
 
 
@@ -71,7 +71,17 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
             }
         }
         return gameIsReady;
-
+    }
+    function gerUrlByType(type) {
+        let rightUrl = "";
+        if (type === "Tournament") {
+            rightUrl = "/Tournament/TournamentBracket";
+        }
+        else {
+            rightUrl = "/Main/HighscoreBracket";
+        }
+        console.log(type);
+        return rightUrl;
     }
 
     $(document).ready(function () {
@@ -80,37 +90,40 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
         var ParticipantsPlay_btn = $('#ParticipantsPlay_btn')
         var numbersOfPlayers = parseInt(ParticipantsPlay_btn.attr("data-PlayerNumber"));
         var startGamebtns_errorDiv = $('#startGamebtns_errorDiv');
+        var gameType = $(this).attr("data-type");
 
         ParticipantsPlay_btn.on("click", function () {
+            var rightUrl = gerUrlByType(gameType);
             startGamebtns_errorDiv.html("");
             if (checkIfGameIsReady(numbersOfPlayers, PlayersFromParticipants)) {
                 // Start Game
                 console.log(" Start Game")
                 var postData = { Players: PlayersFromParticipants };
+                /// FIX Tournament shud have a post and highscore a get
                 $.ajax({
-                    url: "/Tournament/TournamentBracket",
-                    type: "get",
+                    url: rightUrl,
+                    type: "POST",
                     dataType: "html",
                     data: postData,
                     traditional: true,
                     success: function (data) {
 
+                       
+
+                        let html = data;
+                        let StartButtonDiv = $('#UserChoice');
+                        StartButtonDiv.html(html);
                     },
                     error: function (data) {
                         alert("ERROR: " + data);
                     }
                 });
-
-
-
             }
             else {
                 // Game not ready
                 console.log("Game not ready")
                 startGamebtns_errorDiv.html("All PlayerSpots need to be filled! If u want other amount of players you need to restart from begining!!");
             }
-
-
         })
 
         // -- Add Players to game __

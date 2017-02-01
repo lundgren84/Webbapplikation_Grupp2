@@ -22,17 +22,18 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpGet]
-        public ActionResult NbrOfPlayersSelection()
+        public ActionResult NbrOfPlayersSelection(string type)
         {
+            ViewBag.type = type;
             return PartialView();
         }
         [HttpPost]
-        public ActionResult NbrOfPlayersSelection(int number)
+        public ActionResult NbrOfPlayersSelection(int number,string type)
         {
             //number = 8;
             //ViewBag.title = 8;
 
-            return RedirectToAction("ParticiPants", "Tournament", new { number = number });
+            return RedirectToAction("ParticiPants", "Tournament", new { number = number,type = type });
         }
         [HttpGet]
         public ActionResult ContendersForm(int number)
@@ -42,9 +43,10 @@ namespace Tournament.net.Controllers
         }
 
         [HttpGet]
-        public ActionResult HighscoreBracket()
+        public ActionResult HighscoreBracket(List<string> Players)
         {
-            List<string> GuestList = TournamentController.GuestList;
+            // Just Liked up with the list... fix database and stuff!!
+            List<string> GuestList = Players;
 
             if (playersList.Count < 1)
             {

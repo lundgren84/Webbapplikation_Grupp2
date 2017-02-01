@@ -131,7 +131,7 @@ $(document).ready(function () {
 
     HB.Tournament_btn.on("click", function () {
         clickSound2.play();
-        getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
+        callOnParticipantsView('/Main/NbrOfPlayersSelection', 'Tournament');
     });
     HB.Tournament_btn.on("mouseover", function () {
         clickSound.play();
@@ -139,8 +139,8 @@ $(document).ready(function () {
 
     HB.Highscore_btn.on("click", function () {
         gametype = "Highscore";
-        clickSound2.play();
-        getHtmlToGameTypeMenuDiv('/Main/NbrOfPlayersSelection');
+        clickSound2.play();       
+        callOnParticipantsView('/Main/NbrOfPlayersSelection', 'Highscore');
     });
     HB.Highscore_btn.on("mouseover", function () {
         clickSound.play();
@@ -165,13 +165,31 @@ $(document).ready(function () {
         });
     }
 
-    function getHtmlToNbrOfPlayersDiv(url, number) {
+    function callOnParticipantsView(url,type) {
+        HL.Spinner.toggle('300');
+        $.ajax({
+            data: { "type": type },
+            dataType: "html",  // dataType = What I get from the action       
+            type: "GET",   // type = What im gonna do with the controller         
+            url: url,   // url = controller/action           
+            success: function (data) {    // if success i run this function and "data" is what the action returns
+
+                let html = data;
+                HB.StartButtonDiv.html(html);
+                HL.Spinner.toggle('300');
+                //HL.Top_Div_In_Index.toggle('500');
+            }
+        });
+    }
+
+
+    function getHtmlToNbrOfPlayersDiv(url, number,type) {
 
         HL.Spinner.toggle('300');
         $.ajax({
             dataType: "html",  // dataType = What I get from the action       
             type: "POST",   // type = What im gonna do with the controller    
-            data: { number: number },
+            data: { "number": number, "type": type },
             url: url,   // url = controller/action 
             success: function (data) {    // if success i run this function and "data" is what the action returns
 
@@ -186,8 +204,9 @@ $(document).ready(function () {
 
     HB.btns.on("click", function () {
         clickSound2.play();
-        var selectednumber = $(this).attr('data-value')
-        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber);
+        var selectednumber = $(this).attr('data-value');
+        var type = $('#typeHolder').attr('data-type');
+        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber,type);
     });
     HB.btns.on("mouseover", function () {
         clickSound.play();
