@@ -5,13 +5,31 @@
 <div id="Finalpage">
     <h1>Du har vunit</h1>
     <h2>Här är dit diploma</h2>
-    <img src="~/Items/Images/Default/Noback-medalj.png" style="width:300px; height:300px">
+
+    <div id="Frame" style="height:300px">
+
+        <div id="botom" style="position: absolute ">
+            <img src="~/Items/Images/Default/Noback-medalj.png" style="width:300px; height:300px"> <br />
+
+
+            @*<div id="top" style="left: 88px; top: 245px; position: absolute">*@
+            <div id="top" style="left: 27%; top: 30%; position: absolute">
+
+                <img src="@Model.ImgURL" style="width:140px; height:140px" />
+            </div>
+        </div>
+
+
+    </div>
+    @*<div id="botom" style=" position: absolute">*@
+    
+    
 
     <p id="bevistext">Detta är bevis för @Model.UserName deltagande samt seger inom tävlingen.</p>
     <div id="MPButons">
         <button id="Printdip_btn">Print out my diploma</button> <br />
-        <input class="form-control" id="EmailAdd" name="Themail" type="text" value="Addres@test.mail" />
-        <button id="Maildip_btn">Email my diploma</button>
+        @*<input class="form-control" id="EmailAdd" name="Themail" type="text" value="Addres@test.mail" />
+        <button id="Maildip_btn">Email my diploma</button>*@
     </div>
    
 
@@ -40,5 +58,3 @@
 }*@
 @* Här under ska det så en lita av delatager *@
 <hr/>
-<script src="~/Scripts/jquery-1.10.2.js"></script>
-<script src="~/Scripts/JavaScript/Rikard/Rikardmain.js"></script>
