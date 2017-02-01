@@ -16,13 +16,24 @@ namespace Tournament.net.Controllers
         // GET: Victory
         public ActionResult Finalpage()
         {
-            return PartialView();
+            AccountViewModel AVM = new AccountViewModel();
+
+            AVM.Email = "testmail@mail.com";
+            AVM.UserName = "Rikard";
+
+            return PartialView(AVM);
         }
 
         public ActionResult ScoreSummary()
         {
             return PartialView();
         }
+
+        public ActionResult PartisipationSummary()
+        {
+            return PartialView();
+        }
+
 
         public ActionResult SendDiplomaMail(AccountViewModel avm)
         {
