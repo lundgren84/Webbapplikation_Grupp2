@@ -86,12 +86,13 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
             if (checkIfGameIsReady(numbersOfPlayers, PlayersFromParticipants)) {
                 // Start Game
                 console.log(" Start Game")
-                var postData = { values: PlayersFromParticipants };
+                var postData = { Players: PlayersFromParticipants };
                 $.ajax({
                     url: "/Tournament/TournamentBracket",
                     type: "get",
                     dataType: "html",
                     data: postData,
+                    traditional: true,
                     success: function (data) {
  
                     },

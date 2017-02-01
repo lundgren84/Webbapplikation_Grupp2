@@ -41,6 +41,7 @@ namespace Tournament.net.Controllers
             }
             return RedirectToAction("TournamentBracket", "Tournament", new { GuestList = GuestList });
         }
+
         [HttpGet]
         public ActionResult TournamentBracket(List<string> Players)
         {
