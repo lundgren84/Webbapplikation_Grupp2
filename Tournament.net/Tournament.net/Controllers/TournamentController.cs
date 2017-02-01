@@ -42,7 +42,7 @@ namespace Tournament.net.Controllers
             return RedirectToAction("TournamentBracket", "Tournament", new { GuestList = GuestList });
         }
         [HttpGet]
-        public ActionResult TournamentBracket()
+        public ActionResult TournamentBracket(List<string> Players)
         {
             //Hämta lista av players (username) från databas?
             var userNames = new List<string>() {"Olle", "Frodo", "Bruno","Frida","Kaj" };

@@ -85,7 +85,8 @@ namespace Tournament.net.Controllers
           string password)
         {
             var user = await userManager.FindAsync(username, password);
-            AccountViewModel account = new AccountViewModel() { UserName = "Guest" };
+            AccountViewModel account = new AccountViewModel() { UserName = "Guest"  };
+            account = (AccountExtensions.AddDefaultValuesToNewAccount(account.ToBusinessData())).ToModel();
             if (user != null)
             {
                 account = (Account_BData.GetAccount(username)).ToModel();
