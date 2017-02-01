@@ -79,7 +79,7 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+      
         public async Task<ActionResult> CheckLogin(
           string username,
           string password)
