@@ -36,11 +36,11 @@ $(document).ready(function () {
 
 
 
-    HB.Testdiploma.on("click", function () {
-        alert("button has ben clicked");
-        clickSound2.play();
-        getHtmlToGameTypeMenuDiv('/Victory/Finalpage');
-    });
+    //HB.Testdiploma.on("click", function () {
+    //    alert("button has ben clicked");
+    //    clickSound2.play();
+    //    getHtmlToGameTypeMenuDiv('/Victory/Finalpage');
+    //});
 
 
 
