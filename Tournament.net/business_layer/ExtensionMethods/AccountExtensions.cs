@@ -39,7 +39,7 @@ namespace Business_layer.ExtensionMethods
         {
             Random random = new Random();
             var imgNr = "";
-            var rndNr = random.Next(1, 14);
+            var rndNr = random.Next(1, 22);
             if (rndNr < 10)
             {
                 imgNr = "0" + rndNr.ToString();
