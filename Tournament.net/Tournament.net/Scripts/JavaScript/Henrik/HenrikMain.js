@@ -134,13 +134,13 @@ $(document).ready(function () {
             getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
           
 
-        }, 500);
+        }, 600);
 
         setTimeout(function () {
 
             HB.StartButtonDiv.toggle("fast");
 
-    }, 1500);
+    }, 1000);
         //setTimeout(function () {
         //    HB.Start_btn.fadeIn("fast");
 
