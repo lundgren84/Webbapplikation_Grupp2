@@ -1,5 +1,5 @@
 ﻿@using Newtonsoft.Json
-@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
 @{
     ViewBag.Title = "TournamentBracket";
@@ -10,6 +10,7 @@
     @* Pannel *@
     <div class="row">
         <input id="btn_StartTournament" type="button" value="Start" />
+        <input type="button" value="Fight!" id="fight_btn" />
     </div>
     <div class="row">
         <div class="col-xs-1 giveBorder">
@@ -27,33 +28,49 @@
                 @* Tournament Table *@
                 @for (int i = 0; i < Model.Rounds.Count; i++)
                 {
-                    <div id="row @i" style="text-align:center;  border-bottom:dotted black 2px">
+                    <div id="row@(i)" style="text-align:center;  border-bottom:dotted black 2px">
                         <div style="text-align:left"> Round: (@i)</div>
                         @for (int x = 0; x < Model.Rounds[i].Players.Count; x++)
                         {
-                            <span class="tournamentSpot">
-                                <img src="@Model.Rounds[i].Players[x].ImgURL" />
-                                <span>@Model.Rounds[i].Players[x].UserName</span>
+                            <span id="spott@(x)" class="tournamentSpot">
+                                <img class="imgSpott" src="@Model.Rounds[i].Players[x].ImgURL" />
+                                <span class="nameSpot">@Model.Rounds[i].Players[x].UserName</span>
                             </span>
                         }
                     </div>
                 }
+                <input class="askWinButton" style="position:absolute" type="button" value="WINNER" id="btn_WIN_1" />              
+                <input class="askWinButton" style="position:absolute" type="button" value="WINNER" id="btn_WIN_2" />
+                <label id="vsLabel"  style="text-decoration:double;position:absolute">VS</label>
             </div>
         </div>
     </div>
+    
+      
+   
 </div>
 <script type="text/javascript">
     var data = @Html.Raw(JsonConvert.SerializeObject(this.Model));
 </script>
 
 <style>
+    .imgSpott{
+        width: 100px
+    }
     .giveBorder {
         border: 2px solid black;
     }
+    .Fighter{
+        background-color:gold;
+        box-shadow: 5px 5px 5px gold;
+    }
+    .askWinButton{
+       
+    }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
 
 <script src="~/Scripts/JavaScript/Hampus/TournamentBracket.js"></script>
 
 
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*@
-@*<script src="~/Scripts/bootstrap.min.js"></script>*@
