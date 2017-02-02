@@ -161,11 +161,23 @@ body {
        height:50px;
     }
 #ParticipantsPlay_btn {
+    background-image: url('../Items/Images/Buttons/startbutton nohover.png');
+    background-size:100%,100%;
+    background-color: transparent;
+    border:none;
+    width: 100px;
+    height: 100px;
+     -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-delay: 100ms;
+}
+#ParticipantsPlay_btn:hover {
     background-image: url('../Items/Images/Buttons/startbutton hover.png');
     background-size:100%,100%;
-     background-color: transparent;
-     border:none;
-        width: 100px;
+    background-color: transparent;
+    border:none;
+    width: 100px;
     height: 100px;
 }
 
