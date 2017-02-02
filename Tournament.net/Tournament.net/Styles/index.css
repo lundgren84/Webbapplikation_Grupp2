@@ -97,6 +97,19 @@ body {
         background-color:transparent;
     }
 
+        input[type=text]:hover {
+        padding: 3px;
+        margin:5px;
+        border: 3px solid #177eb3;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color:#177eb3;
+            -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-in;
+    -webkit-transition-delay: 100ms;
+    }
+
         input[type=text]:focus {
             border-color: #0D82B8;
         }
@@ -108,6 +121,19 @@ body {
         -webkit-border-radius: 5px;
         border-radius: 5px;
         background-color:transparent;
+    }
+
+                  input[type=password]:hover {
+        padding: 3px;
+          margin:5px;
+        border: 3px solid #177eb3;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color:#177eb3;
+            -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-in;
+    -webkit-transition-delay: 100ms;
     }
 
     .checkUser_btn{
