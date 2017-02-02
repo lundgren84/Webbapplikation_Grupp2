@@ -13,7 +13,12 @@ namespace Tournament.net.Models
         public List<AccountInTournamentViewModel> Players { get; set; }
         public int NumbersOfPlayers { get; set; }
         public bool OddPlayers { get; set; }
-        public int Rounds { get; set; }
+        public List<Round> Rounds { get; set; }
+    }
+    public class Round
+    {
+        public int NumberPlayers { get; set; }
+
     }
   
   
