@@ -52,7 +52,7 @@ namespace Tournament.net.Controllers
             foreach (var item in userNames)
             {
                 counter++;
-                var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/M01.png" };
+                var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/Guest.png" };
                 if (!item.Contains("(Guest)"))
                 {
                      Account = (Account_BData.GetAccount(item).ToModel());
