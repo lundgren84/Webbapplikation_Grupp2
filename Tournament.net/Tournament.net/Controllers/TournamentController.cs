@@ -46,14 +46,13 @@ namespace Tournament.net.Controllers
         public ActionResult TournamentBracket(List<string> Players)
         {
             // Connect "Players" when done!!!!
-
-            var userNames = new List<string>() { "Olle", "Fanny(Guest)", "Linda","Kalle","Kajan(Guest)"};
+            var userNames = Players;
+           // var userNames = new List<string>() { "Olle", "Fanny(Guest)", "Linda","Kalle", "Kaj(Guest)" , "Rudolf(Guest)" };
             var players = new List<AccountInTournamentViewModel>();
 
-            var counter = 0;
+            var counter = userNames.Count;
             foreach (var item in userNames)
-            {
-                counter++;
+            {              
                 var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/Guest.png" };
                 if (!item.Contains("(Guest)"))
                 {
@@ -75,9 +74,10 @@ namespace Tournament.net.Controllers
                 Type = TournamentType.Tournament,
                 Players = players,
                 NumbersOfPlayers = counter,
-               // Rounds = Tournament_BData.GetTournamentRounds(counter),
+                Rounds = FastFix.GetTournamentRounds(counter),
                 OddPlayers = Tournament_BData.IsOdd(counter)
             };
+
             return PartialView(tournament);
         }
         [HttpPost]
@@ -87,5 +87,33 @@ namespace Tournament.net.Controllers
             return View();
         }
 
+
+    }
+    public static class FastFix
+    {
+        public static List<Round> GetTournamentRounds(int PlayerAmount)
+        {
+            var rounds = new List<Round>();
+
+            while (PlayerAmount > 0)
+            {            
+                rounds.Add( new Round(PlayerAmount));
+               
+                if(PlayerAmount == 1) { PlayerAmount = 0; }
+                else
+                {
+                    if (IsOdd(PlayerAmount))
+                    {
+                        PlayerAmount++;
+                    }
+                    PlayerAmount = (PlayerAmount / 2);
+                }
+            }
+            return rounds;
+        }
+        public static bool IsOdd(int value)
+        {
+            return value % 2 != 0;
+        }
     }
 }

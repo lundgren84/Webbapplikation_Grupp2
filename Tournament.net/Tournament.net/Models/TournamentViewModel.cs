@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Tournament.net.Models
 {
-   
+
     public class TournamentViewModel
     {
         public TournamentType Type { get; set; }
@@ -17,9 +17,24 @@ namespace Tournament.net.Models
     }
     public class Round
     {
-        public int NumberPlayers { get; set; }
+        public int PlayersInRound { get; set; }
+        public List<AccountInTournamentViewModel> Players { get; set; }
+        public Round(int PlayersInRound)
+        {
+            this.PlayersInRound = PlayersInRound;
+            this.Players = GetPlayers(PlayersInRound);
+        }
+        private List<AccountInTournamentViewModel> GetPlayers(int PlayersInRound)
+        {
+            var result = new List<AccountInTournamentViewModel>();
+            for (int i = 0; i < PlayersInRound; i++)
+            {
+                result.Add(new AccountInTournamentViewModel() { UserName ="Unknown", ImgURL ="/Items/Images/Buttons/questionmark 100px.png" });
+            }
 
+            return result;
+        }
     }
-  
-  
+
+
 }

@@ -1,24 +1,59 @@
-﻿@model Tournament.net.Models.TournamentViewModel
+﻿@using Newtonsoft.Json
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+
+
+@model Tournament.net.Models.TournamentViewModel
 
 @{
     ViewBag.Title = "TournamentBracket";
 }
 <h2>TreeTest</h2>
-
-<div>
-    @for (int i = 0; i < Model.Rounds; i++)
-    {
-        <div> Round @i</div>
-    }
+<div class="container-fluid">
+    @Model.Players
+    @* Pannel *@
+    <div class="row">
+        <input id="btn_StartTournament" type="button" value="Start" />
+    </div>
+    <div class="row">
+        <div class="col-xs-1 giveBorder">
+            @* Contenders *@
+            @foreach (var item in Model.Players)
+            {
+                <div>
+                    <img style="width:100%" src="@item.ImgURL" />
+                    <span>@item.UserName</span>
+                </div>
+            }
+        </div>
+        <div class="col-xs-10 giveBorder">
+            <div>
+                @* Tournament Table *@
+                @for (int i = 0; i < Model.Rounds.Count; i++)
+                {
+                    <div style="text-align:center;  border-bottom:dotted black 2px">
+                        <div style="text-align:left"> Round: (@i)</div>
+                        @for (int x = 0; x < Model.Rounds[i].Players.Count; x++)
+                        {  
+                                <img src="@Model.Rounds[i].Players[x].ImgURL" />
+                                <span>@Model.Rounds[i].Players[x].UserName</span>                         
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    @for (int i = 0; i < Model.Players.Count; i++)
-    {
-        <div>@Model.Players[i].UserName</div>
+<script type="text/javascript">
+    var data = @Html.Raw(JsonConvert.SerializeObject(this.Model));
+</script>
+
+<style>
+    .giveBorder {
+        border: 2px solid black;
     }
-</div>
-
-
-
+</style>
 
 <script src="~/Scripts/JavaScript/Hampus/TournamentBracket.js"></script>
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*@
+
+@*<script src="~/Scripts/bootstrap.min.js"></script>*@
