@@ -31,7 +31,9 @@ $(document).ready(function () {
 
 
     });
+    // Click FIGHT
     fight_btn.on("click", function () {
+        $('.Fighter').removeClass("Fighter");
         var currentRow = $('#row' + round);
         champ1 = currentRow.find('#spott' + turn);
         champ2 = currentRow.find('#spott' + (turn + 1));
@@ -54,6 +56,6 @@ $(document).ready(function () {
         var btwWidth = parseInt(btn_WIN_1.css("width"));
         vsLabel.css("top", btn2Top);
         vsLabel.css("left", (camp1Position.left + btwWidth + 20));
-
+        turn += 2;
     });
 });
