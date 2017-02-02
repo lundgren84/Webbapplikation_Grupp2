@@ -1,4 +1,9 @@
 ﻿
+#avatarImg{
+    width: 80px;
+    height: 80px;
+}
+
 .btns:focus{
     outline-color:transparent;
 }
