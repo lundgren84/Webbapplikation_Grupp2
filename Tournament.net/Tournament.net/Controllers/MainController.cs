@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Business_layer.BusinessObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tournament.net.ExtensionMethods.Mapping;
 using Tournament.net.Models;
 
 namespace Tournament.net.Controllers
@@ -23,16 +25,16 @@ namespace Tournament.net.Controllers
         }
         [HttpGet]
         public ActionResult NbrOfPlayersSelection()
-        {          
+        {
             return PartialView();
         }
         [HttpPost]
-        public ActionResult NbrOfPlayersSelection(int number,string type)
+        public ActionResult NbrOfPlayersSelection(int number, string type)
         {
             //number = 8;
             //ViewBag.title = 8;
 
-            return RedirectToAction("ParticiPants", "Tournament", new { number = number,type = type });
+            return RedirectToAction("ParticiPants", "Tournament", new { number = number, type = type });
         }
         [HttpGet]
         public ActionResult ContendersForm(int number)
@@ -44,8 +46,29 @@ namespace Tournament.net.Controllers
         [HttpGet]
         public ActionResult HighscoreBracket(List<string> Players)
         {
-            // Just Liked up with the list... fix database and stuff!!
+            //-------- START -------------
+            var userNames = Players;
+            var players = new List<AccountInHighscoreViewModel>();
+
             List<string> GuestList = Players;
+            foreach (var item in userNames)
+            {
+                var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/M01.png" };
+                if (!item.Contains("(Guest)"))
+                {
+                    Account = (Account_BData.GetAccount(item).ToModel());
+                }
+
+                players.Add(new AccountInHighscoreViewModel()
+                {
+                    UserName = Account.UserName,
+                    ImgURL = Account.ImgURL,
+                    Email = Account.Email,
+                    id = Account.id,
+                    Score = 0
+                });
+            }
+            //-------- END -------------
 
             if (playersList.Count < 1)
             {
@@ -55,7 +78,7 @@ namespace Tournament.net.Controllers
                     playersList.Add(player);
                 }
             }
-            
+
             return PartialView("HighscoreBracket", playersList);
         }
         [HttpPost]
