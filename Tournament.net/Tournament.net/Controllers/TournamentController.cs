@@ -46,8 +46,8 @@ namespace Tournament.net.Controllers
         public ActionResult TournamentBracket(List<string> Players)
         {
             // Connect "Players" when done!!!!
-           // var userNames = Players;
-            var userNames = new List<string>() { "Olle", "Fanny(Guest)", "Linda","Kalle", "Kaj(Guest)" , "Rudolf(Guest)" };
+            var userNames = Players;
+          //  var userNames = new List<string>() { "Olle", "Fanny(Guest)", "Linda","Kalle", "Kaj(Guest)" , "Rudolf(Guest)" };
             var players = new List<AccountInTournamentViewModel>();
 
             var counter = userNames.Count;
