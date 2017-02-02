@@ -45,7 +45,7 @@ namespace Business_layer.ExtensionMethods
                 imgNr = "0" + rndNr.ToString();
             }
             else { imgNr = rndNr.ToString(); }
-            NewAccount.ImgURL = "/Items/Avatars/M"+ imgNr + ".png";
+            NewAccount.ImgURL = "/Items/Avatars/A"+ imgNr + ".png";
             return NewAccount;
         }
     }
