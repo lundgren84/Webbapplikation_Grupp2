@@ -22,9 +22,8 @@ namespace Tournament.net.Controllers
             return PartialView();
         }
         [HttpGet]
-        public ActionResult NbrOfPlayersSelection(string type)
-        {
-            ViewBag.type = type;
+        public ActionResult NbrOfPlayersSelection()
+        {          
             return PartialView();
         }
         [HttpPost]

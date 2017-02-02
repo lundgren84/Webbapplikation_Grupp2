@@ -250,6 +250,7 @@
     <Content Include="Scripts\JavaScript\endAngular.js" />
     <Content Include="Scripts\JavaScript\Hampus\AngularJS.js" />
     <Content Include="Scripts\JavaScript\Hampus\Main.js" />
+    <Content Include="Scripts\JavaScript\Hampus\Participants.js" />
     <Content Include="Scripts\JavaScript\Henrik\HenrikAngularJS.js" />
     <Content Include="Scripts\JavaScript\Henrik\HenrikMain.js" />
     <Content Include="Scripts\JavaScript\Rikard\Rikardmain.js" />

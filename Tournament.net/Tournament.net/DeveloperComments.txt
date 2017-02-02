@@ -1,2 +1,4 @@
-﻿HB- ActhenticationController row 60: Add all properties!
-HB- Scripts/JavaScript/Hampus/Main.js: Fix open/close indext top div nice!!! if options open and click = close. if options open and click other = close and open new
+﻿If Logged in you shud automatlicly be added to tournament
+Img not repeat in highscore
+Add guest in forehead on avatar
+add all avatars
