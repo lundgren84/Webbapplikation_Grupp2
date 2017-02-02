@@ -112,12 +112,26 @@ body {
 
     .checkUser_btn{
         padding: 4px;
+        background-color:transparent;    
+        margin:5px;
+        border: 3px solid #177eb3;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+
+    }
+       .checkUser_btn:hover{
+        padding: 4px;
         background: #AB1A17;    
         margin:5px;
         border: 3px solid #177eb3;
         cursor: pointer;
         -webkit-border-radius: 5px;
         border-radius: 5px;
+        -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-out;
+    -webkit-transition-delay: 100ms;
 
     }
 
