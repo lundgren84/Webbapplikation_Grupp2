@@ -2,20 +2,24 @@
     font-family: 'futura-pt-book';
     src: url('../fonts/futuraptbook.woff') format('woff');
 }
+
 @font-face {
     font-family: 'futurapt-heavy';
     src: url('../fonts/futuraptheavy.woff') format('woff');
 }
+
 body {
     font-family: 'Berlin Sans FB';
     background-color: #021e3d;
     color: #177eb3;
 }
+
 .nav.navbar-nav.navbar-right li a {
     font-family: 'Berlin Sans FB';
     color: #177eb3;
 }
-.nav.navbar-nav li a{
+
+.nav.navbar-nav li a {
     font-family: 'Berlin Sans FB';
     color: #177eb3;
 }
@@ -26,35 +30,38 @@ body {
     font-weight: 600;
     letter-spacing: -2px;
 }
+
 .welcome {
-    width:78%;
-    height:250px;
-    margin:auto;
+    width: 78%;
+    height: 250px;
+    margin: auto;
     background-image: url('../Items/Images/Logotypes/tournlogo2-ok 900.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     -webkit-transition-property: background;
     -webkit-transition-duration: 300ms;
-    -webkit-transition-timing-function:ease-out;
+    -webkit-transition-timing-function: ease-out;
     -webkit-transition-delay: 100ms;
     transition: 0.5s;
 }
+
     .welcome:hover {
-     background-image: url('../Items/Images/Logotypes/tournlogo2-ok hover 900.png');
-    -webkit-transition-property: background;
-    -webkit-transition-duration: 300ms;
-    -webkit-transition-timing-function:ease-in;
-    -webkit-transition-delay: 100ms;
- 
+        background-image: url('../Items/Images/Logotypes/tournlogo2-ok hover 900.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
     }
-.unhidden{
+
+.unhidden {
     visibility: visible;
 }
 
-.hidden{
+.hidden {
     visibility: hidden;
 }
+
 .btn-xlarge2 {
     visibility: visible;
     background-image: url('../Items/Images/Buttons/startbutton nohover.png');
@@ -67,176 +74,253 @@ body {
     border: none;
     -webkit-transition-property: background;
     -webkit-transition-duration: 300ms;
-    -webkit-transition-timing-function:ease-out;
+    -webkit-transition-timing-function: ease-out;
     -webkit-transition-delay: 100ms;
 }
-.btn-xlarge2:hover {
-    background-image: url('../Items/Images/Buttons/startbutton hover.png');
-    -webkit-transition-property: background;
-    -webkit-transition-duration: 300ms;
-    -webkit-transition-timing-function:ease-in;
-    -webkit-transition-delay: 100ms;
-}
-    .btn-xlarge2:active{
+
+    .btn-xlarge2:hover {
+        background-image: url('../Items/Images/Buttons/startbutton hover.png');
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
+    }
+
+    .btn-xlarge2:active {
         background-image: url('../Items/Images/Buttons/startbutton pressed.png');
     }
-.btn-xlarge2{
-    outline-color:transparent;
+
+.btn-xlarge2 {
+    outline-color: transparent;
 }
- label {
-        color: #177eb3;
-        margin: 20px;
-    }
 
-    input[type=text] {
+label {
+    color: #177eb3;
+    margin: 20px;
+}
+
+input[type=text] {
+    padding: 3px;
+    margin: 5px;
+    border: 3px solid #177eb3;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+    input[type=text]:hover {
         padding: 3px;
-        margin:5px;
+        margin: 5px;
         border: 3px solid #177eb3;
         -webkit-border-radius: 5px;
         border-radius: 5px;
-        background-color:transparent;
-    }
-
-        input[type=text]:hover {
-        padding: 3px;
-        margin:5px;
-        border: 3px solid #177eb3;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background-color:white;
-            -webkit-transition-property: background;
-    -webkit-transition-duration: 300ms;
-    -webkit-transition-timing-function:ease-in;
-    -webkit-transition-delay: 100ms;
-    }
-
-        input[type=text]:focus {
-            border-color: #0D82B8;
-        }
-
-         input[type=password] {
-             
-        padding: 3px;
-        margin:5px;
-        border: 3px solid #177eb3;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background-color:transparent;
-    }
-
-                  input[type=password]:hover {
-        padding: 3px;
-          margin:5px;
-        border: 3px solid #177eb3;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background-color:white;
+        background-color: white;
         -webkit-transition-property: background;
-    -webkit-transition-duration: 300ms;
-    -webkit-transition-timing-function:ease-in;
-    -webkit-transition-delay: 100ms;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
     }
 
-    .checkUser_btn{
-        padding: 4px;
-        background-color:transparent;    
-        margin:5px;
+    input[type=text]:focus {
+        border-color: #0D82B8;
+    }
+
+input[type=password] {
+    padding: 3px;
+    margin: 5px;
+    border: 3px solid #177eb3;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+    input[type=password]:hover {
+        padding: 3px;
+        margin: 5px;
         border: 3px solid #177eb3;
-        cursor: pointer;
         -webkit-border-radius: 5px;
         border-radius: 5px;
-
+        background-color: white;
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-in;
+        -webkit-transition-delay: 100ms;
     }
-       .checkUser_btn:hover{
-           
+
+.checkUser_btn {
+    padding: 4px;
+    background-color: transparent;
+    margin: 5px;
+    border: 3px solid #177eb3;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .checkUser_btn:hover {
         padding: 4px;
-        background: #AB1A17;    
-        margin:5px;
+        background: #AB1A17;
+        margin: 5px;
         border: 3px solid white;
         cursor: pointer;
         -webkit-border-radius: 5px;
         border-radius: 5px;
         -webkit-transition-property: background;
-    -webkit-transition-duration: 300ms;
-    -webkit-transition-timing-function:ease-out;
-    -webkit-transition-delay: 100ms;
-
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-out;
+        -webkit-transition-delay: 100ms;
     }
-  
 
 
 
 
 
-.btn-info:hover, .btn-info:focus{
+
+.btn-info:hover, .btn-info:focus {
     /*background-color: #00ffd2;*/
     color: white;
+}
 
-}
-.btn-info{
+.btn-info {
     text-align: center;
 }
-.userChoice{
+
+.userChoice {
     text-align: center;
-    
 }
-.userChoice button{
-  margin: 13px 12px 12px 10px;
-}
+
+    .userChoice button {
+        margin: 13px 12px 12px 10px;
+    }
+
 .greenButton {
     background-image: url('../Items/Images/Buttons/startbutton pressed.png');
 }
 
 
 .greydout {
- 
-   opacity: 1;
+    opacity: 1;
 }
+
     .greydout:hover {
-     
         opacity: 1;
     }
 
-    #avatars {
-   /*width: 6vw;*/
-   height: 10vh;
+#avatars {
+    /*width: 6vw;*/
+    height: 10vh;
 }
-   #qMark{
-       width:50px;
-       height:50px;
-    }
+
+#qMark {
+    width: 50px;
+    height: 50px;
+}
+
 #ParticipantsPlay_btn {
     background-image: url('../Items/Images/Buttons/startbutton nohover.png');
-    background-size:100%,100%;
+    background-size: 100%,100%;
     background-color: transparent;
-    border:none;
+    border: none;
     width: 100px;
     height: 100px;
-     -webkit-transition-property: background;
+    -webkit-transition-property: background;
     -webkit-transition-duration: 300ms;
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-delay: 100ms;
 }
-#ParticipantsPlay_btn:hover {
-    background-image: url('../Items/Images/Buttons/startbutton hover.png');
-    background-size:100%,100%;
+
+    #ParticipantsPlay_btn:hover {
+        background-image: url('../Items/Images/Buttons/startbutton hover.png');
+        background-size: 100%,100%;
+        background-color: transparent;
+        border: none;
+        width: 100px;
+        height: 100px;
+    }
+
+
+
+#btn_StartTournament {
+    padding: 4px;
     background-color: transparent;
-    border:none;
-    width: 100px;
-    height: 100px;
+    margin: 5px;
+    border: 3px solid #177eb3;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
+
+    #btn_StartTournament:hover {
+        padding: 4px;
+        background: #AB1A17;
+        margin: 5px;
+        border: 3px solid white;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-out;
+        -webkit-transition-delay: 100ms;
+    }
+
+#fight_btn {
+    padding: 4px;
+    background-color: transparent;
+    margin: 5px;
+    border: 3px solid #177eb3;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    #fight_btn:hover {
+        padding: 4px;
+        background: #AB1A17;
+        margin: 5px;
+        border: 3px solid white;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 300ms;
+        -webkit-transition-timing-function: ease-out;
+        -webkit-transition-delay: 100ms;
+    }
+
+
+
+.removePlayersInParticipanta_btn {
+    padding: 4px;
+    background-color: transparent;
+    margin: 15px;
+    border: 3px solid #AB1A17;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
 
 .removePlayersInParticipanta_btn {
     margin-top: 30px;
 }
+
 .Label_for_Username_img_From_Participants_SelectedAccount {
     margin-top: 32px;
 }
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     .removePlayersInParticipanta_btn {
-    margin-top: 1px;
-}
+        margin-top: 1px;
+    }
+
     .Label_for_Username_img_From_Participants_SelectedAccount {
-    margin-top: 1px;
-}
+        margin-top: 1px;
+    }
 }
