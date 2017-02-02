@@ -41,7 +41,7 @@ namespace Tournament.net.Controllers
             }
             return RedirectToAction("TournamentBracket", "Tournament", new { GuestList = GuestList });
         }
-      
+
         [HttpGet]
         public ActionResult TournamentBracket(List<string> Players)
         {
@@ -55,9 +55,9 @@ namespace Tournament.net.Controllers
                 var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/Guest.png" };
                 if (!item.Contains("(Guest)"))
                 {
-                     Account = (Account_BData.GetAccount(item).ToModel());
+                    Account = (Account_BData.GetAccount(item).ToModel());
                 }
-            
+
                 players.Add(new AccountInTournamentViewModel()
                 {
                     UserName = Account.UserName,
@@ -78,5 +78,12 @@ namespace Tournament.net.Controllers
             };
             return PartialView(tournament);
         }
+        [HttpPost]
+        public ActionResult TournamentBracket()
+        {
+
+            return View();
+        }
+
     }
 }

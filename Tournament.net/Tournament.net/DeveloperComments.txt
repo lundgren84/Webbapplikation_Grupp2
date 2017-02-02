@@ -1,4 +1,3 @@
-﻿If Logged in you shud automatlicly be added to tournament
+﻿If Logged in you shud automatlicly be added to tournament  
 Img not repeat in highscore
-Add guest in forehead on avatar
-add all avatars
+
