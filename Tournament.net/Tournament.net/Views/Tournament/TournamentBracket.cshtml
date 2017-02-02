@@ -27,12 +27,14 @@
                 @* Tournament Table *@
                 @for (int i = 0; i < Model.Rounds.Count; i++)
                 {
-                    <div style="text-align:center;  border-bottom:dotted black 2px">
+                    <div id="row @i" style="text-align:center;  border-bottom:dotted black 2px">
                         <div style="text-align:left"> Round: (@i)</div>
                         @for (int x = 0; x < Model.Rounds[i].Players.Count; x++)
-                        {  
+                        {
+                            <span class="tournamentSpot">
                                 <img src="@Model.Rounds[i].Players[x].ImgURL" />
-                                <span>@Model.Rounds[i].Players[x].UserName</span>                         
+                                <span>@Model.Rounds[i].Players[x].UserName</span>
+                            </span>
                         }
                     </div>
                 }
@@ -51,6 +53,7 @@
 </style>
 
 <script src="~/Scripts/JavaScript/Hampus/TournamentBracket.js"></script>
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*@
 
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*@
 @*<script src="~/Scripts/bootstrap.min.js"></script>*@

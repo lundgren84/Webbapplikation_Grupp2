@@ -1,4 +1,5 @@
-﻿
+﻿var turn = 0;
+var round = 0;
 
 $(document).ready(function () {
 
