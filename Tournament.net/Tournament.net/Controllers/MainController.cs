@@ -72,10 +72,10 @@ namespace Tournament.net.Controllers
 
             if (playersList.Count < 1)
             {
-                foreach (var item in GuestList)
+                foreach (var item in players)
                 {
-                    AccountInHighscoreViewModel player = new AccountInHighscoreViewModel() { UserName = item, Score = 0 };
-                    playersList.Add(player);
+                   
+                    playersList.Add(item);
                 }
             }
 
