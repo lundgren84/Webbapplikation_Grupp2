@@ -75,7 +75,7 @@ namespace Tournament.net.Controllers
                 Type = TournamentType.Tournament,
                 Players = players,
                 NumbersOfPlayers = counter,
-                Rounds = Tournament_BData.GetTournamentRounds(counter),
+               // Rounds = Tournament_BData.GetTournamentRounds(counter),
                 OddPlayers = Tournament_BData.IsOdd(counter)
             };
             return PartialView(tournament);
