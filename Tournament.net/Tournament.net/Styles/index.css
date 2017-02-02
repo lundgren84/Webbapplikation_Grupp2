@@ -116,3 +116,8 @@ body {
      
         opacity: 1;
     }
+
+    #avatars {
+   /*width: 6vw;*/
+   height: 10vh;
+}
