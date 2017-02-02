@@ -84,29 +84,81 @@ body {
     outline-color:transparent;
 }
  label {
-        color: #0D82B8;
+        color: #177eb3;
         margin: 20px;
     }
 
     input[type=text] {
         padding: 3px;
-        border: 3px solid #8EDFF2;
+        margin:5px;
+        border: 3px solid #177eb3;
         -webkit-border-radius: 5px;
         border-radius: 5px;
+        background-color:transparent;
+    }
+
+        input[type=text]:hover {
+        padding: 3px;
+        margin:5px;
+        border: 3px solid #177eb3;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color:#177eb3;
+            -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-in;
+    -webkit-transition-delay: 100ms;
     }
 
         input[type=text]:focus {
             border-color: #0D82B8;
         }
 
-    input[type=submit] {
-        padding: 4px 10px;
-        background: #AB1A17;
-        border: 0 none;
-        margin: 20px;
+         input[type=password] {
+        padding: 3px;
+          margin:5px;
+        border: 3px solid #177eb3;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color:transparent;
+    }
+
+                  input[type=password]:hover {
+        padding: 3px;
+          margin:5px;
+        border: 3px solid #177eb3;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color:#177eb3;
+            -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-in;
+    -webkit-transition-delay: 100ms;
+    }
+
+    .checkUser_btn{
+        padding: 4px;
+        background-color:transparent;    
+        margin:5px;
+        border: 3px solid #177eb3;
         cursor: pointer;
         -webkit-border-radius: 5px;
         border-radius: 5px;
+
+    }
+       .checkUser_btn:hover{
+        padding: 4px;
+        background: #AB1A17;    
+        margin:5px;
+        border: 3px solid #177eb3;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function:ease-out;
+    -webkit-transition-delay: 100ms;
+
     }
 
 
@@ -145,4 +197,43 @@ body {
     #avatars {
    /*width: 6vw;*/
    height: 10vh;
+}
+   #qMark{
+       width:50px;
+       height:50px;
+    }
+#ParticipantsPlay_btn {
+    background-image: url('../Items/Images/Buttons/startbutton nohover.png');
+    background-size:100%,100%;
+    background-color: transparent;
+    border:none;
+    width: 100px;
+    height: 100px;
+     -webkit-transition-property: background;
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-delay: 100ms;
+}
+#ParticipantsPlay_btn:hover {
+    background-image: url('../Items/Images/Buttons/startbutton hover.png');
+    background-size:100%,100%;
+    background-color: transparent;
+    border:none;
+    width: 100px;
+    height: 100px;
+}
+
+.removePlayersInParticipanta_btn {
+    margin-top: 30px;
+}
+.Label_for_Username_img_From_Participants_SelectedAccount {
+    margin-top: 32px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .removePlayersInParticipanta_btn {
+    margin-top: 1px;
+}
+    .Label_for_Username_img_From_Participants_SelectedAccount {
+    margin-top: 1px;
+}
 }

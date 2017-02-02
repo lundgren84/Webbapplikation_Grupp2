@@ -80,7 +80,13 @@ $(document).ready(function () {
         var currentRow = $(this).closest("tr");
         var newHighScore = $(this).prev("input").val();
         var username = currentRow.find("td:eq(1)").html();
-        AddNewScores("/Main/HighscoreBracket", newHighScore, username);
+        if (newHighScore === null || newHighScore === "" || newHighScore === undefined) {
+            alert("No points written")
+        }
+        else {
+            AddNewScores("/Main/HighscoreBracket", newHighScore, username);
+        }
+
 
     });
 
@@ -119,11 +125,28 @@ $(document).ready(function () {
             height: "150px"
         });
         setTimeout(function () {
+       
+            HB.StartButtonDiv.toggle("fast");
+
+        }, 500);
+        
+        setTimeout(function () {
             getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
+          
+
+        }, 600);
+
+        setTimeout(function () {
+
+            HB.StartButtonDiv.toggle("fast");
+
+    }, 1000);
+        //setTimeout(function () {
+        //    HB.Start_btn.fadeIn("fast");
 
 
-        }, 220);
-
+        //}, 5000);
+        
     });
     HB.Start_btn.on("mouseover", function () {
         clickSound.play();
@@ -141,7 +164,7 @@ $(document).ready(function () {
     HB.Highscore_btn.on("click", function () {
         gametype = "Highscore";
         sessionStorage.gameType = 'Highscore';
-        clickSound2.play();       
+        clickSound2.play();
         callOnParticipantsView('/Main/NbrOfPlayersSelection');
     });
     HB.Highscore_btn.on("mouseover", function () {
@@ -167,7 +190,7 @@ $(document).ready(function () {
         });
     }
 
-    function callOnParticipantsView(url,type) {
+    function callOnParticipantsView(url, type) {
         HL.Spinner.toggle('300');
         $.ajax({
             data: { "type": type },
@@ -185,7 +208,7 @@ $(document).ready(function () {
     }
 
 
-    function getHtmlToNbrOfPlayersDiv(url, number,type) {
+    function getHtmlToNbrOfPlayersDiv(url, number, type) {
 
         HL.Spinner.toggle('300');
         $.ajax({
@@ -208,7 +231,7 @@ $(document).ready(function () {
         clickSound2.play();
         var selectednumber = $(this).attr('data-value');
         var type = $('#typeHolder').attr('data-type');
-        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber,type);
+        getHtmlToNbrOfPlayersDiv('/Main/NbrOfPlayersSelection', selectednumber, type);
     });
     HB.btns.on("mouseover", function () {
         clickSound.play();
