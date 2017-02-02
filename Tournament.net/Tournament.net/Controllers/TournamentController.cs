@@ -45,7 +45,9 @@ namespace Tournament.net.Controllers
         [HttpGet]
         public ActionResult TournamentBracket(List<string> Players)
         {
-            var userNames = Players;
+            // Connect "Players" when done!!!!
+
+            var userNames = new List<string>() { "Olle", "Fanny(Guest)", "Linda","Kalle","Kajan(Guest)"};
             var players = new List<AccountInTournamentViewModel>();
 
             var counter = 0;
@@ -73,7 +75,7 @@ namespace Tournament.net.Controllers
                 Type = TournamentType.Tournament,
                 Players = players,
                 NumbersOfPlayers = counter,
-                Rounds = Tournament_BData.GetTournamentRounds(counter),
+               // Rounds = Tournament_BData.GetTournamentRounds(counter),
                 OddPlayers = Tournament_BData.IsOdd(counter)
             };
             return PartialView(tournament);
