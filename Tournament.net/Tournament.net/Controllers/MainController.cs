@@ -69,15 +69,18 @@ namespace Tournament.net.Controllers
                 });
             }
             //-------- END -------------
-
-            if (playersList.Count < 1)
+            if (playersList.Count > 1)
             {
-                foreach (var item in players)
-                {
-                   
-                    playersList.Add(item);
-                }
+                playersList.Clear();
             }
+
+
+            foreach (var item in players)
+            {
+
+                playersList.Add(item);
+            }
+
 
             return PartialView("HighscoreBracket", playersList);
         }
