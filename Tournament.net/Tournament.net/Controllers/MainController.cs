@@ -53,7 +53,7 @@ namespace Tournament.net.Controllers
             List<string> GuestList = Players;
             foreach (var item in userNames)
             {
-                var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/M01.png" };
+                var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/Guest.png" };
                 if (!item.Contains("(Guest)"))
                 {
                     Account = (Account_BData.GetAccount(item).ToModel());
