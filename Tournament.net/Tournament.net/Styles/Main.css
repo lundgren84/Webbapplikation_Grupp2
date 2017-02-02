@@ -13,10 +13,23 @@
 }
 
 #firstSpinner {
-    position: absolute;
+    /*position: absolute;
     left: 71%;
-    margin-top:17%;
-   
+    margin-top:17%;*/
+  
+     position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999;
+
+    /*position: fixed;
+    width: 100%;
+    height: 100%;*/
+    background: rgba(0,0,0,.5) url(spinner.gif) center center no-repeat;
+    background-image: url('../Items/Spinner/25 (2).gif');
+    /*opacity: .5;*/
 }
 
 #Tournament {
