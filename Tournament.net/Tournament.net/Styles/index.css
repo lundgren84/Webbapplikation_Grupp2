@@ -84,16 +84,17 @@ body {
     outline-color:transparent;
 }
  label {
-        color: #0D82B8;
+        color: #177eb3;
         margin: 20px;
     }
 
     input[type=text] {
         padding: 3px;
         margin:5px;
-        border: 3px solid #8EDFF2;
+        border: 3px solid #177eb3;
         -webkit-border-radius: 5px;
         border-radius: 5px;
+        background-color:transparent;
     }
 
         input[type=text]:focus {
@@ -103,16 +104,17 @@ body {
          input[type=password] {
         padding: 3px;
           margin:5px;
-        border: 3px solid #8EDFF2;
+        border: 3px solid #177eb3;
         -webkit-border-radius: 5px;
         border-radius: 5px;
+        background-color:transparent;
     }
 
     .checkUser_btn{
         padding: 4px;
         background: #AB1A17;    
         margin:5px;
-        border: 3px solid #8EDFF2;
+        border: 3px solid #177eb3;
         cursor: pointer;
         -webkit-border-radius: 5px;
         border-radius: 5px;
