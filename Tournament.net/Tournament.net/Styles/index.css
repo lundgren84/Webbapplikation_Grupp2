@@ -168,3 +168,18 @@ body {
         width: 100px;
     height: 100px;
 }
+
+.removePlayersInParticipanta_btn {
+    margin-top: 30px;
+}
+.Label_for_Username_img_From_Participants_SelectedAccount {
+    margin-top: 32px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .removePlayersInParticipanta_btn {
+    margin-top: 1px;
+}
+    .Label_for_Username_img_From_Participants_SelectedAccount {
+    margin-top: 1px;
+}
+}
