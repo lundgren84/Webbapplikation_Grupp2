@@ -238,6 +238,7 @@
     <Content Include="Items\Sounds\sfx_sounds_interaction3.wav" />
     <Content Include="Items\Sounds\sfx_sounds_interaction9.wav" />
     <Content Include="Items\Sounds\Short Circuit-SoundBible.com-1450168875.wav" />
+    <Content Include="Items\Spinner\25 %282%29.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\futuraptbook.woff" />
