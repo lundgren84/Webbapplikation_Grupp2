@@ -41,19 +41,23 @@ namespace Tournament.net.Controllers
             }
             return RedirectToAction("TournamentBracket", "Tournament", new { GuestList = GuestList });
         }
+      
         [HttpGet]
-        public ActionResult TournamentBracket()
+        public ActionResult TournamentBracket(List<string> Players)
         {
-            //Hämta lista av players (username) från databas?
-            var userNames = new List<string>() {"Olle", "Frodo", "Bruno","Frida","Kaj" };
+            var userNames = Players;
             var players = new List<AccountInTournamentViewModel>();
 
             var counter = 0;
             foreach (var item in userNames)
             {
                 counter++;
-                var Account = (Account_BData.GetAccount(item).ToModel());
-
+                var Account = new AccountViewModel() { Email = "", UserName = item, id = new Guid(), ImgURL = "/Items/Avatars/M01.png" };
+                if (!item.Contains("(Guest)"))
+                {
+                     Account = (Account_BData.GetAccount(item).ToModel());
+                }
+            
                 players.Add(new AccountInTournamentViewModel()
                 {
                     UserName = Account.UserName,
@@ -72,7 +76,7 @@ namespace Tournament.net.Controllers
                 Rounds = Tournament_BData.GetTournamentRounds(counter),
                 OddPlayers = Tournament_BData.IsOdd(counter)
             };
-            return View(tournament);
+            return PartialView(tournament);
         }
     }
 }

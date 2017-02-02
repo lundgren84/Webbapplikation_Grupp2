@@ -35,7 +35,7 @@ namespace Business_layer.ExtensionMethods
             return saved;
         }
 
-        private static Account_BData AddDefaultValuesToNewAccount(Account_BData NewAccount)
+        public static Account_BData AddDefaultValuesToNewAccount(Account_BData NewAccount)
         {
             Random random = new Random();
             var imgNr = "";

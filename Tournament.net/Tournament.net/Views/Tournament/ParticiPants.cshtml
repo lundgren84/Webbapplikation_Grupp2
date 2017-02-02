@@ -9,20 +9,20 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
             <label>Username:</label>
             <input type="text" name="username" placeholder="Enter username.." class="usernameInput" />
             <label>Password:</label>
-            <input type="text" name="password" placeholder="Enter password" class="passwordInput" />
+            <input type="password" name="password" placeholder="Enter password" class="passwordInput" />
             <input class="checkUser_btn" type="button" data-id="@i" value="Add player" /><br />
             <div class="errorDiv"></div><br />
         </div>
         <div class="warp2">
             <img class="img_From_Participants_SelectedAccount" src="" alt="Accimg" />
             <label class="Label_for_Username_img_From_Participants_SelectedAccount">UsernameHere</label>
-           <input class="removePlayersInParticipanta_btn" type="button" value="Remove" />
+            <input class="removePlayersInParticipanta_btn" type="button" value="Remove" />
         </div>
     </div>
 }
 
-<input type="submit" id="play" value="Play">
-
+<input type="button" data-PlayerNumber="@ViewBag.number" id="ParticipantsPlay_btn" value="Play">
+<div id="startGamebtns_errorDiv"></div>
 
 
 
@@ -53,64 +53,6 @@ PS. To add Guests: just enter Username and skip the password.. then the program 
         border-radius: 5px;
     }
 </style>
+<script src="~/Scripts/JavaScript/Hampus/Participants.js"></script>
 
-<script type="text/javascript">
-
-    $(document).ready(function () {
-
-        var PlayersFromParticipants = [];
-        var checkUser_btn = $('.checkUser_btn');
-
-        checkUser_btn.on("click", function () {
-
-            //var form = $(this).parents('form:first');
-            //var  = $(this).attr("data-id")
-            var wrap1 = $(this);
-            var password = wrap1.closest('.wrap').find('.passwordInput').val()
-            var username = wrap1.closest('.wrap').find('.usernameInput').val()
-            var errorDivinParticipants = wrap1.closest('.wrap').find('.errorDiv')
-            console.log("Form Index= " + wrap1.attr("data-id"))
-            console.log("Username= " + username)
-            console.log("Password= " + password)
-
-
-
-            $.ajax({
-                url: "/Authentication/CheckLogin",
-                type: "POST",
-                dataType: "json",
-                data: { 'username': username, 'password': password },
-                success: function (data) {
-                    errorDivinParticipants.html("");
-                    let Players = data;
-
-                    console.log(data.UserName)
-                    var warp2 = wrap1.closest(".alfaWrap").find(".warp2");
-
-                    if ((password === undefined || password === "") && data.UserName === "Guest") {
-                        // Add as guest
-                        console.log("Add as guest")
-                    }
-                    else if (data.UserName !== "Guest") {
-                        // Add Registerd user
-                        warp2.find(".img_From_Participants_SelectedAccount").attr("src", data.ImgURL)
-                        warp2.find(".Label_for_Username_img_From_Participants_SelectedAccount").html(data.UserName)
-
-
-                        console.log("Add as Registerd user")
-                    }
-                    else {
-                        errorDivinParticipants.html("Username or password wrong!");
-                    }
-
-                    alert("save-success");
-                },
-                error: function (data) {
-                    alert("ERROR: "+data);
-                }
-            });
-
-        })
-    });
-</script>
 <script src="~/Scripts/JavaScript/Henrik/HenrikMain.js"></script>
