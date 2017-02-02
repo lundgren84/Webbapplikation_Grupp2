@@ -125,11 +125,28 @@ $(document).ready(function () {
             height: "150px"
         });
         setTimeout(function () {
+       
+            HB.StartButtonDiv.toggle("fast");
+
+        }, 500);
+        
+        setTimeout(function () {
             getHtmlToGameTypeMenuDiv('/Main/GameTypeSelection');
+          
+
+        }, 500);
+
+        setTimeout(function () {
+
+            HB.StartButtonDiv.toggle("fast");
+
+    }, 1500);
+        //setTimeout(function () {
+        //    HB.Start_btn.fadeIn("fast");
 
 
-        }, 220);
-
+        //}, 5000);
+        
     });
     HB.Start_btn.on("mouseover", function () {
         clickSound.play();
