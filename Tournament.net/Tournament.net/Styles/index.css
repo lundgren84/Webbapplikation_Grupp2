@@ -162,4 +162,9 @@ body {
     }
 #ParticipantsPlay_btn {
     background-image: url('../Items/Images/Buttons/startbutton hover.png');
+    background-size:100%,100%;
+     background-color: transparent;
+     border:none;
+        width: 100px;
+    height: 100px;
 }
