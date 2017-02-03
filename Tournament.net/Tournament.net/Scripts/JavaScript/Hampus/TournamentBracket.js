@@ -54,7 +54,7 @@ $(document).ready(function () {
 
         // VS Label
         var btwWidth = parseInt(btn_WIN_1.css("width"));
-        vsLabel.css("top", btn2Top);
+        vsLabel.css("top", btn2Top-20);
         vsLabel.css("left", (camp1Position.left + btwWidth + 20));
         turn += 2;
     });
